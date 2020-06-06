@@ -1,12 +1,4 @@
 @font-face {
-  font-family: 'dejavu_sans_monobook';
-  src: url('fonts/dejavu/dejavusansmono-webfont.woff2') format('woff2'),
-    url('fonts/dejavu/dejavusansmono-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'latoregular';
   src: url('fonts/lato/lato-regular-webfont.woff2') format('woff2'),
     url('fonts/lato/lato-regular-webfont.woff') format('woff');
@@ -33,18 +25,53 @@
 h1 {
   color: darkblue;
   font-family: latobold;
+  margin: 0;
 }
 
 body {
   background-color: lightblue;
   font-family: latolight;
-  line-height:  1.6em;
+  line-height: 1.6em;
   font-size: 14px;
 }
 
+hr {
+  height: 2;
+  display: block;
+  margin-before: 0.5em;
+  margin-after: 0.5em;
+  margin-start: auto;
+  margin-end: auto;
+  overflow: hidden;
+  border-style: inset;
+  border-width: 0px;
+  background-color: transparent;
+}
 
+header {}
 
+main {}
 
+.weeklist {
+  /* delete default counter */
+  list-style-type: none;
+  /* create custom counter and set it to 0 */
+  counter-reset: elementcounter;
+}
 
+.weeklist>li:before {
+  /* print out "Element " followed by the current counter value */
+  content: "Week "counter(elementcounter) ": ";
+  /* increment counter */
+  counter-increment: elementcounter;
+}
 
+.subhead {
+  margin-top: 1.5em;
+  line-height: 1em;
+  font-family: latobold;
+}
 
+.subsubhead {
+  line-height: 1em;
+}
