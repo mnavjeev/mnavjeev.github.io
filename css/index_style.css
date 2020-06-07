@@ -25,13 +25,13 @@
 h1 {
   color: darkblue;
   font-family: latobold;
-  padding-top: 3%;
+  padding-top: 4%;
   margin: 0;
-  font-size: 34px;
+  font-size: 40px;
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 24px;
 }
 
 body {
@@ -41,10 +41,9 @@ body {
   font-size: 14px;
 }
 
-
 header {
   margin-top: 5%;
-  margin:auto;
+  margin: auto;
   background-color: inherit;
   margin-left: 3%;
 }
@@ -66,7 +65,7 @@ hr {
   margin-left: 3%;
   display: block;
   height: 2px;
-  border = 0;
+  border=0;
   border-top: 2px solid;
   border-bottom: 0px;
   background-color: inherit;
@@ -84,18 +83,20 @@ nav a.active {
   color: red;
 }
 
+nav a:hover {
+  color: gray;
+}
+
 img {
   width: 80%;
   max-width: 700px;
+  margin-top: 5px;
 }
 
-.subsection{
+.subsection {
   width: 100%;
   max-width: 700px;
-}
-
-nav a:hover {
-  color: gray;
+  font-size: 15px;
 }
 
 .weeklist {
@@ -115,10 +116,13 @@ nav a:hover {
 .subhead {
   line-height: 1em;
   font-family: latoregular;
-  font-size: 18px;
+  font-size: 20px;
+  margin-bottom: 0px;
 }
 
 .subsubhead {
   line-height: 1em;
   font-family: latoregular;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
