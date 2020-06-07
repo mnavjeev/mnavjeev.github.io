@@ -2,32 +2,29 @@
 <html>
 
 <head>
+	<title>Manu's Website</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Manu Navjeevan Personal Website">
 	<meta name="author" content="Manu">
 	<meta name="viewport" content="width=device-width, initial-scale = 1.0">
-	<title>Manu's Website</title>
-	<div id="main_nav_bar">
-		<link rel="stylesheet" type="text/css" href="css/index_style.css">
-	</div>
+	<link rel="stylesheet" type="text/css" href="css/index_style.css">
 </head>
 
 <body>
 	<header>
 		<!-- Adding a header -->
 		<h1>Manu Navjeevan</h1>
-		<h2>Home</h2>
-		<nav><a href="index.html">Home</a> <a href="notes.html">Useful Files</a> <a href="cv.pdf" target="_blank">CV</a></nav>
-		<hr>
+		<nav><a class = "active" href="index.html"><h2>Home</h2></a><a href="notes.html"><h2>Useful Files</h2></a><a href="cv.pdf" target="_blank"><h2>CV</h2></a></nav>
 	</header>
+	<hr>
 	<main>
 			<!--Profile Photo
 			<section>
 				<img src="images/running.jpeg" alt="" width = "350" />
 			</section>
 			-->
-			<h3 class = subhead>About Me</h3>
+			<h3 class = subhead>About Me:</h3>
 			<section>
 				<h4 class = "subsubhead">Research Interests</h4>
 				My name is Manu Navjeevan, I am a second year Economics PhD Student at the University of California, Los Angeles. My research interests are primarily in Econometrics and secondarily in Industrial Organization. Some useful files can be found
@@ -37,7 +34,9 @@
 				<h4 class = subsubhead>Personal Life</h4>
 				<p>Follow me on <a href="https://www.twitter.com/mnavjeevan" target="_blank">Twitter!</a>. Below is a photo of me and my college roomates at Griffith Observatory in Los Angeles.</p>
 				<img src="images/griffith.jpeg" alt="" width="80%">
-				<p>(From left to right: Me, Bryan, Sebastien)</p>
+				<div>
+					(From left to right: Me, Bryan, Sebastien)
+				</div>
 			</section>
 		<br>
 		<!--
