@@ -23,7 +23,7 @@
 }
 
 h1 {
-  color: darkblue;
+  color: #2774AE;
   font-family: latobold;
   padding-top: 4%;
   margin: 0;
@@ -35,17 +35,20 @@ h2 {
 }
 
 body {
-  background-color: lightblue;
+  background-color: #f9f9f9;
   font-family: latolight;
   line-height: 1.6em;
   font-size: 14px;
+  max-width: 700px
 }
 
 header {
+  text-align: left;
   margin-top: 5%;
   margin: auto;
   background-color: inherit;
   margin-left: 3%;
+  max-width: 700px
 }
 
 main {
@@ -56,9 +59,11 @@ main {
 nav {
   display: block;
   overflow: hidden;
+  float: left;
 }
 
 hr {
+  color: black;
   text-align: left;
   width: 97%;
   max-width: 700px;
@@ -80,7 +85,7 @@ nav a {
 }
 
 nav a.active {
-  color: red;
+  color: #2774AE;
 }
 
 nav a:hover {
