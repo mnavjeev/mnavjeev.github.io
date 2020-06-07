@@ -25,6 +25,7 @@
 h1 {
   color: darkblue;
   font-family: latobold;
+  padding-top: 3%;
   margin: 0;
   font-size: 34px;
 }
@@ -42,10 +43,15 @@ body {
 
 
 header {
+  margin-top: 5%;
+  margin:auto;
   background-color: inherit;
+  margin-left: 3%;
 }
 
 main {
+  margin: auto;
+  margin-left: 3%;
 }
 
 nav {
@@ -54,6 +60,10 @@ nav {
 }
 
 hr {
+  text-align: left;
+  width: 97%;
+  max-width: 700px;
+  margin-left: 3%;
   display: block;
   height: 2px;
   border = 0;
@@ -72,6 +82,16 @@ nav a {
 
 nav a.active {
   color: red;
+}
+
+img {
+  width: 80%;
+  max-width: 700px;
+}
+
+.subsection{
+  width: 100%;
+  max-width: 700px;
 }
 
 nav a:hover {
