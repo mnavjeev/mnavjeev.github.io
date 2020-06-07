@@ -118,6 +118,11 @@ img {
   counter-increment: elementcounter;
 }
 
+
+.suppFile {
+  font-size: 10px;
+}
+
 .subhead {
   line-height: 1em;
   font-family: latoregular;
