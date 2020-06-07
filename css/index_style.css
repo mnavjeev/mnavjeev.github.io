@@ -27,11 +27,11 @@ h1 {
   font-family: latobold;
   padding-top: 4%;
   margin: 0;
-  font-size: 40px;
+  font-size: 36px;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 body {
@@ -116,7 +116,7 @@ img {
 .subhead {
   line-height: 1em;
   font-family: latoregular;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 0px;
 }
 
