@@ -1,0 +1,111 @@
+\documentclass[10pt]{article}
+\usepackage{textcomp}
+\usepackage{parskip}
+%\usepackage{extsizes}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{mdframed}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{subfigure}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{commath}
+\usepackage[margin = 1in]{geometry}
+\usepackage{graphicx}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{dsfont}
+\usepackage{setspace}
+\usepackage{longtable}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[mathscr]{euscript}
+\usepackage{hyperref}
+\usepackage{adjustbox}
+\usepackage[small]{titlesec}
+\usepackage{econometrics}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{23pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\sectionmark}[1]{%
+\markboth{\thesection\quad #1}{}}
+\fancyhead{}
+\fancyhead[R]{\leftmark}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+\linespread{1}
+
+\DeclareMathOperator{\err}{err}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Poisson}{Poisson}
+\DeclareMathOperator{\thetaH}{\hat{\theta}}
+\DeclareMathOperator{\thetaT}{\tilde{\theta}}
+\DeclareMathOperator{\nuH}{\hat{\nu}}
+\DeclareMathOperator{\nuT}{\tilde{\nu}}
+\DeclareMathOperator{\DeltaT}{\tilde{\Delta}}
+\DeclareMathOperator{\muH}{\hat{\mu}}
+\DeclareMathOperator{\sigmaH}{\hat{\sigma}}
+\DeclareMathOperator{\wcov}{\rightsquigarrow}
+
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+\newtheoremstyle{exampstyle}
+  {1em plus .2em minus .1em}%   Space above
+  {1em plus .2em minus .1em}%   Space below
+  {} % Body font
+  {} % Indent amount
+  {\bfseries} % Theorem head font
+  {.} % Punctuation after theorem head
+  {.5em} % Space after theorem head
+  {} % Theorem head spec (can be left empty, meaning `normal')
+
+
+ {
+    \theoremstyle{exampstyle}
+    \newtheorem{assumption}{Assumption}
+    \newtheorem*{assumption*}{Assumption}
+    \newtheorem{specification}{Specification}
+    \newtheorem*{specification*}{Specification}
+    \newtheorem{definition}{Definition}
+    \newtheorem*{definition*}{Definition}
+    \newtheorem{example}{Example}
+    \newtheorem*{example*}{Example}
+ 
+ 
+ }
+\newtheorem{theorem}{Theorem}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{prop}{Proposition}
+\newtheorem*{prop*}{Proposition}
+
+\usepackage{chngcntr}
+
+\counterwithin*{equation}{section}
+\counterwithin*{assumption}{section}
+\counterwithin*{prop}{section}
+\counterwithin*{specification}{section}
+\counterwithin*{definition}{section}
+\counterwithin*{footnote}{section}
+
+
+\title{Readings on Demand Identification}
+\author{Manu Navjeevan}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+Starting with some readings on nonparametric identification of simultaneous equations for Demand Identification in Two Sided Markets 
+
+\input{papers/handbookchapter.tex}
+\newpage
+\input{papers/aids}
+
+\end{document}

@@ -1,0 +1,155 @@
+\documentclass[10pt]{article}
+\usepackage{textcomp}
+\usepackage{parskip}
+%\usepackage{extsizes}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{mdframed}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{subfigure}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{commath}
+\usepackage[margin = 1in]{geometry}
+\usepackage{graphicx}
+\usepackage{gensymb}
+\usepackage{marginnote}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{setspace}
+\usepackage{dsfont}
+\usepackage{longtable}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage[mathscr]{euscript}
+\usepackage{hyperref}
+\usepackage{adjustbox}
+\usepackage[small]{titlesec}
+\usepackage{econometrics}
+
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{23pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\sectionmark}[1]{%
+\markboth{\thesection\quad #1}{}}
+\fancyhead{}
+\fancyhead[R]{\leftmark}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+\linespread{1}
+
+\DeclareMathOperator{\err}{err}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Poisson}{Poisson}
+\DeclareMathOperator{\thetaH}{\hat{\theta}}
+\DeclareMathOperator{\thetaT}{\tilde{\theta}}
+\DeclareMathOperator{\nuH}{\hat{\nu}}
+\DeclareMathOperator{\nuT}{\tilde{\nu}}
+\DeclareMathOperator{\muH}{\hat{\mu}}
+\DeclareMathOperator{\sigmaH}{\hat{\sigma}}
+\DeclareMathOperator{\DeltaT}{\tilde{\Delta}}
+\DeclareMathOperator{\ris}{\rho_{i}^*}
+\DeclareMathOperator{\polylog}{polylog}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\id}{id}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\sign}{sign}
+
+\DeclareMathOperator{\wcov}{\rightsquigarrow}
+
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+
+\newtheoremstyle{exampstyle}
+  {1em plus .2em minus .1em}%   Space above
+  {1em plus .2em minus .1em}%   Space below
+  {} % Body font
+  {} % Indent amount
+  {\bfseries} % Theorem head font
+  {.} % Punctuation after theorem head
+  {.5em} % Space after theorem head
+  {} % Theorem head spec (can be left empty, meaning `normal')
+
+
+ {
+    \theoremstyle{exampstyle}
+    \newtheorem{assumption}{Assumption}
+    \newtheorem*{assumption*}{Assumption}
+    \newtheorem{specification}{Specification}
+    \newtheorem*{specification*}{Specification}
+    \newtheorem{definition}{Definition}
+    \newtheorem*{definition*}{Definition}
+    \newtheorem{example}{Example}
+    \newtheorem*{example*}{Example}
+ 
+ }
+
+\newtheorem{theorem}{Theorem}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem*{prop*}{Proposition}
+
+\newcommand{\blocktheorem}[1]{%
+  \csletcs{old#1}{#1}% Store \begin
+  \csletcs{endold#1}{end#1}% Store \end
+  \RenewDocumentEnvironment{#1}{o}
+    {\par\addvspace{1.5ex}
+     \noindent\begin{minipage}{\textwidth}
+     \IfNoValueTF{##1}
+       {\csuse{old#1}}
+       {\csuse{old#1}[##1]}}
+    {\csuse{endold#1}
+     \end{minipage}
+     \par\addvspace{1.5ex}}
+}
+\blocktheorem{theorem}
+\blocktheorem{assumption}
+\blocktheorem{definition}
+\blocktheorem{prop}
+\blocktheorem{specification}
+
+
+\raggedbottom
+
+
+\usepackage{chngcntr}
+
+\counterwithin*{equation}{section}
+\counterwithin*{assumption}{section}
+\counterwithin*{prop}{section}
+\counterwithin*{specification}{section}
+\counterwithin*{definition}{section}
+\counterwithin*{footnote}{section}
+\counterwithin*{theorem}{section}
+\counterwithin*{lemma}{section}
+
+
+\title{Readings on Moment Inequality Methods}
+\author{Manu Navjeevan}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\normalsize
+
+
+
+
+\input{papers/baiSantosShaikh.tex}
+\newpage
+\input{papers/CCK-2019.tex}
+\newpage
+\input{papers/GH-2011}
+
+\end{document}
+
+
+

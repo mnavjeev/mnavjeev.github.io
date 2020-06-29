@@ -1,0 +1,66 @@
+%!TEX root = /Users/manunavjeevan/Desktop/Research/ML + Lasso/Annotated Literature Review/litNotesML.tex
+
+\section{Central Limit Theorems and Bootstrap in High Dimensions \textit{\small Victor Chernozhukov, Denis Chetverikov, Kengo Kato (A0P 2017)}}
+
+Article appeared in Annals of Probability in 2017. It can be found through the AoP website \href{https://projecteuclid.org/euclid.aop/1502438428}{here} or from ArXiv \href{https://arxiv.org/pdf/1412.3661.pdf}{here}.
+
+Paper derives central limit theorems and bootstrap theorems for probabilities that sums of centered high dimensional random vectors hit hyperrectangles and sparsely convex sets. 
+
+\subsection{Introduction}
+
+Let $X_1, \dots, X_n$ be independent random vectors in $\SR^p$ where $p\geq 3$ may be large or even much larger than $n$. Denote by $X_{ij}$ the $j$-th coordinate of $X_i$ so that $X_i = (X_{i1},\dots,X_{ip})'$. Assume that each $X_i$ is centered, so that $\E[X_ij] = 0$ and $\E[X_{ij}^2] < \infty$ for all $i = 1, \dots, n$ and $j = 1, \dots, p$. Define the normalized sum 
+\[S_n^X := \left(S_{n1}^X, \dots, S_{np}^X\right)' := \frac{1}{\sqrt{n}} \sum_{i=1}^n X_i\]
+Paper considers Gaussian approximations to $S_n^X$ and, to this end, let $Y_1, \dots, Y_n$ be independent centered Gaussian random vectors in $\SR^p$ such that each $Y_i$ has the same covariance matrix as $X_i$, that is $Y_i \sim N(0,\E[X_iX_i'])$. Define the normalized sum for the Gaussian random vectors 
+\[S_n^Y := \left(S_{n1}^Y, \dots, S_{np}^Y\right)' := \frac{1}{\sqrt{n}}\sum_{i=1}^n Y_i\]
+Interested in bounding the quantity 
+\begin{equation}
+	\label{eq:cck17-1}
+	\rho_n(\calA) := \sup_{A\in \calA}\left| \P(S_n^X \in A) - \P(S_n^Y\in A)\right|
+\end{equation}
+where $\calA$ is a class of Borel sets in $\SR^p$. Section 2 derives this bound for $\calA = \calA^{\text{re}}$, the class of all byperrectangles ans shows that this bound vconverges to 0 under some conditions. 
+
+Bounding $\rho_n(\calA)$ for various classes $\calA$ of sets in $\SR^p$ with a special emphasis on explicit dependence on the dimension $p$ in the bounds has been studied. The appendix for the 2013 Annals of Statistics Paper, ``Gaussian approximations and multiplier bootstrap for maxima of sums of high dimensional random vectors'' also by Chernozhukov, Chetverkiov, Kato offers a literature review. 
+
+\paragraph{Some Notation} 
+
+Use notation $\|v\|_0 = \sum_{j=1}^p \mathds{1}\{v_j\neq 0\}$ and $\|v\| = (\sum_{j=1}^p v_j^2)^{1/2}$. For $\alpha > 0$, defined the function $\psi_a :[0, \infty) \to [0, \infty)$ by $\phi_\alpha := \exp(x^\alpha) - 1$. Consider 
+\[ \|\xi\|_{\psi_\alpha} := \inf \{\lambda > 0: \E[\psi_\alpha(|\xi|/\lambda)] \leq 1 \} \]
+For $\alpha \in [1,\infty)$ this is a well defined norm, whereas for $\alpha \in (0,1)$ this is a quasi-norm. That is, there exists a constant $K_\alpha$ depending only on $\alpha$ such that 
+\[\|\xi_1 + \xi_2\|_{\psi_\alpha} \leq K_\alpha (\|\xi_1\|_{\psi_\alpha} + \|\xi_2\|_{\psi_\alpha})\]
+Throughout the paper assume $n\geq 4$ and $p \geq 3$
+
+\subsection{High-dimensional CLT for hyperrectangles}
+
+Begin by presenting an abstract theorem. General but depends on the tail properties of the distributions of the coordinates of $X_i$ in a nontrivial way. Next, apply this theorem under simple moment conditions and derive more explicit bounds. 
+
+Let $\calA^{\text{re}}$ be the class of all hyperrectangels in $\SR^p$; that is $\calA^{\text{re}}$ consists of all sets $A$ of the form 
+\begin{equation}
+	\label{eq:cck17-4}
+	A = \{w \in \SR^P: a_j \leq w_j \leq b_j\text{ for all }j = 1, \dots, p\}
+\end{equation}
+for some $-\infty \leq a_j \leq b_j \leq \infty$, $j = 1, \dots, p$. Will derive a bound on $\rho_n(\calA^{\text{re}})$ and show that, under certain conditions it converges to 0, even in the high dimensional setting. 
+
+To describe the bound, need to prepare some notation. Define 
+\[L_n := \max_{1\leq j \leq p} \sum_{i=1}^n \E\left[|X_{ij}|^3\right]/n\]
+and for $\phi \geq 1$, define for $Z = X,Y$
+\begin{equation}
+	\label{eq:cck17-5}
+	M_{n,Z}(\phi) := n^{-1}\sum_{i=1}^n \E\left[\max_{1\leq j \leq p}\mathds{1}\left\{\max_{1\leq j \leq p} |X_{ij}| < \sqrt{n}/(4\phi\log p)\right\}\right]
+\end{equation}
+and let 
+\[M_n(\phi) := M_{n,X}(\phi) + M_{n,Y}(\phi)\]
+The following is the main result of the paper 
+\begin{theorem}[Abstract high-dimensional CLT for hyperrectangles]
+	\label{thm:ckk17-1}
+	Suppose that there exists some constant $b > 0$ such that $n^{-1}\sum_{i=1}^n \E[X_{ij}^2] \geq b$ for all $j = 1, \dots, p$. Then tere exist constants $K_1, K_2 > 0$ depending only on $b$ such that, for every constant $\bar{L}_n \geq L_n$,
+	\begin{equation}
+		\label{eq:cck17-6}
+		\rho_n(\calA^{\text{re}}) \leq K_1 \left[\left(\frac{\bar{L}^2_n\log^7 p}{n}\right)^{\frac{1}{6}} + \frac{M_n(\phi_n)}{\bar{L}_n}\_\right]
+	\end{equation}
+	with 
+	\begin{equation}
+		\label{eq:cck17-7}
+		\phi_n := K_2\left(\frac{\bar{L}_n^2 \log^4 p}{n} \right)^{-\frac{1}{6}}
+	\end{equation}
+\end{theorem}
+

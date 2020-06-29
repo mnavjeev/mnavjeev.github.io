@@ -1,0 +1,218 @@
+%!TEX root = /Users/manunavjeevan/Desktop/Research/Moment Inequality Methods/Annotated Literature Review/inequalityLitReview.tex
+
+\section{Set Identification in Models with Multiple Equilibria; \textit{\small Alfred Galichon, Marc Henry (ReStud, 2011)}}\label{sec:GH-2011}
+
+Paper proposes a computationally feasible way of deriving the identified features of a model with multiple equilibria in pure or mixed strategies. It can be found from the ReStud website \href{https://academic.oup.com/restud/article/78/4/1264/1593470}{here}. 
+
+\subsection{Introduction}
+
+Empirical study of game theoretic models generally complicated by the presence of multiple equilibria. The existence of multiple equiliria generally leads to a failure of identification of the structural parameters governing the model. 
+\begin{itemize}
+	\item Berry and Tamer (2006) and Ackerberg et al. (2007) give an account of the various ways this issue is approached in the literature.
+	\item Andrews, Berry, and Jia (2003),  Ciliberto and Tamer (2009) consider some partial identification approach. Identification approach is not sharp. 
+\end{itemize}
+Paper proposes a computationally feasible way of recovering the identified. Note a generalized likelihood implied by a model with multiple equilibria can be represented by a non-additive set function called a \textit{Choquet Capacity}.	Give a formal definition of an equilibrium selection mechanism and call such a mechanism compatible with the data if the likeli	hood of the model augmented with such a mechanism is equal to the probabilities observed in the data. THe identified feature of the model is then the set of parameter values s.t there exists an equilibrium selecton mechanism compatible with the data. 
+
+The computational burden remains high in situations with a large number of observable outcomes since the number of inequalities to be checked is equal to the number of subsets of the set of observable outcomes. 
+
+\subsection{Identified Features of Models with Multiple Equilibria}
+First go over framework and general results in the case where only equilibria in pure strategies are considered. Section 1.2 specializes and illustrates them on leading examples of participation gaems. 
+ 
+\subsubsection{Identified Parameter Sets in General Models with Multiple Equilibria}
+
+General framework is that of Jovanovic (1989). Applies to the empirical analysis of normal form games, where only equilibra in pure strategies are considered. Consider three types of economic variables. 
+\begin{itemize}
+	\item Outcome variables, $Y$
+	\item Exogeneous eexplanatory variables $X$
+	\item Random shocks (or latent variables) $\epsilon$
+\end{itemize}
+Outcome variables and latent variables are assumed to belong to complete and seperable metric spaces. Economic model consists of a set of restrictions on the joing behavior of the variables listed above. Restrivtions may be induced by assumptions of rational agents, and they generally depend on a set of unknown structural paramaters, $\theta$. 
+
+Without loss of generality, model may be formalized as a measurable correspondence (defined below) between the latent variables $\epsilon$ and the outcome variables $Y$, indexed by the exogeneous variables $X$ and the vector of parameters $\theta$. This correspondence is called $G$ and write 
+$Y\in G(\epsilon | X;\theta)$ to indicate admissable values of $Y$ given $\epsilon, X, \theta$. The econometrician is assumed to have access to a sample of i.i.d vectors $(Y,X)$ and the problem that is considered is estimating the vector of parameters $\theta$. The latent variables $\epsilon$ is supposed to be distributed accorind to a parametric distribution $\nu(\cdot|X;\theta)$. Assumptions are collected below:
+\newpage
+\begin{assumption}
+	\label{assm:GK-1}
+	An independent and identically distributed sample of copies of the random vector $(Y,X)$ is available. The observable outcomes $Y$ conditionally distributed accotding to the probability distribution $P(\cdot|X)$ on $\calY$, a Polish space\footnote{A Polish space is a complete and seperable metric space. A complete metric space is one where every Cauchy sequence converges to a point in the space and a seperable metric space is one with a countable, dense, subset. A Cauchy sequence, $(a_n)_{n\in \SN}$ is one such that for every $\epsilon > 0, \exists N_\epsilon \in \mathbb{N}$ s.t $\forall m,n \geq N_\epsilon, d(a_m, a_n) < \epsilon$. Completeness ensures that the space is ``rich enough.'' For example, the reals are complete but the rationals are not.}
+	endowed with its Borel $\sigma$-algebra of subsets $\calB$ are related to the unobervable variables $\epsilon$ according to the model $Y\in G(\epsilon| X;\theta)$. Here, $\theta$ belongs to an open subset $\Theta$ of $\SR^{d_\theta}$, $\epsilon$ is distributed according to the probability measure $\nu(\cdot|X;\theta)$ on $\calU$\footnote{Also a Polish space}, 
+	and $G$ is a measurable correspondence\footnote{A measurable correspondence is such that for all open subsets $A \subseteq \calY$, $G^{-1}(A|X;\theta) := \{\epsilon\in\calU: G(\epsilon|X;\theta) \cap A \neq 0\}$ is measurable. A note: technically $A$ should be measurable, but since we are dealing with Borel $\sigma$-algebra's this is an equivalent definition. A measurable correspondence is also called a random correspondence or a random set.}
+	for almost all $X$ and for all $\theta \in \Theta$. Finally, the variables $(Y,X,\epsilon)$ are defined on the same underlying probability space $(\Omega, \calF, \mathbb{P})$. 
+\end{assumption}
+
+\begin{example}
+	\label{ex:GH-1}
+	To illistrate, consider a simple game proposed by Jovanovic (1989). Consider two firms with profit functions $\Pi_1(Y_1, Y_2, \epsilon_1, \epsilon_2;\theta)= (\theta Y_2 - \epsilon_2)Y_1$ and $\Pi_2(Y_1, Y_2, \epsilon, \epsilon_2; \theta) = (\theta Y_1 - \epsilon_1)Y_2$ where $Y_i \in \{0,1\}$ is firm $i$'s action and $\epsilon = (\epsilon_1, \epsilon_2)$ are exogeneous cots. The firms know thier costs, the analyst only knows that $\epsilon$ is uniformly distributed on $[0,1]^2$ and that the structural parameter $\theta$ is in $(0,1]$. There are two pure strategy Nash equilibria. The first is $Y_1 = Y_2 = 0$ for all $\epsilon \in [0,1]^2$.  The second is $Y_1 = Y_2 = 1$ for all $\epsilon \in [0,\theta]^2$ and $Y_1 = Y_2 = 0$ otherwise. Hence the model is described be the correspondence $G(\epsilon; \theta) = \{(0,0),(1,1)\}$ for all $\epsilon \in [0,\theta]^2$ and $G(\epsilon;\theta) = \{0,0\}$ otherwise.
+\end{example}
+
+To conduct inference on the parameter vector $\theta$, one first needs to determine the identified features of the model. Since $G$ may be multi-valued due to the presence of multiple equilibria, the outcomes may not be uniquely determined by the latent variable. In such cases, the generalized likelihood of an outcome falling in the subset $A$ of $\calY$ predicted by the model is $\calL(A|X;\theta) = \nu(G^{-1}(A|X;\theta)|X;\theta)$. Because of multiple equilibria, this generalized likelihood may sum to more than one, as we may have $A\cap B = \null set$ and yet $G^{-1}(A | X;\theta) \cap G^{-1}(B|X;\theta) \neq 0$\footnote{Inutition: $G^{-1}(y|X;\theta)$ gives the set of $\epsilon$ values that could have generated the $y$ value (observed outcome) conditional on $X$ and $\theta$ and one epsilon can generate two different $y$ values because of multiple equilibria.} so that $\calL(A\cup B | X;\theta) < L(A|X;\theta) + L(B|X;\theta)$. The set function $A\mapsto \calL(A|X;\theta) = \nu(G^{-1}(A|X;\theta)|X;\theta)$ is generally not additive and is called a \textit{Choquet capacity}\footnote{See Choquet, 1954. Choquet capacity also used as a generalized probability in some behavioral decision making theory.}. This non-additivity of the model likelihood is well documented.
+
+\begin{definition}[Choquet capacity]
+	\label{def:GH-1}
+	A Choquet capacity $\calL$ on a finite set $\calY$ is a set function $\calL: A\subset\calY\mapsto[0,1]$ which is
+	\begin{itemize}
+		\item normalized, i.e $\calL(\emptyset) = 0$ and $\calL(\calY) = 1$
+		\item monotone, i,e $\calL(A) \leq \calL(B)$, for any $A\subset B\subset \calY$
+	\end{itemize}
+\end{definition}
+
+This is like a probability measure but without additivity. In the example above, $\nu(\cdot| X;\theta)$ is the uniform distribution on $[0,1]^2$ and the Choquet capacity $\nu(G^{-1})$ gives value $\nu(G^{-1}(\{0,0\})) = \nu([0,1]^2) = 1$. and $\nu(G^{-1}\{1,1\}) = \nu([0,\theta]^2)= \theta^2$ to the set $\{(1,1)\}$. Hence it is immediately apparent that the Choquet capacity of $\nu(G^{-1})$ is nonadditive.
+
+As discussed in Jovanovic (1989) and Berry and Tamer (2006), the model with multiple equilibria can be completed with an equilibrium selection mechanism. Define an equilibrium selection mechanism as a conditional distribution $\pi_{Y|\epsilon, X;\theta}$ over equilibrium outcomes $Y$ in the regions of multiplicity. By constricution, an equlilibrium slection mechanism is allowed to depend on the latent variables $\epsilon$ even after conditioning on $X$. 
+
+\begin{definition}[Equilibrium selection mechanism]
+	\label{def:GH-2}
+	An equilibrium selection mechanism is a conditional probability $\pi(\cdot|\epsilon, X;\theta)$ for $Y$ conditional on $\epsilon$ and $X$ such that the selected value of the outcome variable is actually an equilibrium. Formally $\pi(\cdot|\epsilon, X,\theta)$ has support contained in $G(\epsilon|X;\theta)$.
+\end{definition}
+
+Crucial to this is the fact that $\pi$ is a \textit{probability measure}. It should ``smooth out'' the nonadditivity of $\nu(G^{-1})$. 
+
+\emph{The identified feature of the model is the smallest set of parameters that cannot be rejected by the data}. Hence, it is the set of parameters for which one can find an equilibrium selection mechanism that completes the model and equates probabilities of outcomes predicted by the model with the probabilities obtained from the data.\footnote{Is this somehow restrictive? I guess not, since we've placed no assumption on the selection mechanism.}
+
+\begin{definition}[Compatabile equilibrium selection mechanism]
+	\label{def:GH-3}
+	The equilibrium selection mechanism $\pi(\cdot|\epsilon, X;\theta)$ is compatible with the data if the probabilities ovserved in the data are equal to the probabilities predicted by the equilibrium selection mechanism. More formally, if for all measurable subsets $A$ of $\calY$
+	\[P(A|X) = \int_\calU \pi(A|\epsilon, X,\theta) \nu(d\epsilon |X;\theta)\]
+\end{definition}
+\begin{definition}[Identified Set]
+	\label{def:GH-4}
+	The identified set (or the \emph{sharp} identified set) is the set $\theta_I \subseteq\Theta$ such that, $\forall \theta \in \theta_I$, there exists an equilibrium selection mechanism compatible with the data.
+\end{definition}
+
+Above definition is not operational, in the sense that it does not allow for the computation of the identified set based on the knowledge of the probabilities in the data, because $\pi$ is an infninite dimensional nuisance parameter. Now set out to show how to reduce the dimensionality of the problem. Equivalent formulation of the identified set relates to the \emph{core} of the Choquet capacity.
+\begin{definition}[Core of a Choquet capacity]
+	\label{def:GH-5}
+	The \emph{core} of a Choquet capacity $\calL$ on $\calY$ is the collection of probability distributions $Q$ on $\calY$ such that for all $A\subset \calY$, $Q(A) \leq \calL(A)$.
+	\footnote{Equivalently, if we consider the random set $\calL$ as a map from $(\Omega, \calF, \mathbb{P}) \rightarrow 2^\calY$, we can say a random variable $\gamma:\Omega \rightarrow \calY$ is in the core of $\calL$ if $\gamma(\omega) \in \calL(\omega), \forall \omega \in \Omega.$ The random variable $\gamma$ induces a distribution on $\calY$ that has the above property, and every distribution on $\calY$ with the above property should be induced by a random variable with this property.}
+\end{definition}
+In cooperative game theory, a Choquet capacity on a set $\calY$ is interpreted as a game, where $\calY$ is the set of players and $\calL$ is the utility value or worth of a coalition $A\subseteq\calY$ and the core of the game $\calL$ is the collection of allocations that cannot be improved upon by any coalition of players.
+
+In Example~\ref{ex:GH-1}, the core of the Choquet capcaity $\nu G^{-1}$ is the set of probabilities $P$ for the observed outcomes $(0,0)$ and $(1,1)$ such that $P(\{(0,0)\}) \leq \nu G^{-1}(\{(0,0\}) = \nu([0,1]^2) =1$ and $P(\{(1,1)\}) \leq \nu G^{-1}(\{(1,1)\}) = \nu([0,\theta]^2) = \theta^2$. 
+
+Next result shows the equivalende between the existence of a compatible eqm. selection mechanism and the fact that the true distribution of the data belongs to the core of the Choquet capacity that characterizes the generalized likelihood predicted by the model. 
+
+\begin{theorem}
+	\label{thm:GH-1}
+	The identified set $\Theta_I$ is the set of parameters such that the true distribution of the observable variables lies in the core of the generalized likelihood predicted by the model. 
+	\[\Theta_I = \left\{\theta \in \Theta: \forall A \in \calB, P(A|X) \leq \calL(A|X;\theta); X-\text{a.s}\right\}\]
+\end{theorem}
+
+A later theorem generalizes this to the case of mixed strategy eqm. In the example above, the identified set is the set of values for $\theta$ such that $0 \leq \mathbb{P}((Y_1,Y_2)) \leq \theta^2$.
+
+The first thing to note from this theorem is that the problem of computing the identified set has been transformed into a finite-dimensional problm in the case where $\calY$ is a finite set. Indeed, in this case, teh problem of computing the indentified set is reduced to the problem of checking a finite number of inequalities. 
+
+However, in cases where the cardinality of $\calY$ is large, then the number of inequalities to be checked is $2^{|\calY|} - 2$ and the computational burden is only partially lifted. The rest of the paper is based on the characterization of Theorem~\ref{thm:GH-1}. 
+\subsubsection{Some illustrative examples}
+
+Examples are given in this section of Market Entry, Family Bargaining etc. For the most part, they resemble the market entry example given above in Section~\ref{sec:CCK-2019}. 
+
+\paragraph{Family Bargaining}
+
+Go over this game since it is later considered in the optimal transport section. Consider a simplified version of the bargaining model of decision regarding the long-term care of an elderly parent for a family with two children. The issue is which child will care for the parent when the parent ages or whether the parent is moved to a nursing home. The payoff to family memeber $i, i = 1,2$ is represented by the sum of thgree terms. 
+
+The first term, $V_{ij}$ represents the value to child $i$ of care option $j$, wjere $j > 0$ means child $j$ becomes the primary care giver, and $j= 0$ means the parent is moved to a nurding home. The matrix $(V_{ij})_{ij}$ is known to both children. We suppose it takes the form 
+
+\[V = \begin{pmatrix} 0 & 2\theta & 4\theta \\0 & 2\theta & 4\theta  \end{pmatrix}\]
+
+$\theta > 0$ is unknown to the analyst. Both children simultaneously decide whether or not to take part in the long-term care decision. Suppose $M$ is the set of children who participate. The option chosen is option $j$ that maximizes the sum $\sum_{i\in M} V_{ij}$ among the available options. It is assumed that participants abide with the decision and that benefits are then shared equally amond the children participating int he decision through a monetary transfer $s_i$, which is the second term in the children's payoff. Third term $\epsilon_i$ is a random benefit from participation, which is $0$ for children who decide not to participate and dsitributed according to $\nu(\cdot | \theta)$ for children who participate\footnote{Normalizing the utility of the outside option to 0}. All players observe the realization of $\epsilon$, while the analyst knows only its distribution. 
+
+Equilibria correspondence, restricting analysis to only pure strategy NE is:
+\begin{align*}
+	\{(0,0)\}&\text{is a Nash Equilbrium in pure strategies iff }\eps_2 < -2\theta\text{ and }\eps_1 < -2\theta \\
+	\{(1,1)\}&\text{is a Nash Equilbrium in pure strategies iff }\eps_2 > \theta\text{ and }\eps_1  > \theta \\
+	\{(0,1)\}&\text{is a Nash Equilbrium in pure strategies iff }\eps_2 > -2\theta\text{ and }\eps_1  < \theta \\
+	\{(1,0)\}&\text{is a Nash Equilbrium in pure strategies iff }\eps_2 < \theta\text{ and }\eps_1  > -2\theta 
+\end{align*}
+The equilibrium correspondence $G(\eps|\theta)$ is represented in Figure \ref{fig:GH-1}(a) below.
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/GH-Fig1}
+	\caption{Family Game [Lifted from Paper]}
+	\label{fig:GH-1}
+\end{figure}
+
+In the case of the family bargaining game, the set of possible outcomes is $\calY = \{(0,0),(0,1),(1,0),(1,1)\}$. The generalized likelihood of outcomes predicted by the model can be written as follows: 
+\begin{align*}
+ 	\calL(\{(0,0)\}|\theta) &= \nu(\eps: \eps_1 \leq -2\theta, \eps_2 \leq -2\theta| \theta) = \nu(G^{-1}((0,0)|\theta)|\theta)\\
+ 	\calL(\{(0,1)\}|\theta) &= \nu(\eps: \eps_1 \leq \theta, \eps_2 \geq -2\theta| \theta) = \nu(G^{-1}((0,1)|\theta)|\theta)\\
+ 	\calL(\{(1,0)\}|\theta) &= \nu(\eps: \eps_1 \geq -2\theta, \eps_2 \leq \theta| \theta) = \nu(G^{-1}((1,0)|\theta)|\theta)\\
+ 	\calL(\{(1,1)\}|\theta) &= \nu(\eps: \eps_1 \geq \theta, \eps_2 \geq \theta| \theta) = \nu(G^{-1}((1,1)|\theta)|\theta)
+\end{align*}
+anf the generalized likelihood of the remaining events can be derived as follows 
+\begin{align*}
+	\calL(\{(0,0)\}\cup A | \theta) &= \calL(\{(0,0)\}|\theta) + \calL(A|\theta),\hbox{ }\text{ for all }A \subset \calY/\{(0,0)\}\\
+	\calL(\{(1,1)\}\cup A | \theta) &= \calL(\{(1,1)\}|\theta) + \calL(A|\theta),\hbox{ }\text{ for all }A \subset \calY/\{(1,1)\} \\
+	\calL(\{(0,1),(1,0)\}|\theta) &= 1 - \calL(\{(0,0),(1,1)\}|\theta)
+\end{align*}
+The generalized likelihood predicted by the model is the set function $A\mapsto \calL(A|\theta) = \nu(G^{-1}(A|\theta)|\theta)$ for $A \subset \calY = \{(0,0),(0,1),(1,0),(1,1)\}$. This set function is a Choquet capacity and if the support of $\nu$ is suffeciently large, the generalized likelihood sums to more than one because the region of multiple equilibria is ``counted twice''. 
+
+Model is completed by adding an equilibrium selection mechanism that will pick out a single equilibrium for each value of the latent variable $\epsilon$ in the region of multiplicity. As formally defined previously, an equilibrium selection mechanism is a conditional probability $\pi(\cdot | \eps, X,\theta)$ with support included in $G(\eps|X;\theta)$. It is compatible with the data if the probabilities it predicts are equal to the true probablities of the observable variables. 
+
+In this example, for $j = 0,1$:
+\[P((i,j)|X) = \int_\calU \pi((i,j)|\eps, X;\theta)\nu(d\eps|X;\theta)\]
+Since the model contains no prior information, any valid probability measure equilibrium selection mechanism that generates equates predicted probabilities with observed probabilities is consistent.
+
+It is noted that the definition of the identified region using a semi-parametric likelihood representation, with the equilibrium selection mechanism as the infinite dimensional nuisance parameter $\pi$ is impractivle, so Theorem \ref{thm:GH-1} is used to make it operational and compute $\Theta_I$. So 
+\[\Theta_I = \{\theta \in \Theta: (\forall A \in 2^\calY; P(A|X) \leq \calL(A|X;\theta); X-a.s\}\]
+
+\subsection{Effecient Computation of the Identified Set}
+
+Subtitle: ``\emph{Which inequalities to check and how to check them?}''
+
+Describe three approaches to the effective computation of the identified set based on the characterization of Theorem~$\ref{thm:GH-1}$. First approach is based on submodular optimization and extends readily to the case with mixed strategies. Second appraoch, describes in Section 2.2, relies on the highly effecient algorithms for optimal transportation problems.\footnote{I found the following ArXiv introduction to optimal transport problems \href{https://arxiv.org/abs/1009.3856}{here} (if the link doesn't work; https://arxiv.org/abs/1009.3856)} Third approach is based off the notion of \emph{core determining sets} and provides a dramatic reduction in the computational complexity under specific assumptions on the game under study.
+
+\subsubsection{Submodular Optimization}
+
+The first proposal to deal with the complexity of the problem of checking inequalities in Theorem~\ref{thm:GH-1} is a method of general validity based on the minimization of a submodular function, the discrete equivalent of a convex function. This is a well-known problem in combinatorial optimiazation and effecient algorithms are easily available off the shelf. 
+
+\begin{definition}[Submodular function]
+	\label{def:GH-6}
+	A set function $\calL:\calY\rightarrow\SR$ is called submodular if, for each $A, B \subset \calY$, we have 
+	\[\calL(A\cup B) + \calL(A\cap B) \leq \calL(A) + \calL(B)\]
+	In the case that $\calL$ is a probability measure, this holds as equality.
+\end{definition}
+
+Submodularity for set functions is the analogue of convexity, and the problem of minimizing a submodular function is well studied. Paper now shows that checking inequalities involved in the characterization of the identified set in Theorem~\ref{thm:GH-1} is equivalent to the minimization of a submodular function. Theorem~\ref{thm:GH-1} whoes that the identified set is the set of values of $\theta$ such that $X$-almost surely, we have the domination $\forall A\subseteq \calY$, $P(A|X) \leq \calL(A|X;\theta)$. Equivalently, 
+\[\min_{A\subseteq\calY}\left(\calL(A|X;\theta) - P(A|X) \right) \geq 0\]
+First note that the function above is indeed submodular.
+\begin{lemma}[Submodularity of the generalized likelihood]
+ 	\label{lemma:GH-1}
+	For all $\theta \in \Theta$ and all $X$, the set function $\calY$ defined for all $A\subseteq\calY$ by $A\mapsto \calL(A|X;\theta) - P(A|X)$ is submodular. 
+\end{lemma}
+ The most effecient, generic, way to check that a convex function is everywhere non-negative and verify that the minimum is non-negative. Apply the same logic to the above. Of course, can speed this up by terminating the algorithm when a negative value is found.
+
+ \begin{theorem}[Computation of the identified set]
+	\label{thm:GH-2}
+	The identified set is obtained by minimization of a submodular function
+	\[\theta_I = \left\{\theta \in \Theta: \min_{B\subseteq\calY} \left(\calL(B|X;\theta - P(B|X)\right)= 0, X-\text{a.s}\right\}\] 	
+ \end{theorem}
+
+As a note: I think the reason there is an ``$=0$'' instead of a $\geq 0$ in the statement of the identified set above is that we can always take $B=\emptyset$. More details on the procedure are given later on in Section 4. This method can be generalized to the case where equilibria in mixed strategies are considered.
+
+The below is a special case of submodular optimization which is more effecient and applies to the case where only equilibria in pure strategies are considered.
+
+\subsubsection{Optimal Transportation Approach}
+
+When equilibria are only in pure strategies, the model generalized likelihood $\calL$ is a very special case of submodular function since it is derived as the distribution function of a random set. 
+\[\calL(A|X;\theta) = \nu(\epsilon: G(\epsilon | X;\theta) \cap A \neq \emptyset| X;\theta)\]
+
+When mixed equilibria are considered, this improvment in effeciency is no longer available because (in general), the model generalized likelihood is no longer the distribution of a random set.\footnote{Why not? Maybe because the probabilities of observing an outcome now are not functions of the underlying probability space $(\Omega, \calF, \mathbb{P})$, but, rather also depend on the properties of the mixed strategy equilibrium} To describe the method, need the following notations and definitions. 
+
+Call $\calU^*$ the set of predicted combinations of equilibrium, formally $\calU^* = \{G(\epsilon|X;\theta); \epsilon \in \calU\}$, remembering that $\calU$ is the support of $\eps$. Note that $\calU^*$ is a quotient space for the correspondence $G$
+\footnote{From WolframMathWorld: A quotient space, $X$/{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}} of a topological space $X$ and a set of equivalence classes {\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}} on $X$ is the set of equivalence classes of points in $X$ (under {\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}). Open sets on $X$/{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}} can be described using the map $\pi: X\rightarrow X$/{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}} which maps each point in $X$ to its equivalence class. A subset $W \subseteq X$/{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}} is open if $\pi^{-1}(W)$ is open. $\calU^*$ is a quotient space for $\calU$ using equivalence classes from the correspondence $G$, that is $\calU = X/${\raise.17ex\hbox{$\scriptstyle\mathtt{\overset{G}\sim}$}} where $\eps_1{\raise.17ex\hbox{$\scriptstyle\mathtt{\overset{G}\sim}$}} \eps_2$ if $G(\eps_1) = G(\eps_2)$}. 
+So $\calU^*$ contains subsets of $\calY$ but is typically of much lower cardinality than $2^\calY$. 
+
+Further, consider the bipartite graph $\calG(\theta, X)$ in $\calY \times \calU^*$. The edges are defined as $(y,u) \in E(\calG)$ if $y \in u$. Each vertex $u \in \calY$ has weight $P(y|X)$ and each vertex $y\in \calU^*$ has weight $\nu(\{\epsilon: G(\epsilon|X;\theta) = u|X\})$. Finally, call $Q(\cdot|X;\theta)$ the probabilities $Q(u|X;\theta) = \nu\{G^{-1}(u)| X;\theta)\}$ (so t at $Q(u|X;\theta)$ is the weight attached to vertex $u \in \calY$.)
+
+Theorem~\ref{thm:GH-1} shows that $\theta \in \Theta_I$ if and only if, for any subset $A$ of $\calY$, we have $P(A|X) \leq Q(G^{-1}(A)|X;\theta)$, where $G^{-1}(A) = \{u\in\calU^* | A\cap u \neq \theta\}$. Galichon and Genry show that it is equivalent to the existance of a joint probability $\Lambda$ on $\calG(\theta, X)$ with marginal distributions $P(\cdot| X)$ and $Q(\cdot|X;\theta)$.\footnote{I'm a bit lost on this part. I don't quite know what a probability is on a bipartite graph. I guess we just mean a joint probability distribution on the product space of the outcomes and the sets of outcomes. The theorem makes more sense intuitively looking at it from this view. For a consistent parameter, the rules relating the weights on one side with weights on the other are given above.}
+
+\begin{theorem}
+	\label{thm:GH-3}
+	The parameter value $\theta$ belongs to the identified set iff there exists a probability on $\calY \times \calU^*$ with support contained in $G(X;\theta)$ and with marginal probabilities $P(\cdot|X)$ and $Q(\cdot|X;\theta)$. 
+\end{theorem}
+
+One implication is easy to prove. Call $U$ the random element with distribution $Q$ ($U$ is a random variable from $(\Omega, \calF, \mathbb{P}) \rightarrow \calY$) If a joint probability $\Lambda$ exists with all the required properties then 
+\[Y\in A \implies U\in G^{-1}(A)\]
+(Family Bargaining Example cont.) For the case of the family bargaining game 
+\[\calU^* = \bigg\{\{(0,0)\}, \{(0,1)\}, \{(1,0)\}, \{(1,1)\}, \{(0,1),(1,0)\}\bigg\}\] 
+This is a class of sets because $G(\eps|X;\theta)$ is a correspondence. The existence of a joint probability measure on $\calY \times \calU^*$ supported on $\calG(X;\theta)$ with marginal probabilities $p_y, y\in\calY$ and $q_u, u\in\calU^*$ can be represented graphically by a set of non-negative numbers attached to each edge of the graph that sum to 1, and such that the weight of each vertex is qual to the sum of the weights on the edges that reach it.
+

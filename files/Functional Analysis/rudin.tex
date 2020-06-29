@@ -1,0 +1,217 @@
+\documentclass[10pt]{article}
+
+%Packages with options
+\usepackage[english]{babel}
+\usepackage[mathscr]{euscript}
+\usepackage[margin = 1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[small]{titlesec}
+
+% Primary Packages
+\usepackage{adjustbox}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{commath}
+\usepackage{chngcntr}
+\usepackage{dsfont}
+\usepackage{econometrics}
+\usepackage{fancyhdr}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{marginnote}
+\usepackage{mathtools}
+\usepackage{mdframed}
+\usepackage{parskip}
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{tabularx}
+\usepackage{textcomp}
+
+% Secondary Pacakges [need to be loaded later]
+\usepackage{breqn}
+
+% Setting up page style 
+\pagestyle{fancy}
+\setlength{\headheight}{23pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\sectionmark}[1]{%
+\markboth{\thesection\quad #1}{}}
+\fancyhead{}
+\fancyhead[R]{\leftmark}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+\linespread{1}
+
+% Declaring new commonly used math operators
+\DeclareMathOperator{\err}{err}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Poisson}{Poisson}
+\DeclareMathOperator{\polylog}{polylog}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\id}{id}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\sign}{sign}
+
+%Redeclare \P to represent probability
+\renewcommand{\P}{\hbox{}\text{P}}
+
+%indicator shorthand
+\newcommand{\one}{\mathds{1}}
+
+%and shorthand
+\newcommand{\andbox}{\hbox{ }\text{ and }\hbox{ }}
+
+% Make capital vectors commands from econometrics packages
+\newcommand{\vA}{\mathbf{A}}
+\newcommand{\vB}{\mathbf{B}}
+\newcommand{\vC}{\mathbf{C}}
+\newcommand{\vD}{\mathbf{D}}
+\newcommand{\vE}{\mathbf{E}}
+\newcommand{\vF}{\mathbf{F}}
+\newcommand{\vG}{\mathbf{G}}
+\newcommand{\vH}{\mathbf{H}}
+\newcommand{\vI}{\mathbf{I}}
+\newcommand{\vJ}{\mathbf{J}}
+\newcommand{\vK}{\mathbf{K}}
+\newcommand{\vL}{\mathbf{L}}
+\newcommand{\vM}{\mathbf{M}}
+\newcommand{\vN}{\mathbf{N}}
+\newcommand{\vO}{\mathbf{O}}
+\newcommand{\vP}{\mathbf{P}}
+\newcommand{\vQ}{\mathbf{Q}}
+\newcommand{\vR}{\mathbf{R}}
+\newcommand{\vS}{\mathbf{S}}
+\newcommand{\vT}{\mathbf{T}}
+\newcommand{\vU}{\mathbf{U}}
+\newcommand{\vV}{\mathbf{V}}
+\newcommand{\vW}{\mathbf{W}}
+\newcommand{\vX}{\mathbf{X}}
+\newcommand{\vY}{\mathbf{Y}}
+\newcommand{\vZ}{\mathbf{Z}}
+
+
+% Declaring new helpful math commands
+\newcommand{\thetaH}{\hat{\theta}}
+\newcommand{\thetaT}{\tilde{\theta}}
+\newcommand{\nuH}{\hat{\nu}}
+\newcommand{\nuT}{\tilde{\nu}}
+\newcommand{\DeltaT}{\tilde{\Delta}}
+\newcommand{\ris}{\rho_{i}^*}
+
+% Adding a command to number random things, added to equation counter
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+% Declaring Theorem Styles, exampstyle removes italics from some theorems
+\newtheoremstyle{exampstyle}
+  {1em plus .2em minus .1em}%   Space above
+  {1em plus .2em minus .1em}%   Space below
+  {} % Body font
+  {} % Indent amount
+  {\bfseries} % Theorem head font
+  {.} % Punctuation after theorem head
+  {.5em} % Space after theorem head
+  {} % Theorem head spec (can be left empty, meaning `normal')
+
+
+ {
+    \theoremstyle{exampstyle}
+    \newtheorem{assumption}{Assumption}
+    \newtheorem*{assumption*}{Assumption}
+    \newtheorem{specification}{Specification}
+    \newtheorem*{specification*}{Specification}
+    \newtheorem{definition}{Definition}
+    \newtheorem*{definition*}{Definition}
+    \newtheorem{example}{Example}
+    \newtheorem*{example*}{Example}
+    \newtheorem{comment}{Comment}
+    \newtheorem*{comment*}{Comment}
+ 
+ }
+
+\newtheorem{theorem}{Theorem}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem*{corollary*}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem*{prop*}{Proposition}
+
+\newcommand{\blocktheorem}[1]{%
+  \csletcs{old#1}{#1}% Store \begin
+  \csletcs{endold#1}{end#1}% Store \end
+  \RenewDocumentEnvironment{#1}{o}
+    {\par\addvspace{1.5ex}
+     \noindent\begin{minipage}{\textwidth}
+     \IfNoValueTF{##1}
+       {\csuse{old#1}}
+       {\csuse{old#1}[##1]}}
+    {\csuse{endold#1}
+     \end{minipage}
+     \par\addvspace{1.5ex}}
+}
+\blocktheorem{theorem}
+\blocktheorem{assumption}
+\blocktheorem{definition}
+\blocktheorem{corollary}
+\blocktheorem{prop}
+\blocktheorem{specification}
+
+
+\raggedbottom
+
+
+\counterwithin*{equation}{section}
+\counterwithin*{assumption}{section}
+\counterwithin*{prop}{section}
+\counterwithin*{specification}{section}
+\counterwithin*{footnote}{section}
+\counterwithin*{definition}{section}
+\counterwithin*{figure}{section}
+\counterwithin*{corollary}{section}
+\counterwithin*{theorem}{section}
+\counterwithin*{lemma}{section}
+\counterwithin*{example}{section}
+
+
+\title{Rudin Functional Analysis}
+\author{Manu Navjeevan}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\normalsize
+\input{chapters/ch1.tex}
+\input{chapters/ch2}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

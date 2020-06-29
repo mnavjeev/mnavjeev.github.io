@@ -1,0 +1,77 @@
+%!TEX root = /Users/manunavjeevan/Desktop/Research/Moment Inequality Methods/Annotated Literature Review/inequalityLitReview.tex
+
+\section{A Practical Method for Testing Many Moment Inequalities; \textit{\small Yuehao Bai, Andres Santos, Azeem M. Shaikh}}
+
+\subsection{Introduction}
+
+Setup: $\{X_i\}_{i=1}^n$ i.i.d with distribution $P\in P_n$ on $R^{\mathscr{p}_n}$. Consider the problem of testing 
+
+\begin{equation}
+\label{eq:hypothesisTest}
+	H_0: P\in \mathbf{P}_{0,n}\hbox{ }\text{ versus }\hbox{ }H_1: P\in \mathbf{P}_{1,n}
+\end{equation}
+where
+\begin{equation}
+\label{eq:restrictedSet}
+	\mathbf{P}_{0,n} \equiv \{P\in \mathbf{P}_n: E_P[X_i]\leq 0\}
+\end{equation}
+and $\mathbf{P}_{1,n} = \mathbf{P}_n/\mathbf{P}_{0,n}$. The inequality in \ref{eq:restrictedSet} is interpreted component wise and $\mathbf{P}_n$ is a large class of possible distributions for the observed data. Indexing both the number of moments $p_n$ and the class of possible distributions by the sample size allows for the number of moments to grow (rapidly) with the sample size $n$. Goal is to construct test that are uniformply consistent in level; i.e
+\begin{equation}
+	\label{eq:uniformConsistency}
+	\lim\sup_{n\rightarrow \infty} \sup_{P\in\mathbf{P}_{0,n}} E_P[\phi_n] \leq \alpha
+\end{equation}
+A test can be viewed as a function of the data $\phi_n = \phi_n: \mathscr{X}^n \rightarrow \{0,1\}$ where $\mathscr{X}^n$ is generally some subset of $\mathbb{R}^n$ where the data takes its values. 
+
+There are a large class of problems in economics in which the number of moments is large. For example, in the entry models as in Cilberto and Tamer (2009) the number of moment inequalities to check is $p_n = o(2^{m+1})$ where $m$ is the number of firms. Apart from Chernozukhov et. al (2019), this has typically been done by limiting $\mathbf{P}_n$ so that the number of moments $p_n$ are small. Canay and Shaikh (2017) provide a detailed review of these tests. This paper focuses on the two step testing procedure of Romano et. al (2014). Test is shown to satisy (\ref{eq:uniformConsistency}) under assumptions on $\mathbf{P}_n$ that restrict $p_n$ to not depend on $n$. However, the test is ``practical'' in that it is computationally feasible even if the number of moments is large. \textbf{Paper shows that the test of Romano et. al (2014) continues to satisy (\ref{eq:uniformConsistency}) for a large class of distributions that permits the number of moments $p_n$ to grow exponentially with the sample size $n$.}
+
+Theoretical analysis relies on Chernozhukov et. al (2013, 2017) on the high dimensional CLT. This is seminal work. Allen (2018) argues that the test proposed Romano et al. (2014) is more powerful in finite samples then the test proposed by Chernozhukov et al. (2019). 
+
+\subsection{Main Result}
+
+Begin this section by describing the testing procedure in Romano et al. (2014). To do so, best to introduce some further notation. For $1\leq j\leq p_n$ let $X_{i,j}$ denote the $j$th component of $X_i$ and set 
+\begin{align}
+    \bar{X}_{j,n} &\equiv \frac{1}{n}\sum_{i=1}n X_{i,j} \label{eq:XjBar} \\
+    S_{j,n}^2 &\equiv \frac{1}{n}\sum_{i=1}^n (X_{i,j} - \bar{X}_{j,n})^2 \label{eq:Sj2}
+\end{align}
+Can also use the notation $\mu_j(p) \equiv E_P[X_{i,j}]$ and $\sigma_j^2(P)\equiv \Var_{P}[X_i,j]$ so that (\ref{eq:XjBar}) and (\ref{eq:Sj2}) can be expressed as $\mu_j(\hat{P}_n)$ and $\sigma_j^2(\hat{P}_n)$, respectively, where $\hat{P}_n$ is the empirical distribution of $\{X_i\}_{i=1}^n$. Focus on a test that rejects for large values of 
+\[T_n \equiv \max\left\{ \max_{1\leq j \leq p_n}\frac{\sqrt{n}\bar{X}_{j,n}}{S_{j,n}} ,0\right\}\] 
+In defining critical value, useful to introduce an i.i.d sequence of random variables with distribution $\hat{P}_n$ conditional on $\{X_i\}_{i=1}^n$, which we will denote $X_i^*, i = 1, \dots, n$. Further define $\bar{X}_{j,n}^*$ and $(S_{j,n}^*)^2$ analagously to before, but substituting in $X_i^*$. Critical value for $T_n$ is given by 
+\begin{equation}
+	\label{eq:critVal}
+	\hat{c}_n^{(2)}(1 - \alpha + \beta) \equiv \inf \mathscr{S}_n(1-\alpha +\beta)
+\end{equation}
+where 
+\[\mathscr{S}_n(a) \equiv \left\{c\in \mathbb{R}: \mathbb{P}\left[\max\left\{ \max_j \frac{\sqrt{n}(\bar{X}_{j,n}^* - \bar{X}_{j,n} + \hat{\mu}_{j,n})}{S_{j,n}^*},0 \right\} \leq c \hbox{ }\bigg|\hbox{ } \{X_i\}_{i=1}^n\right] \geq a \right\}\]
+Here $\alpha \in (0,0.5)$ is the nominal level of the test and $\beta \in (0,\alpha)$ and 
+\begin{equation}
+	\label{eq:muHat}
+	\hat{\mu}_{j,n} \equiv \min\left\{\bar{X}_{j,n} + \frac{S_{j,n}}{\sqrt{n}} \hat{c}_n^{(1)}(1-\beta), 0\right\}
+\end{equation}
+with 
+\[\hat{c}_n^{(1)} \equiv \inf\left\{ c \in \mathbb{R}: \mathbb{P}\left[\max_{1\leq j\leq p_n} \frac{\sqrt{n}(\bar{X}_{j,n} - \bar{X}_{j,n}^*)}{S_{j,n}^*} \leq c \hbox{ }\bigg|\hbox{ }  \{X_i\}_{i=1}^n \right] \geq 1- \beta \right\}\]
+The test is then
+\begin{equation}
+	\label{eq:testRSW}
+	\phi_n^{\text{RSW}} \equiv \mathds{1}\left\{T_n \geq \hat{c}_n^{(2)}(1-\alpha+\beta)\right\}
+\end{equation}
+Motivating this choice of critical value it is useful to note that the test statistic $T_n$ satisfies
+\begin{equation}
+	\label{eq:decomp}
+	T_n = \max\left\{\max_j \left(\frac{\sqrt{n}(\bar{X}_{j,n} - \mu_j(P))}{S_{j,n}} + \frac{\sqrt{n}\mu_{j}(P)}{S_{j,n}} \right), 0 \right\}
+\end{equation}
+Decomposition highlights that the main impedment in approximating the distribution of $T_n$ is the presence of nuisance parameters $\sqrt{n}\mu_j(P)$ for $1\leq j \leq p_n$.\footnote{I'm not entirely sure why they cannot be consistently estimated. I think this is because we are only partially identified.} Though these nuisance parameters cannot be consistently estimated, Romano et al (2014) observe that it may still be possible to construct a suitably valid confidence region for them. 
+
+Lemma in Appendix employs Romano insight and high dimensional CLT of Chernozhukov et al. (2017) to show that, under conditions that permit $p_n$ to grow rapidly with the sample size $n$, $\sqrt{n}\mu_j(P) \leq \sqrt{n}\hat{\mu}_{j,n}$ for all $j \leq p_n$ with pr. approximately no less than $1-\beta$ whenever the null hypothesis in (\ref{eq:hypothesisTest}) is true. Since $T_n$ is monotonically increasing in the nuisance parameters $\sqrt{n}\mu_j(P)$ for all $1\leq j \leq p_n$ it follows that, viewed as a funtion of these nuisance parameters, any quantile of $T_n$ is maximized over said confidence region by setting $\sqrt{n}\mu_j(P) = \sqrt{n}\hat{\mu}_{j,n}$ for all $j$. Then, the critical value $\hat{c}_n^{(2)}(1-\alpha + \beta)$ is a bootstrap estimate of the $1-\alpha + \beta$ quantile of $T_n$ under the ``least favorable'' nuisance parameter value $\sqrt{n}\mu_j(P) = \sqrt{n}\hat{\mu}_{j,n}$ for all $j$. The $1-\alpha-\beta$ quantile is employed instead of $\beta$ to account for that, with pr. appx no greater than $\beta$, $\sqrt{n}\mu_j(P)>\sqrt{n}\hat{\mu}_{j,n}$. Analysis of test (\ref{eq:testRSW}) hinges on following assumption:
+
+\begin{assumption} 
+\label{eq:assumption2.1}
+Assume (i) $\{X_i\}_{i=1}^n$ is an i.i.d sample with $X_i \in \mathbb{R}^{p_n}$ and $X_i \sim P \in \mathbf{P}_n$; (ii) $\sigma_j(P) > 0$ for all $1 \leq j \leq p_n$ and $P \in \mathbb{P}_n$; (iii) For $k = 1,2$, there is a $M_{k,n} < \infty$ such that $E_P[|X_{i,j} - \mu_j(P)|^{2+k}] \leq \sigma_j^{2+k}(P)M_{k,n}^k$ for all $1\leq j \leq p_n$ and $P\in \mathbf{P}_n$; (iv) There exists a $B_n < \infty$ such that $E_P\left[\max_{1\leq j \leq p_n}\left|X_{i,j} -\mu_j(P)\right|^4\right] \leq B_n^4$ for all $P\in \mathbf{P}_n$; (v) $(M_{1,n}^2 \vee M_{2,n}^2 \vee B_n^2)\log^{3.5}(p_n n) = o(n^{(1-\delta)/2})$ for some $\delta \in (0,1)$
+\end{assumption}
+
+\ref{eq:assumption2.1}(i) formalizes that $\{X_i\}_{i=1}^n$ be an i.i.d sample, while Assumption \ref{eq:assumption2.1}(ii) requires the variance of $X_{i,j}$ to be positive for all $P \in \mathbb{P}_n$ and $1 \leq j \leq p_n$.\ref{eq:assumption2.1}(iii) imposes a uniform in $P$ and $j$ bound on the standardized moments of $X_{i,j}$. Condition is a strengthening of the uniform integrability requirements of Romano et al (2014) required so study a setting in which $p_n$ diverges to infinity. Part (iv) bounds the 4th moments of the maximim of $X_{i,j}$. Finally, (v) states the main conditiion governing how fast $p_n$ can grow with $n$. Under suitable moment restrictions on $X_{i,j}$, $p_n$ may grow exponentially with $n$. Now ready for main result
+
+\begin{theorem}
+	If Assumption \ref{eq:assumption2.1} holds, $\alpha \in (0,\frac{1}{2})$ and $0 < \beta < \alpha$, then $\phi_n^{\text{RSW}}$ as defined in (\ref{eq:testRSW}) satisfies uniform consistency in level as defined in (\ref{eq:uniformConsistency})
+\end{theorem}
+
+The rest of this paper goes through some simulations. It is also just a working paper at the moment. Probably it is best to go through the main proof; but I will print it out and make some notes on this. 
