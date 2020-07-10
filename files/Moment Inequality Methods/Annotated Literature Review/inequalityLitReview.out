@@ -1,7 +1,7 @@
 \BOOKMARK [1][-]{section.1}{A Practical Method for Testing Many Moment Inequalities; Yuehao Bai, Andres Santos, Azeem M. Shaikh}{}% 1
 \BOOKMARK [2][-]{subsection.1.1}{Introduction}{section.1}% 2
 \BOOKMARK [2][-]{subsection.1.2}{Main Result}{section.1}% 3
-\BOOKMARK [1][-]{section.2}{Inference on Causal and Structural Parameters Using Many Moment Inequalities; Victor Chernozhukov, Denis Chetverikov, and Kengo Kato \(ReStud, 2019\)}{}% 4
+\BOOKMARK [1][-]{section.2}{Inference on Causal and Structural Parameters Using Many Moment Inequalities; Victor Chernozhukov, Denis Chetverikov, and Kengo Kato \(ReStud, 2018\)}{}% 4
 \BOOKMARK [2][-]{subsection.2.1}{Introduction}{section.2}% 5
 \BOOKMARK [2][-]{subsection.2.2}{Motivating Examples}{section.2}% 6
 \BOOKMARK [3][-]{subsubsection.2.2.1}{Market Structure Model}{subsection.2.2}% 7
@@ -18,6 +18,12 @@
 \BOOKMARK [2][-]{subsection.3.2}{Identified Features of Models with Multiple Equilibria}{section.3}% 18
 \BOOKMARK [3][-]{subsubsection.3.2.1}{Identified Parameter Sets in General Models with Multiple Equilibria}{subsection.3.2}% 19
 \BOOKMARK [3][-]{subsubsection.3.2.2}{Some illustrative examples}{subsection.3.2}% 20
-\BOOKMARK [2][-]{subsection.3.3}{Effecient Computation of the Identified Set}{section.3}% 21
+\BOOKMARK [2][-]{subsection.3.3}{Efficient Computation of the Identified Set}{section.3}% 21
 \BOOKMARK [3][-]{subsubsection.3.3.1}{Submodular Optimization}{subsection.3.3}% 22
 \BOOKMARK [3][-]{subsubsection.3.3.2}{Optimal Transportation Approach}{subsection.3.3}% 23
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Core-determining classes}{subsection.3.3}% 24
+\BOOKMARK [2][-]{subsection.3.4}{Illustration: Oligopoly Entry with Two Types of Players}{section.3}% 25
+\BOOKMARK [1][-]{section.4}{A Geometric Approach to Inference in Set-Identified Entry Games; Christian Bontemps, Rohit Kumar \(JoE, 2020\)}{}% 26
+\BOOKMARK [2][-]{subsection.4.1}{Introduction}{section.4}% 27
+\BOOKMARK [2][-]{subsection.4.2}{Entry Game with N players}{section.4}% 28
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Setup and Notations}{subsection.4.2}% 29

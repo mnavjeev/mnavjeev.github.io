@@ -22,6 +22,14 @@
 \BOOKMARK [2][-]{subsection.3.1}{Introduction}{section.3}% 22
 \BOOKMARK [2][-]{subsection.3.2}{Mathematical Definition of Multilayer Neural Networks}{section.3}% 23
 \BOOKMARK [2][-]{subsection.3.3}{Main Results}{section.3}% 24
-\BOOKMARK [1][-]{section.4}{Central Limit Theorems and Bootstrap in High Dimensions Victor Chernozhukov, Denis Chetverikov, Kengo Kato \(A0P 2017\)}{}% 25
+\BOOKMARK [1][-]{section.4}{Central Limit Theorems and Bootstrap in High Dimensions Victor Chernozhukov, Denis Chetverikov, Kengo Kato \(AoP 2017\)}{}% 25
 \BOOKMARK [2][-]{subsection.4.1}{Introduction}{section.4}% 26
 \BOOKMARK [2][-]{subsection.4.2}{High-dimensional CLT for hyperrectangles}{section.4}% 27
+\BOOKMARK [2][-]{subsection.4.3}{High-dimensional CLT for simple and sparsely convex sets}{section.4}% 28
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Simple Convex Sets}{subsection.4.3}% 29
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Sparsely Convex Sets}{subsection.4.3}% 30
+\BOOKMARK [1][-]{section.5}{Sparse Principal Component Analysis Hui Zou, Trevor Hastie, Robert Tisbirani \(JCGS, 2006\)}{}% 31
+\BOOKMARK [2][-]{subsection.5.1}{Introduction}{section.5}% 32
+\BOOKMARK [2][-]{subsection.5.2}{Motivation and Details of SPCA}{section.5}% 33
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Direct Sparse Approximation}{subsection.5.2}% 34
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Sparse Principal Components Based on the SPCA Criterion}{subsection.5.2}% 35

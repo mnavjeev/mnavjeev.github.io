@@ -312,6 +312,10 @@ INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/doublestroke/dsrom10.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/doublestroke/dsrom8.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/doublestroke/dsrom8.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/doublestroke/dsrom8.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/doublestroke/dsrom8.tfm
+INPUT papers/spca.tex
+INPUT papers/spca.tex
 INPUT litNotesML.aux
 INPUT ./litNotesML.out
 INPUT ./litNotesML.out

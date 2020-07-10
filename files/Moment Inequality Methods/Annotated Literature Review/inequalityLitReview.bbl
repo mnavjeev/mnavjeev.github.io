@@ -1,0 +1,23 @@
+\begin{thebibliography}{}
+
+\bibitem[Bontemps and Kumar, 2020]{BK-2020}
+Bontemps, C. and Kumar, R. (2020).
+\newblock A geometric approach to inference in set-identified entry games.
+\newblock {\em Journal of Econometrics}.
+
+\bibitem[Chernozhukov et~al., 2018]{CCK-2018}
+Chernozhukov, V., Chetverikov, D., and Kato, K. (2018).
+\newblock {Inference on Causal and Structural Parameters using Many Moment
+  Inequalities}.
+\newblock {\em The Review of Economic Studies}, 86(5):1867--1900.
+
+\bibitem[Galichon and Henry, 2006]{GH-2006}
+Galichon, A. and Henry, M. (2006).
+\newblock Inference in incomplete models.
+
+\bibitem[Galichon and Henry, 2011]{GH-2011}
+Galichon, A. and Henry, M. (2011).
+\newblock Set identification in models with multiple equilibria.
+\newblock {\em Review of Economic Studies}, 78(4):1264--1298.
+
+\end{thebibliography}
