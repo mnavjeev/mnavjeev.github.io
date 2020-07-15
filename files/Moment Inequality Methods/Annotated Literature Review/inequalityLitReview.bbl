@@ -1,5 +1,11 @@
 \begin{thebibliography}{}
 
+\bibitem[Berry and Tamer, 2007]{BT-2007}
+Berry, S. and Tamer, E. (2007).
+\newblock {\em Identification in Models of Oligopoly Entry}, volume~2 of {\em
+  Econometric Society Monographs}, page 46–85.
+\newblock Cambridge University Press.
+
 \bibitem[Bontemps and Kumar, 2020]{BK-2020}
 Bontemps, C. and Kumar, R. (2020).
 \newblock A geometric approach to inference in set-identified entry games.
@@ -19,5 +25,11 @@ Galichon, A. and Henry, M. (2006).
 Galichon, A. and Henry, M. (2011).
 \newblock Set identification in models with multiple equilibria.
 \newblock {\em Review of Economic Studies}, 78(4):1264--1298.
+
+\bibitem[Kaido and Santos, 2014]{KS-2014}
+Kaido, H. and Santos, A. (2014).
+\newblock Asymptotically efficient estimation of models defined by convex
+  moment inequalities.
+\newblock {\em Econometrica}, 82(1):387--413.
 
 \end{thebibliography}

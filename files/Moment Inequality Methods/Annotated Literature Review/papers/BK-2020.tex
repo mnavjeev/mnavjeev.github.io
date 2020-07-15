@@ -3,7 +3,8 @@
 \newpage
 \section{A Geometric Approach to Inference in Set-Identified Entry Games; \textit{\small Christian Bontemps, Rohit Kumar (JoE, 2020)}}\label{sec:BK-2020}
 
-\citet{BK-2020} is set to appear in Journal of Econometrics in 2020. They consider inference procedures for entry games with complete information. Complete the model with the unknown selection mechanism and characterize geometrically the set of predicted choice probabilities. 
+\citet{BK-2020} is set to appear in Journal of Econometrics in 2020. They consider inference procedures for entry games with complete information. Complete the model with the unknown selection mechanism and characterize geometrically the set of predicted choice probabilities. A 2019 version of the paper can be found 
+\href{https://www.cemmap.ac.uk/uploads/Bontemps-Kumar-JofEc-december2019.pdf}{here}.
 
 \subsection{Introduction}
 
@@ -25,6 +26,14 @@ Formalize the entry game considered with $N$ firms. First consider a model witho
 
 \paragraph{Model}
 Let $N$ denote the number of firms that can enter any market. Following Berry (1992), introduce a model of market structure where the profit function $\pi_{im}$ of firm $i$ in a market $m$ is assumed to be independent of the identity of the firm's competitors. All firms decide simultaneously whether to enter the market (action \(a_{im} = 1\), doing so if their profit is positive. If $\pi_{im} = 0$, firms do not enter the market (take action \(a_{im}= 0\)). The profit function is assumed, without loss of generality, to be linear in the explanatory variables\footnote{[FOOTNOTE FROM TEXT] Any separable parametric form $\pi_{im} = f_i(\sum_{j\neq i} a_{jm}l\alpha) + \eps_{im}$ can be considered as long as the function $f_i(\cdot;\theta)$ is strictly decreasing in its first argument.}
+\begin{equation}
+	\label{eq:BK-1}
+	\begin{split}
+    	\pi_{im} &= \beta_i + \alpha_i \left(\sum_{j\neq i}a_{jm}\right) + \eps_{im} \\
+    	a_{im} &= \ind\{\pi_{im} > 0\}
+	\end{split}
+\end{equation}
+
 
 Following the literature, assume that $\alpha_i < 0$, i.e, the presence of more competitors decreases a firm's profit. Unobserved components $\eps_{im}, i = 1,\dots, N$ are drawn from a known distribution (up to some parameter vector $\gamma$). Econometrician does not observe their values but firms do.
 
@@ -54,8 +63,135 @@ Denote by $\calE$ the set of selection mechanisms and by \(P(\theta,\eta)\) the 
 
 One solution to the multiple equilibria problem consists of making assumption on this selection mechanism like in Reiss (1996) or Cleeren (2010). The vector of predicted choice probabilities is a point in $[0,1]^{2^N}$ and standard inference techniques may be used. Of course, any restrictions are ad hoc and may lead to misspecification. 
 
-Another solution, following the literature on set-identification, consists of characterizing all the possible choice probabilities predicted by the model. The vector of predicted choice probabilities, instead of being an unrestricted point, belongs to a convex set that is characterized. Different sets of values $(\theta, \eta)$ may generate the same point $P(\theta,\eta)$. 
+Another solution, following the literature on set-identification, consists of characterizing all the possible choice probabilities predicted by the model. The vector of predicted choice probabilities, instead of being an unrestricted point, belongs to a convex set that is characterized. Different sets of values $(\theta, \eta)$ may generate the same point $P(\theta,\eta)$. Goal is to characterize which ones generate the true (read: observed) choice probability vector. 
 
+\subsubsection{Choice Probabilities to Identified Set}
 
+Want to characterize the set of predicted choice probabilities. To do so, need to understand the multiplicity structure and characterize it. Then derive a parametrization of the set. 
 
+\paragraph{Regions of Multiple Equilibria}
+
+Specification ensures that multiple equilibria only involve outcomes with the same number of active firms, i.e within $\calY_K$. Therefore, focus on subsets of outcomes $S\subseteq \calY_K$ to characterize the multiple equilibria regions. Say that a subset $S\subseteq \calY_k$ is \textbf{in multiplicity} if the prediction of the game is all outcomes in $S$ and no outcome outside $S$ for $\eps$ in a non empty set $\calR_S^{(K)}(\theta)$.\footnote{In the Galichon Henry (2011) notation, this means that \(S = G(\eps|\theta)\) for some \(\eps \in \calU\). Then $\calR_S^{(K)}(\theta) = \{\eps \in \calU : G(\eps|\theta) = S\}$}
+$\calR_S^{(K)}$ is called a multiple equilibria region. Denote by $S^{(K)}$ the collection of subsets $S$ of $\calY_K$ in multiplicity\footnote{The maximum number of such subsets is equal to $2^{d_K} - d_k - 1$}.
+\[S^{(K)} = \left\{S\subset \calY_K: |S|\geq 2\text{ and $S$ is in multiplicity}\right\}\]
+Note that not all subsets of cardinality greater than two are elements of $S^{(K)}$. For example, when $N = 4$, $K = 2$, $S_1 = \{(1,1,0,0)^T,(0,0,1,1)^T\}$ is not in multiplicity whereas the subset $S_2 = \{(1,1,0,0)^T,(1,0,1,0)^T\}$ is\footnote{This just means that, there exists a value of $(\theta,\eps)\in \Theta \times \SR^{N}$ such that both outcomes in $S_2$ are simultaneously equilibria of the game. That is, given $\theta$ and $\eps$, both $(1,1,0,0)^T$ and $(1,0,1,0)^T$ are equilibria. However, there is no value of $(\theta,\eps)$ such that both $(1,1,0,0)^T$ and $(0,0,1,1)^T$ are both simultaneously equilibrium outcomes.}.
+
+Now present necessary and sufficient condition for $S$ to be in multiplicity. 
+\begin{align*}
+	N_0(S) &= \{\text{Set of indices of firms that always play action 0 across $S$}\} \\
+	N_1(S) &= \{\text{Set of indices of firms that always play action 1 across $S$}\} 
+\end{align*}
+Further define $n_0(S) = |N_0(S)|$ and $n_1(S) = |N_1(S)|$, the cardinalities of the sets above. For now, suppress the dependence on $S$. With $N_0$ and $N_1$ fixed, there are $\binom{N - n_0 - n_1}{K - n_1}$ possible outcomes in $\calY_K$ corresponding to the remaining choice of the $K-n_1$ which play action $a_{im} = 1$ among the $N- n_0 - n_1$ remaining ones. $S$ should contain all these possibilities to be in multiple equilibria. 
+\begin{prop}
+	\label{prop:BK-1}
+	A set $S\subset \calY_K$ is in multiplicity if and only if \(|S| = \binom{N- n_0 - n_1}{K - n_1}\)
+\end{prop}
+For the particular examples above, $S_1$ is not in multiplicity because $n_0 = n_1 = 0$ and, consequently, the subset should contain $\binom{4}{2} = 6$ outcomes with two active firms to be in multiplicity. $S_2$ is in multiplicity because $n_0 = n_1 = 1$ and it collects all possible outcomes, \(\binom{4-1-1}{2-1}=1\). Proof of proposition 1 also characterizes the region \(\calR_S^{(K)}(\theta)\).  Proposition \ref{prop:BK-1} can be used to count the number of multiple equilibria regions:
+\begin{prop}
+	\label{prop:BK-2}
+	The cardinality of $S^{(K)}$, i.e, the number of multiple equilibria regions predicting $K$ active firms, for $1\leq K \leq N-1$ is equal to 
+	\[|S^{(K)}| = \sum_{n_1 = 0}^{K-1} \sum_{n_0 = 0}^{N-K-1}\binom{N}{n_1}\binom{N-n_1}{n_0}\footnote{We can think of this as, for a given $K$ firms that are active in the quilibrium, choose $n_1$ to ``always'' be in and $n_0$ to ``always'' be out. So long as $n_0 + n_1 < N$ and $n_1 < K$, there is garunteed to be a region of mulitple equilibria corresponding to this by Proposition \ref{prop:BK-1}.}\]
+\end{prop}
+With $K=1$, the number of regions of multiple equilibria is $\sum_{n=0}^{N-2} \binom{N}{n}$, all possible combinations of more than two outcomes. However, Table \ref{table:BK-1} shows that the number of regions for the various values of $N$ and $K$ is generally far less than all the possible combinations. So the parameterization of the set of predicted choice probabilities is of a much lower dimension than one would have expected.
+\begin{table}[htb!]
+	\centering
+	\begin{tabular}[c]{|lllll|}
+		\hline\hline
+		$N$ & $K$ & $d_k$ & $|S^{(K)}|$ & $2^{d_k} - d_k - 1$\\
+		\hline
+		3 & 1 & 3 & 4 & 4 \\ 
+		  & 2 & 3 & 4 & 4 \\
+		\hline 
+		4 & 1 & 3 & 11 & 11 \\ 
+		& 2 & 6 & 21 & 59 \\ 
+		& 3 & 4 & 11 & 11 \\ 
+		\hline 
+		5 & 1 & 5 & 26 & 26 \\
+		& 2 & 10 & 71 & 1018 \\
+		& 3 & 10 & 71 & 1018 \\
+		& 4 & 5 & 26 & 26 \\
+		\hline 
+		6 & 1 & 6 & 57 & 57 \\
+		& 2 & 15 & 198 & 32761\\
+		& 3 & 20 & 283 & 1048569 \\
+		& 4 & 14 & 198 & 32761 \\ 
+		& 5 & 6 & 57  & 57\\
+		\hline\hline
+	\end{tabular}
+	\caption{Counting the number of multiple equilibria regions [Lifted from paper]}
+	\label{table:BK-1}
+\end{table}
+
+\paragraph{The set of predicted choice probabilities} Also define the subset of $S^{(K)}$ that contains one specific outcome $y_j^\PK$ as 
+\[S_j^\PK = \left\{S\in S^\PK : y_j^\PK \in S\right\}\]
+Following \citet{BT-2007} and \citet{GH-2011}, can calculate the probability of observing outcome $y_j^\PK$. This probability depends on the parameter vector $\theta$ and the selection mechanism $\eta$. Specifically, letting $U_j^\PK(\theta)$ be the region in the support of $\eps$ which uniquely predicts the outcome $y_j^\PK$:
+\begin{equation}
+	\label{eq:BK-3}
+	P_j^\PK(\theta,\eta) = \int_{U_j^\PK(\theta)} dF(\eps;\theta) + \sum_{S\in S_j^\PK} \int_{R_S^\PK(\theta)} \eta\left(y_j^\PK|\eps;\theta\right) dF(\eps;\theta)
+\end{equation}
+Denote by 
+\[\Delta_j^\PK(\theta) :=\int_{U_j^\PK(\theta)} dF(\eps;\theta)\andbox \Delta_S^\PK(\theta) := \int_{R_S^\PK(\theta)} dF(\eps;\theta)\]
+Let $A(\theta)$ be the set of $P(\theta;\eta)$ generated by the variation of $\eta$ in $\calE$\footnote{Recall \(\calE\) is the set of all valid equilibrium selection mechanisms.} and let $B_K^\theta$ be the set of $P^\PK(\theta, \eta)$ generated by the variation of $\eta$ in $\calE$, for $K = 0,\dots,N$. Formally
+\[A(\theta):= \left\{P\in\SR^{2^N}: \exists \eta \in \calE, P = P(\theta,\eta)\right\} \andbox B_K(\theta) := \left\{P^\PK\in \SR^{d_K}: \exists \eta \in \calE, P^\PK = P^\PK(\theta, \eta) \right\}\]
+Equation \ref{eq:BK-3} can then be viewed as a parameterization of the sets $A(\theta)$ and $B_K(\theta)$ where the ``parameters'' are the regions $\calR_S^\PK(\theta)$\footnote{This means that elements of the sets $A(\theta)$, $B_K(\theta)$ are characterized/fully determined by their corresponding regions $\calR$.}.
+
+\paragraph{A characterization of the identified set} 
+
+Let $P_0 = P(\theta_0,\eta_0)$ be the true choice probabilities generated by the ``true'' unknown parameter and selection mechanism. The identified set $\Theta_I$ is defined as the collection of points $\theta$ such that $P_0$ can be rationalized with a selection mechanism 
+\begin{equation}
+	\label{eq:BK-4}
+	\Theta_I := \left\{\theta\in \Theta: \exists \eta\in\calE, P_0 = P(\theta,\eta) \right\}
+\end{equation}
+The following is easily verified and intuitive
+\begin{equation}
+	\label{eq:BK-5}
+	\theta\in\Theta_I \iff P_0 \in A(\theta)
+\end{equation}
+So, can study $\Theta_I$ by studying the structure of $A(\theta)$. The following result holds:
+\begin{prop}
+	\label{prop:BK-3}
+	\(A(\theta)\) is a convex subset of $\SR^{2^N}$, each $B_K(\theta)$ is a convex subset of $\SR^{d_K}$, and 
+	\[A(\theta) = B_0(\theta) \times B_1(\theta)\times \dots \times B_N(\theta)\]
+\end{prop}
+The convexity of $A(\theta)$ is a general feature of an entry game and does not depend on this specification. The specific structure, the direct product nature, comes from the specification in Equation (\ref{eq:BK-1}). Structure simplifies some of the results to follow. 
+
+Also, $B_K(\theta)$ is a point only when the number of active firms in equilibrium is $0$ or $N$, because there is no region of multiple equilibria involving these specific outcomes. Note that each $B_K(\theta)$ is strictly included in the cube, $\cube_K$, defined by 
+\begin{equation}
+	\label{eq:BK-6}
+	\Delta_j^\PK(\theta) \leq P_j^\PK \leq \Delta_j^\PK(\theta) + \sum_{S\in S_j^\PK} \Delta_S^\PK(\theta), \forall j \in \{1,\dots, d_K\}
+\end{equation}
+This follows simply from the breakdown of $P_j^\PK$ in equation (\ref{eq:BK-3}), the following definitions of $\Delta_j^\PK$ and $\Delta_S^\PK(\theta)$, and that $0 \leq \eta(\cdot) \leq 1$.
+
+$\Theta_I$, the identified set, is not convex, but it can be characterized by verifying that a point $P_0$ belongs to a convex set $A(\theta)$. Using Proposition \ref{prop:BK-3}, can decompose this condition to
+\[P_0\in A(\theta)\iff \forall K \in \{0,1,\dots, N\}, P_0^\PK \in B_K(\theta)\]
+\subsubsection{The Support Function and a First Selection of Moment Inequalities}
+
+Following the convex literature, introduce the support function of each convex set $B_K(\theta)$. Tool has, in particular, been used in the set-identified literature, by Beresteanu and Molinari (2008) and Bontemps et al. (2012). Helps in generating the set of inequalities satisfied by $P_0$. First go over what a support function of a convex set is, and how it generates the inequalities that are the basis of inference procedure. The \emph{support function} of a convex set $A\subset \SR^d$ is defined as 
+\[\delta^*(q;A)= \sup_{x\in A} q^T x\]
+for all directions $q \in \SR^d$. This is depicted visually in Figure \ref{fig:BK-Fig1}, below. Generally, the domain of $\delta(\cdot)$ is restricted to $\mathbb{S}^{n-1}$
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=0.50\textwidth]{figures/BK-Fig1.png}
+	\caption{The support function [Lifted from \citet{BK-2020}]}
+	\label{fig:BK-Fig1}
+\end{figure}
+The support function of a convex set in a given direction locates the supporting hyperplane in this direction. For each direction $q$, it defines an inequality that is satisfied by any point of the convex set. The support function implicitly gathers all the inequalities that define the convex set into a single function. If the set is smooth, there is a continuum of such inequalities. If it is a polytope, there are only a finite number of (linear) inequalities needed to characterize the set. \citet{KS-2014} show that, when the set is convex, using the support function leads to an efficient estimator of the convex identified set.
+
+Following Rockafeller (1970) and Proposition \ref{prop:BK-3}, the identified set is characterized by the following inequalities.
+\begin{equation}
+	\label{eq:BK-7}
+	\begin{split}
+	 	\theta \in \Theta_I &\iff P_0 \in A(\theta) \\ 
+	 	&\iff \forall q\in \SR^{2^N}, q^T P_0 \leq \delta^*(a;A(\theta)) \\
+	 	&\iff \forall K, P_0^\PK \in B_K(\theta) \\
+	 	&\iff \forall K, \forall q_K \in \SR^{d_K}, q_K^T P_0^\PK \leq \delta^*(q_K;B_K(\theta))
+	 \end{split} 	
+\end{equation} 
+Breaking this down. $P_0$ is the observed ``true'' vector of outcome probabilities. \(A(\theta) \subset \SR^{2^N}\) is the set of probabilities that can be rationalized by an equilibrium selection mechanism in the model with parameter vector $\theta$. $P_0^\PK \in \SR^{d_K}$ is the sub-vector of probabilities for outcomes with $K$ active firms, where $d_K = \binom{N}{K}$, the number of possible outcomes with $K$ active firms. $B_K(\theta) \subset \SR^{d_K}$ is the set of sub-vectors of observed probabilities for outcomes with $K$ active firms that can be rationalized by an equilibrium selection mechanism in a model generated by parameter vector $\theta$.
+
+Now turn to the calculation of the support function of $B_K(\theta)$ for any $K$. Make the following notations:
+\begin{itemize}
+	\item  Let $q_K \in \SR^{d_K}$ be a given direction. Assume the following order among the coordinates of $q_K$: $q_{i_1,K} \geq q_{i_2,K} \geq \dots, \geq q_{i_{d_K},K}$. 
+	\item Partition $S^\PK$, the collection of subsets of outcomes with $K$ active firms in multiplicity, as follows: First denote $\calO^\PK_{i_1} = S_{i_1}^\PK$, the elements of $S^\PK$ which contain the outcome $y_{i_1}^\PK$ by 
+\end{itemize}
 

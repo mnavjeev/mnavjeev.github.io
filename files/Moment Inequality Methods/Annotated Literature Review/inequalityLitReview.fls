@@ -317,6 +317,9 @@ INPUT ./figures/GH-Fig3.png
 INPUT ./figures/GH-Fig3.png
 INPUT papers/BK-2020.tex
 INPUT papers/BK-2020.tex
+INPUT figures/BK-Fig1.png
+INPUT ./figures/BK-Fig1.png
+INPUT ./figures/BK-Fig1.png
 INPUT inequalityLitReview.bbl
 INPUT inequalityLitReview.bbl
 INPUT inequalityLitReview.aux

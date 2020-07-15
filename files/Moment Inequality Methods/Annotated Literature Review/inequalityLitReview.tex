@@ -80,34 +80,39 @@
 \newcommand{\vY}{\mathbf{Y}}
 \newcommand{\vZ}{\mathbf{Z}}
 
-%Declate some shortcuts
-\newcommand{\thetaH}{\hat{\theta}}
-\newcommand{\thetaT}{\tilde{\theta}}
+%Declare some shortcuts
+\newcommand{\andbox}{\hbox{ }\text{ and }\hbox{ }}
+\newcommand{\DeltaT}{\tilde{\Delta}}
+\newcommand{\ind}{\mathds{1}}
+\newcommand{\muH}{\hat{\mu}}
 \newcommand{\nuH}{\hat{\nu}}
 \newcommand{\nuT}{\tilde{\nu}}
-\newcommand{\muH}{\hat{\mu}}
-\newcommand{\sigmaH}{\hat{\sigma}}
-\newcommand{\DeltaT}{\tilde{\Delta}}
+\newcommand{\PK}{(K)}
 \newcommand{\ris}{\rho_{i}^*}
-\newcommand{\ind}{\mathds{1}}
+\newcommand{\sigmaH}{\hat{\sigma}}
+\newcommand{\thetaH}{\hat{\theta}}
+\newcommand{\thetaT}{\tilde{\theta}}
 \newcommand{\wcov}{\rightsquigarrow}
 
 
-%Declate New Math Operators
-\DeclareMathOperator{\err}{err}
-\DeclareMathOperator{\Var}{Var}
-\DeclareMathOperator{\Poisson}{Poisson}
-\DeclareMathOperator{\polylog}{polylog}
+%Declare New Math Operators
 \DeclareMathOperator{\argmax}{arg\,max}
 \DeclareMathOperator{\argmin}{arg\,min}
+\DeclareMathOperator{\cube}{Cub}
+\DeclareMathOperator{\do}{do}
+\DeclareMathOperator{\err}{err}
 \DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Poisson}{Poisson}
+\DeclareMathOperator{\polylog}{polylog}
 \DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\vec}{vec}
 
-
+%Useful numberthis tag
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
-
+%Define Theorems, Definitions, Corollarys, etc.
 \newtheoremstyle{exampstyle}
   {1em plus .2em minus .1em}%   Space above
   {1em plus .2em minus .1em}%   Space below
@@ -121,24 +126,29 @@
 
  {
     \theoremstyle{exampstyle}
+
     \newtheorem{assumption}{Assumption}
     \newtheorem*{assumption*}{Assumption}
-    \newtheorem{specification}{Specification}
-    \newtheorem*{specification*}{Specification}
     \newtheorem{definition}{Definition}
-    \newtheorem*{definition*}{Definition}
+    \newtheorem*{definition*}{Definition}    
     \newtheorem{example}{Example}
     \newtheorem*{example*}{Example}
-
+    \newtheorem{remark}{Remark}
+    \newtheorem*{remark*}{Remark}
+    \newtheorem{specification}{Specification}
+    \newtheorem*{specification*}{Specification}
  }
 
-\newtheorem{theorem}{Theorem}
-\newtheorem*{theorem*}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem*{corollary*}{Corollary}
 \newtheorem{lemma}{Lemma}
 \newtheorem*{lemma*}{Lemma}
 \newtheorem{prop}{Proposition}
 \newtheorem*{prop*}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem*{theorem*}{Theorem}
 
+%Define command for blocked theorems
 \newcommand{\blocktheorem}[1]{%
   \csletcs{old#1}{#1}% Store \begin
   \csletcs{endold#1}{end#1}% Store \end
@@ -152,33 +162,41 @@
      \end{minipage}
      \par\addvspace{1.5ex}}
 }
-\blocktheorem{theorem}
 \blocktheorem{assumption}
 \blocktheorem{definition}
+\blocktheorem{theorem}
 \blocktheorem{prop}
 \blocktheorem{specification}
 \raggedbottom
 
 %Reset equation counters for each section
-\counterwithin*{equation}{section}
 \counterwithin*{assumption}{section}
-\counterwithin*{prop}{section}
-\counterwithin*{specification}{section}
+\counterwithin*{corollary}{section}
 \counterwithin*{definition}{section}
+\counterwithin*{equation}{section}
+\counterwithin*{figure}{section}
 \counterwithin*{footnote}{subsection}
-\counterwithin*{theorem}{section}
 \counterwithin*{lemma}{section}
+\counterwithin*{prop}{section}
+\counterwithin*{remark}{section}
+\counterwithin*{specification}{section}
+\counterwithin*{table}{section}
+\counterwithin*{theorem}{section}
 
 %Set bibliography style
 \bibliographystyle{apalike}
 
-
-
+%Title, Author, Date
 \title{Readings on Moment Inequality Methods}
 \author{Manu Navjeevan}
 \date{\today}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%MAIN DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{document}
+
 %Title Page and Table of Contents
 \maketitle
 \tableofcontents

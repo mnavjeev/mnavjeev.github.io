@@ -35,3 +35,8 @@
 \contentsline {subsubsection}{\numberline {4.2.1}Setup and Notations}{26}{subsubsection.4.2.1}% 
 \contentsline {paragraph}{Model}{26}{paragraph*.10}% 
 \contentsline {paragraph}{Multiplicity of Pure Strategy eqm.}{27}{paragraph*.11}% 
+\contentsline {subsubsection}{\numberline {4.2.2}Choice Probabilities to Identified Set}{27}{subsubsection.4.2.2}% 
+\contentsline {paragraph}{Regions of Multiple Equilibria}{28}{paragraph*.12}% 
+\contentsline {paragraph}{The set of predicted choice probabilities}{28}{paragraph*.13}% 
+\contentsline {paragraph}{A characterization of the identified set}{29}{paragraph*.14}% 
+\contentsline {subsubsection}{\numberline {4.2.3}The Support Function and a First Selection of Moment Inequalities}{30}{subsubsection.4.2.3}% 

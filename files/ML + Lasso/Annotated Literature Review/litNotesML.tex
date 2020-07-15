@@ -24,6 +24,7 @@
 \usepackage{longtable}
 \usepackage{marginnote}
 \usepackage{mathtools}
+\usepackage{natbib}
 \usepackage{mdframed}
 \usepackage{parskip}
 \usepackage{setspace}
@@ -46,22 +47,10 @@
 \fancyfoot[C]{\thepage}
 \linespread{1}
 
-% Declaring new commonly used math operators
-\DeclareMathOperator{\err}{err}
-\DeclareMathOperator{\Var}{Var}
-\DeclareMathOperator{\Poisson}{Poisson}
-\DeclareMathOperator{\polylog}{polylog}
-\DeclareMathOperator*{\argmax}{arg\,max}
-\DeclareMathOperator*{\argmin}{arg\,min}
-\DeclareMathOperator*{\id}{id}
-\DeclareMathOperator{\supp}{supp}
-\DeclareMathOperator{\sign}{sign}
+%Change expectation and probability to doublescript
+\renewcommand{\E}{\mathbb{E}}
+\renewcommand{\P}{\mathbb{P}}
 
-%Redeclare \P to represent probability
-\renewcommand{\P}{\hbox{}\text{P}}
-
-%indicator shorthand
-\newcommand{\one}{\mathds{1}}
 
 % Make capital vectors commands from econometrics packages
 \newcommand{\vA}{\mathbf{A}}
@@ -91,19 +80,36 @@
 \newcommand{\vY}{\mathbf{Y}}
 \newcommand{\vZ}{\mathbf{Z}}
 
-
-% Declaring new helpful math commands
+%Declare some shortcuts
 \newcommand{\thetaH}{\hat{\theta}}
 \newcommand{\thetaT}{\tilde{\theta}}
 \newcommand{\nuH}{\hat{\nu}}
 \newcommand{\nuT}{\tilde{\nu}}
+\newcommand{\muH}{\hat{\mu}}
+\newcommand{\sigmaH}{\hat{\sigma}}
 \newcommand{\DeltaT}{\tilde{\Delta}}
 \newcommand{\ris}{\rho_{i}^*}
+\newcommand{\ind}{\mathds{1}}
+\newcommand{\wcov}{\rightsquigarrow}
+\newcommand{\PK}{(K)}
+\newcommand{\andbox}{\hbox{ }\text{ and }\hbox{ }}
 
-% Adding a command to number random things, added to equation counter
+
+%Declate New Math Operators
+\DeclareMathOperator{\argmax}{arg\,max}
+\DeclareMathOperator{\argmin}{arg\,min}
+\DeclareMathOperator{\cube}{Cub}
+\DeclareMathOperator{\Do}{do}
+\DeclareMathOperator{\err}{err}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Poisson}{Poisson}
+\DeclareMathOperator{\polylog}{polylog}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Var}{Var}
+
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
-% Declaring Theorem Styles, exampstyle removes italics from some theorems
 \newtheoremstyle{exampstyle}
   {1em plus .2em minus .1em}%   Space above
   {1em plus .2em minus .1em}%   Space below
@@ -127,17 +133,16 @@
     \newtheorem*{example*}{Example}
     \newtheorem{remark}{Remark}
     \newtheorem*{remark*}{Remark}
- 
  }
 
 \newtheorem{theorem}{Theorem}
 \newtheorem*{theorem*}{Theorem}
-\newtheorem{corollary}{Corollary}
-\newtheorem*{corollary*}{Corollary}
 \newtheorem{lemma}{Lemma}
 \newtheorem*{lemma*}{Lemma}
 \newtheorem{prop}{Proposition}
 \newtheorem*{prop*}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem*{corollary*}{Corollary}
 
 \newcommand{\blocktheorem}[1]{%
   \csletcs{old#1}{#1}% Store \begin
@@ -155,26 +160,23 @@
 \blocktheorem{theorem}
 \blocktheorem{assumption}
 \blocktheorem{definition}
-\blocktheorem{corollary}
 \blocktheorem{prop}
 \blocktheorem{specification}
-
-
 \raggedbottom
 
-
-\counterwithin*{equation}{section}
+%Reset equation counters for each section
 \counterwithin*{assumption}{section}
-\counterwithin*{prop}{section}
-\counterwithin*{specification}{section}
-\counterwithin*{footnote}{section}
-\counterwithin*{definition}{section}
-\counterwithin*{figure}{section}
 \counterwithin*{corollary}{section}
-\counterwithin*{theorem}{section}
+\counterwithin*{definition}{section}
+\counterwithin*{equation}{section}
+\counterwithin*{figure}{section}
+\counterwithin*{footnote}{subsection}
 \counterwithin*{lemma}{section}
-\counterwithin*{example}{section}
+\counterwithin*{prop}{section}
 \counterwithin*{remark}{section}
+\counterwithin*{specification}{section}
+\counterwithin*{table}{section}
+\counterwithin*{theorem}{section}
 
 \title{Readings on ML and High-Dimensional Methods}
 \author{Manu Navjeevan}
@@ -195,7 +197,8 @@
 \input{papers/cck17}
 \newpage
 \input{papers/spca}
-
+\newpage 
+\input{papers/deepIV}
 
 
 \end{document}
