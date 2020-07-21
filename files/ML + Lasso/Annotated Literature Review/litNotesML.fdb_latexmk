@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1594845451 "litNotesML.tex" "litNotesML.pdf" "litNotesML" 1594845453
-  "/dev/null" 1594845450 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1594845451 "litNotesML.tex" "litNotesML.pdf" "litNotesML" 1595036682
+  "/dev/null" 1595036673 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/jknappen/ec/tcrm0500.tfm" 1136768653 1536 b3387106d9afecbfe14bde2de6eadf47 ""
@@ -210,8 +210,8 @@
   "papers/sh_neural.tex" 1593138486 27521 5d47d0f6bb77436b0e4f84857929106f ""
   "papers/spca.tex" 1594261688 10234 21f7d4ea6a898762b3b995465adfac3b ""
   (generated)
-  "litNotesML.pdf"
-  "litNotesML.toc"
   "litNotesML.log"
-  "litNotesML.out"
   "litNotesML.aux"
+  "litNotesML.pdf"
+  "litNotesML.out"
+  "litNotesML.toc"

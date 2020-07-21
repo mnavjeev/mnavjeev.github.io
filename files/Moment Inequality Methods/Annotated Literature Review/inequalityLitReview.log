@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  14 JUL 2020 17:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  21 JUL 2020 13:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1050,38 +1050,40 @@ LaTeX Info: Redefining \genfrac on input line 145.
 \conditionsep=\skip159
 )
 \c@assumption=\count314
-\c@specification=\count315
-\c@definition=\count316
-\c@example=\count317
-\c@theorem=\count318
-\c@lemma=\count319
-\c@prop=\count320
+\c@definition=\count315
+\c@example=\count316
+\c@remark=\count317
+\c@specification=\count318
+\c@corollary=\count319
+\c@lemma=\count320
+\c@prop=\count321
+\c@theorem=\count322
 
 (./inequalityLitReview.aux)
 \openout1 = `inequalityLitReview.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 187.
-LaTeX Font Info:    ... okay on input line 187.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 187.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 187.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 201.
+LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 201.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 201.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 187.
+LaTeX Font Info:    ... okay on input line 201.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1119,16 +1121,16 @@ LaTeX Font Info:    ... okay on input line 187.
 
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count321
+\scratchcounter=\count323
 \scratchdimen=\dimen277
 \scratchbox=\box68
-\nofMPsegments=\count322
-\nofMParguments=\count323
+\nofMPsegments=\count324
+\nofMParguments=\count325
 \everyMPshowfont=\toks38
-\MPscratchCnt=\count324
+\MPscratchCnt=\count326
 \MPscratchDim=\dimen278
-\MPnumerator=\count325
-\makeMPintoPDFobject=\count326
+\MPnumerator=\count327
+\makeMPintoPDFobject=\count328
 \everyMPtoPDFconversion=\toks39
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1149,17 +1151,17 @@ e
 ))
 \symgns@font=\mathgroup9
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/cmr/m/n --> TS1/cmr/bx/n on input line 187.
-Package gensymb Info: Math companion symbols declared on input line 187.
-LaTeX Info: Redefining \degree on input line 187.
-LaTeX Info: Redefining \celsius on input line 187.
+(Font)                  TS1/cmr/m/n --> TS1/cmr/bx/n on input line 201.
+Package gensymb Info: Math companion symbols declared on input line 201.
+LaTeX Info: Redefining \degree on input line 201.
+LaTeX Info: Redefining \celsius on input line 201.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 187.
-LaTeX Info: Redefining \ohm on input line 187.
-Package gensymb Info: Using \textohm for \ohm on input line 187.
-Package gensymb Info: Using \textmu for \micro on input line 187.
+erthousand on input line 201.
+LaTeX Info: Redefining \ohm on input line 201.
+Package gensymb Info: Using \textohm for \ohm on input line 201.
+Package gensymb Info: Using \textmu for \micro on input line 201.
 \AtBeginShipoutBox=\box69
-Package hyperref Info: Link coloring OFF on input line 187.
+Package hyperref Info: Link coloring OFF on input line 201.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1167,22 +1169,22 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count327
+\c@section@level=\count329
 )
-LaTeX Info: Redefining \ref on input line 187.
-LaTeX Info: Redefining \pageref on input line 187.
-LaTeX Info: Redefining \nameref on input line 187.
+LaTeX Info: Redefining \ref on input line 201.
+LaTeX Info: Redefining \pageref on input line 201.
+LaTeX Info: Redefining \nameref on input line 201.
 
 (./inequalityLitReview.out) (./inequalityLitReview.out)
 \@outlinefile=\write3
 \openout3 = `inequalityLitReview.out'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 190.
+LaTeX Font Info:    Try loading font information for U+msa on input line 205.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 190.
+LaTeX Font Info:    Try loading font information for U+msb on input line 205.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1246,28 +1248,34 @@ File: figures/BK-Fig1.png Graphic file (type png)
 <use figures/BK-Fig1.png>
 Package pdftex.def Info: figures/BK-Fig1.png  used on input line 174.
 (pdftex.def)             Requested size: 234.8775pt x 188.33974pt.
- [30 <./figures/BK-Fig1.png>])
-[31] (./inequalityLitReview.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 203.
- [32]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 203.
+ [30 <./figures/BK-Fig1.png>]
+[31]) [32] (./inequalityLitReview.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 220.
+ [33]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 220.
  (./inequalityLitReview.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 203.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 203.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 220.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 220.
 Package rerunfilecheck Info: File `inequalityLitReview.out' has not changed.
 (rerunfilecheck)             Checksum: F161C2A4694878272F9CDC7ACA38014C;2779.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 203.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 220.
  ) 
 Here is how much of TeX's memory you used:
- 22486 strings out of 492616
- 376605 string characters out of 6129482
- 492376 words of memory out of 5000000
- 25865 multiletter control sequences out of 15000+600000
+ 22517 strings out of 492616
+ 376893 string characters out of 6129482
+ 492612 words of memory out of 5000000
+ 25886 multiletter control sequences out of 15000+600000
  551320 words of font info for 97 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,18n,65p,1439b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.32} has been referenced but does not ex
+pdfTeX warning (dest): name{Hfootnote.34} has been referenced but does not ex
 ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.33} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.32} has been referenced but does not exis
+t, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.31} has been referenced but does not exis
 t, replaced by a fixed one
@@ -1396,10 +1404,10 @@ ts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2019/texmf-
 dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2019/tex
 mf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on inequalityLitReview.pdf (32 pages, 1017495 bytes).
+Output written on inequalityLitReview.pdf (33 pages, 1022271 bytes).
 PDF statistics:
- 771 PDF objects out of 1000 (max. 8388607)
- 689 compressed objects within 7 object streams
- 220 named destinations out of 1000 (max. 500000)
+ 790 PDF objects out of 1000 (max. 8388607)
+ 706 compressed objects within 8 object streams
+ 230 named destinations out of 1000 (max. 500000)
  269 words of extra memory for PDF output out of 10000 (max. 10000000)
 

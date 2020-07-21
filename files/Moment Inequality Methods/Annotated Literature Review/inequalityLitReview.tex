@@ -47,10 +47,13 @@
 \fancyfoot[C]{\thepage}
 \linespread{1}
 
-%Change expectation and probability to doublescript
+% Change expectation and probability to doublescript
 \renewcommand{\E}{\mathbb{E}}
 \renewcommand{\P}{\mathbb{P}}
 
+% Declare a shortcut for \theta and \Theta
+\renewcommand{\t}{\theta}
+\newcommand{\T}{\Theta}
 
 % Make capital vectors commands from econometrics packages
 \newcommand{\vA}{\mathbf{A}}
@@ -80,7 +83,7 @@
 \newcommand{\vY}{\mathbf{Y}}
 \newcommand{\vZ}{\mathbf{Z}}
 
-%Declare some shortcuts
+% Declare some shortcuts
 \newcommand{\andbox}{\hbox{ }\text{ and }\hbox{ }}
 \newcommand{\DeltaT}{\tilde{\Delta}}
 \newcommand{\ind}{\mathds{1}}
@@ -95,7 +98,7 @@
 \newcommand{\wcov}{\rightsquigarrow}
 
 
-%Declare New Math Operators
+% Declare New Math Operators
 \DeclareMathOperator{\argmax}{arg\,max}
 \DeclareMathOperator{\argmin}{arg\,min}
 \DeclareMathOperator{\cube}{Cub}
@@ -107,12 +110,12 @@
 \DeclareMathOperator{\supp}{supp}
 \DeclareMathOperator{\sign}{sign}
 \DeclareMathOperator{\Var}{Var}
-\DeclareMathOperator{\vec}{vec}
 
-%Useful numberthis tag
+
+% Useful numberthis tag
 \newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
 
-%Define Theorems, Definitions, Corollarys, etc.
+% Define Theorems, Definitions, Corollarys, etc.
 \newtheoremstyle{exampstyle}
   {1em plus .2em minus .1em}%   Space above
   {1em plus .2em minus .1em}%   Space below
@@ -183,10 +186,10 @@
 \counterwithin*{table}{section}
 \counterwithin*{theorem}{section}
 
-%Set bibliography style
+% Set bibliography style
 \bibliographystyle{apalike}
 
-%Title, Author, Date
+% Title, Author, Date
 \title{Readings on Moment Inequality Methods}
 \author{Manu Navjeevan}
 \date{\today}
@@ -197,19 +200,21 @@
 
 \begin{document}
 
-%Title Page and Table of Contents
-\maketitle
+% Title Page and Table of Contents
+\maketitle  
 \tableofcontents
 \newpage
 
-%Covered Papers
+% Covered Papers
 \input{papers/baiSantosShaikh.tex}
 \input{papers/CCK-2019.tex}
 \input{papers/GH-2011}
 \input{papers/BK-2020}
+
+% Gap before references
 \newpage
 
-%Bibliography
+% Bibliography
 \bibliography{references}
 
 \end{document}
