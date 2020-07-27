@@ -1,0 +1,16 @@
+%!TEX root = /Users/manunavjeevan/Documents/GitHub/mnavjeev.github.io/files/Moment Inequality Methods/Annotated Literature Review/inequalityLitReview.tex
+\newpage
+\section{Action-Graph Games \textit{\small Albert Xin Jiang, Kevin Leyton-Brown, Navin A.R Bhat (GEB, 2011)}}
+\citet{AGG-2011} appeared in the journal \emph{Games and Economic Behavior} in 2011. The link can be found \href{https://www.sciencedirect.com/science/article/abs/pii/S0899825610001752}{here}.
+
+\subsection{Introduction}
+
+Simultaneous action games have received considerable study, which is reasonable as these games are fundamental. Most of the game theory literature presumes that simultaneous action games will be represented in normal form. This is problematic because, in many domains of interest, the number of players and/or the number of actions per player is large. In normal form representation, the game's payoff function is stored as a matrix sith one netry for each player's payoff under each combination of all players' actions. As a result, the size of the representation grows exponentially with the number of players. 
+
+Fortunately, most games of practical interest have highly-structured payoff functions, and thus, it is possible to represent them compactly. Intuitively, this helps to explain why pepople are able to reason about these games in the first place: understand the payoffs in terms of simple relationships rather than in terms of large lookup tables. One thread od recent work has explored game representations that are able to succintly describe games of interest. For example, the extensive form allows games with temporal structure to be encoded in exponentially less space than the normal form. In what follows, however, concentrate on game representations that are compact even for simultaneous-move games of perfect information. 
+
+Perhaps the most influential class of cmpact game representations is that which exploits strict independencies between players' utility functions. Class includes graphical games, muli-agent influence diagrams, and game nets. Focus on the first of these. 
+
+Consider a graph in which nodes correspond to agents and an edge from one node to another represents the proposition that the first agent is able to affect the second agents payoff's. If every node in the graph has a small in-degree, the graphical game has a compact representation (exponentially smaller than it's induced normal form). Of course, there are many ways of representing games compactly. What makes graphical games important is the fact that computational questions about these games can be answered by algorithms whose running time depends on the size of the representation rather than the size of the induced normal form. To state one fundamental property, it is possible to compute an agent's expected utility under an arbitrary mized strategy profile in time polynomial in the size of the graphical game representation. 
+
+This roperty implies that a cariety of algorithms for computing game-theoretic quantities of interest, such as sample Nash and correlated equilibrium, can be made exponentially faster for graphical games without introducing any change in the algorithm's behavior or output.

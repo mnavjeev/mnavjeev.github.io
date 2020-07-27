@@ -1,6 +1,7 @@
+% Document Class
 \documentclass[10pt]{article}
 
-%Packages with options
+% Packages with options
 \usepackage[english]{babel}
 \usepackage[mathscr]{euscript}
 \usepackage[margin = 1in]{geometry}
@@ -151,7 +152,7 @@
 \newtheorem{theorem}{Theorem}
 \newtheorem*{theorem*}{Theorem}
 
-%Define command for blocked theorems
+% Define command for blocked theorems
 \newcommand{\blocktheorem}[1]{%
   \csletcs{old#1}{#1}% Store \begin
   \csletcs{endold#1}{end#1}% Store \end
@@ -172,7 +173,7 @@
 \blocktheorem{specification}
 \raggedbottom
 
-%Reset equation counters for each section
+% Reset equation counters for each section
 \counterwithin*{assumption}{section}
 \counterwithin*{corollary}{section}
 \counterwithin*{definition}{section}
@@ -195,7 +196,7 @@
 \date{\today}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%MAIN DOCUMENT
+%%%% MAIN DOCUMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
@@ -206,10 +207,11 @@
 \newpage
 
 % Covered Papers
-\input{papers/baiSantosShaikh.tex}
-\input{papers/CCK-2019.tex}
+\input{papers/baiSantosShaikh}
+\input{papers/CCK-2019}
 \input{papers/GH-2011}
 \input{papers/BK-2020}
+\input{papers/AGG}
 
 % Gap before references
 \newpage

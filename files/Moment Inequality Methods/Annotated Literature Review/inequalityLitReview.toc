@@ -1,42 +1,50 @@
 \babel@toc {english}{}
-\contentsline {section}{\numberline {1}A Practical Method for Testing Many Moment Inequalities; \textit {\relax \fontsize {9}{11}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \topsep \z@ \parsep \parskip \itemsep \z@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Yuehao Bai, Andres Santos, Azeem M. Shaikh}}{2}{section.1}% 
-\contentsline {subsection}{\numberline {1.1}Introduction}{2}{subsection.1.1}% 
-\contentsline {subsection}{\numberline {1.2}Main Result}{2}{subsection.1.2}% 
-\contentsline {section}{\numberline {2}Inference on Causal and Structural Parameters Using Many Moment Inequalities; \textit {\relax \fontsize {9}{11}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \topsep \z@ \parsep \parskip \itemsep \z@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Victor Chernozhukov, Denis Chetverikov, and Kengo Kato (ReStud, 2018)}}{5}{section.2}% 
-\contentsline {subsection}{\numberline {2.1}Introduction}{5}{subsection.2.1}% 
-\contentsline {subsection}{\numberline {2.2}Motivating Examples}{6}{subsection.2.2}% 
-\contentsline {subsubsection}{\numberline {2.2.1}Market Structure Model}{6}{subsubsection.2.2.1}% 
-\contentsline {subsection}{\numberline {2.3}Test Statistic}{6}{subsection.2.3}% 
-\contentsline {subsection}{\numberline {2.4}Critical Values}{7}{subsection.2.4}% 
-\contentsline {subsubsection}{\numberline {2.4.1}Self Normalized Critical Values}{7}{subsubsection.2.4.1}% 
-\contentsline {paragraph}{One-step method:}{7}{paragraph*.1}% 
-\contentsline {paragraph}{Two-step method:}{8}{paragraph*.6}% 
-\contentsline {subsubsection}{\numberline {2.4.2}Bootstrap Methods}{9}{subsubsection.2.4.2}% 
-\contentsline {paragraph}{One-Step Method}{9}{paragraph*.7}% 
-\contentsline {paragraph}{Two-step Methods}{11}{paragraph*.8}% 
-\contentsline {subsubsection}{\numberline {2.4.3}Hybrid Methods}{12}{subsubsection.2.4.3}% 
-\contentsline {subsubsection}{\numberline {2.4.4}Three-step method}{12}{subsubsection.2.4.4}% 
-\contentsline {subsection}{\numberline {2.5}Power}{14}{subsection.2.5}% 
-\contentsline {subsection}{\numberline {2.6}Monte Carlo Experiments}{15}{subsection.2.6}% 
-\contentsline {section}{\numberline {3}Set Identification in Models with Multiple Equilibria; \textit {\relax \fontsize {9}{11}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \topsep \z@ \parsep \parskip \itemsep \z@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Alfred Galichon, Marc Henry (ReStud, 2011)}}{16}{section.3}% 
-\contentsline {subsection}{\numberline {3.1}Introduction}{16}{subsection.3.1}% 
-\contentsline {subsection}{\numberline {3.2}Identified Features of Models with Multiple Equilibria}{16}{subsection.3.2}% 
-\contentsline {subsubsection}{\numberline {3.2.1}Identified Parameter Sets in General Models with Multiple Equilibria}{16}{subsubsection.3.2.1}% 
-\contentsline {subsubsection}{\numberline {3.2.2}Some illustrative examples}{19}{subsubsection.3.2.2}% 
-\contentsline {paragraph}{Family Bargaining}{19}{paragraph*.9}% 
-\contentsline {subsection}{\numberline {3.3}Efficient Computation of the Identified Set}{20}{subsection.3.3}% 
-\contentsline {subsubsection}{\numberline {3.3.1}Submodular Optimization}{20}{subsubsection.3.3.1}% 
-\contentsline {subsubsection}{\numberline {3.3.2}Optimal Transportation Approach}{21}{subsubsection.3.3.2}% 
-\contentsline {subsubsection}{\numberline {3.3.3}Core-determining classes}{24}{subsubsection.3.3.3}% 
-\contentsline {subsection}{\numberline {3.4}Illustration: Oligopoly Entry with Two Types of Players}{25}{subsection.3.4}% 
-\contentsline {section}{\numberline {4}A Geometric Approach to Inference in Set-Identified Entry Games; \textit {\relax \fontsize {9}{11}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \topsep \z@ \parsep \parskip \itemsep \z@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Christian Bontemps, Rohit Kumar (JoE, 2020)}}{26}{section.4}% 
-\contentsline {subsection}{\numberline {4.1}Introduction}{26}{subsection.4.1}% 
-\contentsline {subsection}{\numberline {4.2}Entry Game with \emph {N} players}{26}{subsection.4.2}% 
-\contentsline {subsubsection}{\numberline {4.2.1}Setup and Notations}{26}{subsubsection.4.2.1}% 
-\contentsline {paragraph}{Model}{26}{paragraph*.10}% 
-\contentsline {paragraph}{Multiplicity of Pure Strategy eqm.}{27}{paragraph*.11}% 
-\contentsline {subsubsection}{\numberline {4.2.2}Choice Probabilities to Identified Set}{27}{subsubsection.4.2.2}% 
-\contentsline {paragraph}{Regions of Multiple Equilibria}{28}{paragraph*.12}% 
-\contentsline {paragraph}{The set of predicted choice probabilities}{28}{paragraph*.13}% 
-\contentsline {paragraph}{A characterization of the identified set}{29}{paragraph*.14}% 
-\contentsline {subsubsection}{\numberline {4.2.3}The Support Function and a First Selection of Moment Inequalities}{30}{subsubsection.4.2.3}% 
+\contentsline {section}{\numberline {1}A Practical Method for Testing Many Moment Inequalities; \textit {\relax \fontsize {9}{11}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \topsep \z@ \parsep \parskip \itemsep \z@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Yuehao Bai, Andres Santos, Azeem M. Shaikh}}{3}{section.1}% 
+\contentsline {subsection}{\numberline {1.1}Introduction}{3}{subsection.1.1}% 
+\contentsline {subsection}{\numberline {1.2}Main Result}{3}{subsection.1.2}% 
+\contentsline {section}{\numberline {2}Inference on Causal and Structural Parameters Using Many Moment Inequalities; \textit {\relax \fontsize {9}{11}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \topsep \z@ \parsep \parskip \itemsep \z@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Victor Chernozhukov, Denis Chetverikov, and Kengo Kato (ReStud, 2018)}}{6}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Introduction}{6}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Motivating Examples}{7}{subsection.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.1}Market Structure Model}{7}{subsubsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.3}Test Statistic}{7}{subsection.2.3}% 
+\contentsline {subsection}{\numberline {2.4}Critical Values}{8}{subsection.2.4}% 
+\contentsline {subsubsection}{\numberline {2.4.1}Self Normalized Critical Values}{8}{subsubsection.2.4.1}% 
+\contentsline {paragraph}{One-step method:}{8}{paragraph*.1}% 
+\contentsline {paragraph}{Two-step method:}{9}{paragraph*.6}% 
+\contentsline {subsubsection}{\numberline {2.4.2}Bootstrap Methods}{10}{subsubsection.2.4.2}% 
+\contentsline {paragraph}{One-Step Method}{10}{paragraph*.7}% 
+\contentsline {paragraph}{Two-step Methods}{12}{paragraph*.8}% 
+\contentsline {subsubsection}{\numberline {2.4.3}Hybrid Methods}{13}{subsubsection.2.4.3}% 
+\contentsline {subsubsection}{\numberline {2.4.4}Three-step method}{13}{subsubsection.2.4.4}% 
+\contentsline {subsection}{\numberline {2.5}Power}{15}{subsection.2.5}% 
+\contentsline {subsection}{\numberline {2.6}Monte Carlo Experiments}{16}{subsection.2.6}% 
+\contentsline {section}{\numberline {3}Set Identification in Models with Multiple Equilibria; \textit {\relax \fontsize {9}{11}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \topsep \z@ \parsep \parskip \itemsep \z@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Alfred Galichon, Marc Henry (ReStud, 2011)}}{17}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Introduction}{17}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Identified Features of Models with Multiple Equilibria}{17}{subsection.3.2}% 
+\contentsline {subsubsection}{\numberline {3.2.1}Identified Parameter Sets in General Models with Multiple Equilibria}{17}{subsubsection.3.2.1}% 
+\contentsline {subsubsection}{\numberline {3.2.2}Some illustrative examples}{20}{subsubsection.3.2.2}% 
+\contentsline {paragraph}{Family Bargaining}{20}{paragraph*.9}% 
+\contentsline {subsection}{\numberline {3.3}Efficient Computation of the Identified Set}{21}{subsection.3.3}% 
+\contentsline {subsubsection}{\numberline {3.3.1}Submodular Optimization}{21}{subsubsection.3.3.1}% 
+\contentsline {subsubsection}{\numberline {3.3.2}Optimal Transportation Approach}{22}{subsubsection.3.3.2}% 
+\contentsline {subsubsection}{\numberline {3.3.3}Core-determining classes}{25}{subsubsection.3.3.3}% 
+\contentsline {subsection}{\numberline {3.4}Illustration: Oligopoly Entry with Two Types of Players}{26}{subsection.3.4}% 
+\contentsline {section}{\numberline {4}A Geometric Approach to Inference in Set-Identified Entry Games; \textit {\relax \fontsize {9}{11}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \topsep \z@ \parsep \parskip \itemsep \z@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Christian Bontemps, Rohit Kumar (JoE, 2020)}}{27}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Introduction}{27}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}Entry Game with \emph {N} players}{27}{subsection.4.2}% 
+\contentsline {subsubsection}{\numberline {4.2.1}Setup and Notations}{27}{subsubsection.4.2.1}% 
+\contentsline {paragraph}{Model}{27}{paragraph*.10}% 
+\contentsline {paragraph}{Multiplicity of Pure Strategy eqm.}{28}{paragraph*.11}% 
+\contentsline {subsubsection}{\numberline {4.2.2}Choice Probabilities to Identified Set}{28}{subsubsection.4.2.2}% 
+\contentsline {paragraph}{Regions of Multiple Equilibria}{29}{paragraph*.12}% 
+\contentsline {paragraph}{The set of predicted choice probabilities}{29}{paragraph*.13}% 
+\contentsline {paragraph}{A characterization of the identified set}{30}{paragraph*.14}% 
+\contentsline {subsubsection}{\numberline {4.2.3}The Support Function and a First Selection of Moment Inequalities}{31}{subsubsection.4.2.3}% 
+\contentsline {paragraph}{Optimal Transport, Random Sets, or Completion of the Model}{34}{paragraph*.15}% 
+\contentsline {subsection}{\numberline {4.3}Using the Geometry of $A(\theta )$ to Select Inequalities}{34}{subsection.4.3}% 
+\contentsline {subsubsection}{\numberline {4.3.1}Deriving a Core Determining Class of an Entry Game}{34}{subsubsection.4.3.1}% 
+\contentsline {subsubsection}{\numberline {4.3.2}A Geometric Selection Procedure}{35}{subsubsection.4.3.2}% 
+\contentsline {subsection}{\numberline {4.4}Estimation and Inference}{36}{subsection.4.4}% 
+\contentsline {subsubsection}{\numberline {4.4.1}The Asymptotic Distribution of the Test Statistics}{36}{subsubsection.4.4.1}% 
+\contentsline {section}{\numberline {5}Action-Graph Games \textit {\relax \fontsize {9}{11}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \topsep \z@ \parsep \parskip \itemsep \z@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Albert Xin Jiang, Kevin Leyton-Brown, Navin A.R Bhat (GEB, 2011)}}{38}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}Introduction}{38}{subsection.5.1}% 

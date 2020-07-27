@@ -68,8 +68,6 @@ abstract = {This paper examines the efficient estimation of partially identified
 year = {2014}
 }
 
-
-
 @inbook{BT-2007, 
     place={Cambridge},
     series={Econometric Society Monographs}, 
@@ -82,4 +80,95 @@ year = {2014}
     year={2007}, 
     pages={46–85}, 
     collection={Econometric Society Monographs}
+}
+
+@article{BMM-2011,
+author = {Beresteanu, Arie and Molchanov, Ilya and Molinari, Francesca},
+title = {Sharp Identification Regions in Models With Convex Moment Predictions},
+journal = {Econometrica},
+volume = {79},
+number = {6},
+pages = {1785-1821},
+keywords = {Partial identification, random sets, Aumann expectation, support function, finite static games, multiple equilibria, random utility models, interval data, best linear prediction},
+doi = {10.3982/ECTA8680},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA8680},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.3982/ECTA8680},
+abstract = {We provide a tractable characterization of the sharp identification region of the parameter vector θ in a broad class of incomplete econometric models. Models in this class have set-valued predictions that yield a convex set of conditional or unconditional moments for the observable model variables. In short, we call these models with convex moment predictions. Examples include static, simultaneous-move finite games of complete and incomplete information in the presence of multiple equilibria; best linear predictors with interval outcome and covariate data; and random utility models of multinomial choice in the presence of interval regressors data. Given a candidate value for θ, we establish that the convex set of moments yielded by the model predictions can be represented as the Aumann expectation of a properly defined random set. The sharp identification region of θ, denoted ΘI, can then be obtained as the set of minimizers of the distance from a properly specified vector of moments of random variables to this Aumann expectation. Algorithms in convex programming can be exploited to efficiently verify whether a candidate θ is in ΘI. We use examples analyzed in the literature to illustrate the gains in identification and computational tractability afforded by our method.},
+year = {2011}
+}
+
+@article{CT-2009,
+author = {Ciliberto, Federico and Tamer, Elie},
+title = {Market Structure and Multiple Equilibria in Airline Markets},
+journal = {Econometrica},
+volume = {77},
+number = {6},
+pages = {1791-1828},
+keywords = {Entry models, inference in discrete games, multiple equilibria, partial identification, airline industry, firm heterogeneity},
+doi = {10.3982/ECTA5368},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA5368},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.3982/ECTA5368},
+abstract = {We provide a practical method to estimate the payoff functions of players in complete information, static, discrete games. With respect to the empirical literature on entry games originated by Bresnahan and Reiss (1990) and Berry (1992), the main novelty of our framework is to allow for general forms of heterogeneity across players without making equilibrium selection assumptions. We allow the effects that the entry of each individual airline has on the profits of its competitors, its “competitive effects,” to differ across airlines. The identified features of the model are sets of parameters (partial identification) such that the choice probabilities predicted by the econometric model are consistent with the empirical choice probabilities estimated from the data. We apply this methodology to investigate the empirical importance of firm heterogeneity as a determinant of market structure in the U.S. airline industry. We find evidence of heterogeneity across airlines in their profit functions. The competitive effects of large airlines (American, Delta, United) are different from those of low cost carriers and Southwest. Also, the competitive effect of an airline is increasing in its airport presence, which is an important measure of observable heterogeneity in the airline industry. Then we develop a policy experiment to estimate the effect of repealing the Wright Amendment on competition in markets out of the Dallas airports. We find that repealing the Wright Amendment would increase the number of markets served out of Dallas Love.},
+year = {2009}
+}
+
+@article{CR-2017,
+author = {Chesher, Andrew and Rosen, Adam M.},
+title = {Generalized Instrumental Variable Models},
+journal = {Econometrica},
+volume = {85},
+number = {3},
+pages = {959-989},
+keywords = {Instrumental variables, endogeneity, excess heterogeneity, limited information, partial identification, random sets, incomplete models, English auctions},
+doi = {10.3982/ECTA12223},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA12223},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.3982/ECTA12223},
+abstract = {This paper develops characterizations of identified sets of structures and structural features for complete and incomplete models involving continuous or discrete variables. Multiple values of unobserved variables can be associated with particular combinations of observed variables. This can arise when there are multiple sources of heterogeneity, censored or discrete endogenous variables, or inequality restrictions on functions of observed and unobserved variables. The models generalize the class of incomplete instrumental variable (IV) models in which unobserved variables are single-valued functions of observed variables. Thus the models are referred to as generalized IV (GIV) models, but there are important cases in which instrumental variable restrictions play no significant role. Building on a definition of observational equivalence for incomplete models the development uses results from random set theory that guarantee that the characterizations deliver sharp bounds, thereby dispensing with the need for case-by-case proofs of sharpness. The use of random sets defined on the space of unobserved variables allows identification analysis under mean and quantile independence restrictions on the distributions of unobserved variables conditional on exogenous variables as well as under a full independence restriction. The results are used to develop sharp bounds on the distribution of valuations in an incomplete model of English auctions, improving on the pointwise bounds available until now. Application of many of the results of the paper requires no familiarity with random set theory.},
+year = {2017}
+}
+
+@article{BMM-2012,
+author = {Bontemps, Christian and Magnac, Thierry and Maurin, Eric},
+title = {Set Identified Linear Models},
+journal = {Econometrica},
+volume = {80},
+number = {3},
+pages = {1129-1155},
+keywords = {Partial identification, linear prediction, support function, test},
+doi = {10.3982/ECTA7637},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA7637},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.3982/ECTA7637},
+abstract = {We analyze the identification and estimation of parameters β satisfying the incomplete linear moment restrictions E(z⊤(xβ−y)) = E(z⊤u(z)), where z is a set of instruments and u(z) an unknown bounded scalar function. We first provide empirically relevant examples of such a setup. Second, we show that these conditions set identify β where the identified set B is bounded and convex. We provide a sharp characterization of the identified set not only when the number of moment conditions is equal to the number of parameters of interest, but also in the case in which the number of conditions is strictly larger than the number of parameters. We derive a necessary and sufficient condition of the validity of supernumerary restrictions which generalizes the familiar Sargan condition. Third, we provide new results on the asymptotics of analog estimates constructed from the identification results. When B is a strictly convex set, we also construct a test of the null hypothesis, β0∈B, whose size is asymptotically correct and which relies on the minimization of the support function of the set B− {β0}. Results of some Monte Carlo experiments are presented.},
+year = {2012}
+}
+
+@article{AGG-2011,
+title = "Action-Graph Games",
+journal = "Games and Economic Behavior",
+volume = "71",
+number = "1",
+pages = "141 - 173",
+year = "2011",
+note = "Special Issue In Honor of John Nash",
+issn = "0899-8256",
+doi = "https://doi.org/10.1016/j.geb.2010.10.012",
+url = "http://www.sciencedirect.com/science/article/pii/S0899825610001752",
+author = "Albert Xin Jiang and Kevin Leyton-Brown and Navin A.R. Bhat",
+keywords = "Game representations, Graphical models, Large games, Computational techniques, Nash equilibria",
+abstract = "Representing and reasoning with games becomes difficult once they involve large numbers of actions and players, because the space requirement for utility functions can grow unmanageably. Action-Graph Games (AGGs) are a fully-expressive game representation that can compactly express utility functions with structure such as context-specific independence, anonymity, and additivity. We show that AGGs can be used to compactly represent all games that are compact when represented as graphical games, symmetric games, anonymous games, congestion games, and polymatrix games, as well as games that require exponential space under all of these existing representations. We give a polynomial-time algorithm for computing a player's expected utility under an arbitrary mixed-strategy profile, and show how to use this algorithm to achieve exponential speedups of existing methods for computing sample Nash equilibria. We present results of experiments showing that using AGGs leads to a dramatic increase in the size of games accessible to computational analysis.22We gratefully acknowledge Moshe Tennenholtz for his co-authorship of a paper on Local Effect Games (Leyton-Brown and Tennenholtz, 2003), an action-centric graphical model for games that inspired our work on AGGs."
+}
+
+@article{BM-2008,
+author = {Beresteanu, Arie and Molinari, Francesca},
+title = {Asymptotic Properties for a Class of Partially Identified Models},
+journal = {Econometrica},
+volume = {76},
+number = {4},
+pages = {763-814},
+keywords = {Partial identification, confidence collections, set valued random variables, support functions},
+doi = {10.1111/j.1468-0262.2008.00859.x},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-0262.2008.00859.x},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1468-0262.2008.00859.x},
+abstract = {We propose inference procedures for partially identified population features for which the population identification region can be written as a transformation of the Aumann expectation of a properly defined set valued random variable (SVRV). An SVRV is a mapping that associates a set (rather than a real number) with each element of the sample space. Examples of population features in this class include interval-identified scalar parameters, best linear predictors with interval outcome data, and parameters of semiparametric binary models with interval regressor data. We extend the analogy principle to SVRVs and show that the sample analog estimator of the population identification region is given by a transformation of a Minkowski average of SVRVs. Using the results of the mathematics literature on SVRVs, we show that this estimator converges in probability to the population identification region with respect to the Hausdorff distance. We then show that the Hausdorff distance and the directed Hausdorff distance between the population identification region and the estimator, when properly normalized by , converge in distribution to functions of a Gaussian process whose covariance kernel depends on parameters of the population identification region. We provide consistent bootstrap procedures to approximate these limiting distributions. Using similar arguments as those applied for vector valued random variables, we develop a methodology to test assumptions about the true identification region and its subsets. We show that these results can be used to construct a confidence collection and a directed confidence collection. Those are (respectively) collection of sets that, when specified as a null hypothesis for the true value (a subset of values) of the population identification region, cannot be rejected by our tests.},
+year = {2008}
 }
