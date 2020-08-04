@@ -27,6 +27,11 @@ Bontemps, C., Magnac, T., and Maurin, E. (2012).
 \newblock Set identified linear models.
 \newblock {\em Econometrica}, 80(3):1129--1155.
 
+\bibitem[Brandt et~al., 2011]{BFH-2011}
+Brandt, F., Fischer, F., and Holzer, M. (2011).
+\newblock Equilibria of graphical games with symmetries.
+\newblock {\em Theor. Comput. Sci.}, 412:675--685.
+
 \bibitem[Chernozhukov et~al., 2018]{CCK-2018}
 Chernozhukov, V., Chetverikov, D., and Kato, K. (2018).
 \newblock {Inference on Causal and Structural Parameters using Many Moment
@@ -42,6 +47,17 @@ Chesher, A. and Rosen, A.~M. (2017).
 Ciliberto, F. and Tamer, E. (2009).
 \newblock Market structure and multiple equilibria in airline markets.
 \newblock {\em Econometrica}, 77(6):1791--1828.
+
+\bibitem[Daskalakis, 2008]{D-2008}
+Daskalakis, C. (2008).
+\newblock An efficient {PTAS} for two-strategy anonymous games.
+\newblock {\em CoRR}, abs/0812.2277.
+
+\bibitem[Daskalakis and Papadimitriou, 2008]{DP-2008}
+Daskalakis, C. and Papadimitriou, C.~H. (2008).
+\newblock Discretized multinomial distributions and nash equilibria in
+  anonymous games.
+\newblock {\em CoRR}, abs/0808.2801.
 
 \bibitem[Galichon and Henry, 2006]{GH-2006}
 Galichon, A. and Henry, M. (2006).
@@ -63,5 +79,16 @@ Kaido, H. and Santos, A. (2014).
 \newblock Asymptotically efficient estimation of models defined by convex
   moment inequalities.
 \newblock {\em Econometrica}, 82(1):387--413.
+
+\bibitem[Kalai and Vempala, 2005]{KV-200}
+Kalai, A. and Vempala, S. (2005).
+\newblock Efficient algorithms for online decision problems.
+\newblock {\em Journal of Computer and System Sciences}, 71(3):291 -- 307.
+\newblock Learning Theory 2003.
+
+\bibitem[Papadimitriou and Roughgarden, 2008]{PR-2008}
+Papadimitriou, C. and Roughgarden, T. (2008).
+\newblock Computing correlated equilibria in multi-player games.
+\newblock {\em J. ACM}, 55.
 
 \end{thebibliography}

@@ -14,3 +14,5 @@
 \contentsline {subsubsection}{\numberline {3.2.1}Identification Problem}{10}{subsubsection.3.2.1}% 
 \contentsline {subsubsection}{\numberline {3.2.2}Identification by Instrumental Variables}{11}{subsubsection.3.2.2}% 
 \contentsline {subsection}{\numberline {3.3}Identification of Statistical Characteristics for Compliers}{11}{subsection.3.3}% 
+\contentsline {subsection}{\numberline {3.4}Estimation of Average Response Functions}{13}{subsection.3.4}% 
+\contentsline {subsubsection}{\numberline {3.4.1}Local Average Response Functions}{13}{subsubsection.3.4.1}% 

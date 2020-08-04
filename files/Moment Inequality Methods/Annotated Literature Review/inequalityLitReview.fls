@@ -322,6 +322,11 @@ INPUT ./figures/BK-Fig1.png
 INPUT ./figures/BK-Fig1.png
 INPUT papers/AGG.tex
 INPUT papers/AGG.tex
+INPUT figures/AGG-Fig1.png
+INPUT ./figures/AGG-Fig1.png
+INPUT ./figures/AGG-Fig1.png
+INPUT papers/PTAS.tex
+INPUT papers/PTAS.tex
 INPUT inequalityLitReview.bbl
 INPUT inequalityLitReview.bbl
 INPUT inequalityLitReview.aux

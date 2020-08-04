@@ -5,45 +5,45 @@ The style file: apalike.bst
 Database file #1: references.bib
 Warning--can't use both author and editor fields in BT-2007
 Warning--empty journal in GH-2006
-You've used 12 entries,
+You've used 17 entries,
             1935 wiz_defined-function locations,
-            560 strings with 5500 characters,
-and the built_in function-call counts, 4918 in all, are:
-= -- 482
-> -- 176
-< -- 10
-+ -- 58
-- -- 56
-* -- 436
-:= -- 832
-add.period$ -- 36
-call.type$ -- 12
-change.case$ -- 87
-chr.to.int$ -- 12
-cite$ -- 14
-duplicate$ -- 183
-empty$ -- 358
-format.name$ -- 84
-if$ -- 982
+            591 strings with 6144 characters,
+and the built_in function-call counts, 6661 in all, are:
+= -- 654
+> -- 240
+< -- 14
++ -- 80
+- -- 76
+* -- 577
+:= -- 1147
+add.period$ -- 52
+call.type$ -- 17
+change.case$ -- 122
+chr.to.int$ -- 17
+cite$ -- 19
+duplicate$ -- 250
+empty$ -- 479
+format.name$ -- 115
+if$ -- 1320
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 13
-newline$ -- 63
-num.names$ -- 36
-pop$ -- 67
+missing$ -- 18
+newline$ -- 89
+num.names$ -- 51
+pop$ -- 87
 preamble$ -- 1
-purify$ -- 88
+purify$ -- 123
 quote$ -- 0
-skip$ -- 147
+skip$ -- 204
 stack$ -- 0
-substring$ -- 389
-swap$ -- 29
+substring$ -- 499
+swap$ -- 34
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 70
+type$ -- 100
 warning$ -- 2
-while$ -- 35
+while$ -- 47
 width$ -- 0
-write$ -- 157
+write$ -- 224
 (There were 2 warnings)

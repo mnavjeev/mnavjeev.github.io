@@ -168,8 +168,15 @@ Now go through the proof of this Theorem.
 
 \subsubsection{Local Average Response Functions}
 
-Consider the function of $(D,X)$ that is equal to $\E[Y_0 | X, D_1 > D_0]$ if $D = 0$ and is equal to $\E[Y_1 | X, D_1 > D_0]$ if $D = 1$. This function describes average treatment responses for any group of compliers defined by some value for the covariates. Borrowing from the terminology in 
+Consider the function of $(D,X)$ that is equal to $\E[Y_0 | X, D_1 > D_0]$ if $D = 0$ and is equal to $\E[Y_1 | X, D_1 > D_0]$ if $D = 1$. This function describes average treatment responses for any group of compliers defined by some value for the covariates. Refer to this function as the local average response function (LARF). Since $Z = D$ for compliers, under Assumptions~\ref{assm:abadie-2.1}.1 and \ref{assm:abadie-2.1}.2, $Z$ is ignorable for the compliers given $X$. It follows that
+\begin{align*}
+	\E[Y | X, D= 0, D_1 > D_0] &= \E[Y_0 | D_1 > D_0] \\
+	\E[Y | X, D=1, D_1 > D_0] &= \E[Y_1 | X, D_1 > D_0] \\
+	\E[Y | X, D=1, D_1 > D_0] - \E[Y|X, D= 0, D_1 > D_0] &= \E[Y_1 - Y_0|X, D_1 > D_0]
+\end{align*}
+So $\E[Y | X, D_1 > D_0]$ is the LARF. Important special case arises when $\P(D_0 = 0 | X) = 1$. This happens in some randomized experiments.
 
+The face that the conditional expectation of $Y$ given $D$ and $X$ holds for compliers has an interpretation as an average treatment response function would not be very useful in the absence of Theorem~\ref{thm:abadie-3.1}. 
 
 
 
