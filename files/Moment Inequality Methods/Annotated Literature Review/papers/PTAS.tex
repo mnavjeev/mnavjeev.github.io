@@ -9,5 +9,20 @@
 
 Recently been established that computing a Nash equilibrium is an intractable problem, even in the case of two-player games. In view of this hardness result, research has been directed to the computation of approximate Nash equilibria. These are action profiles in which no player has more than some small $\eps$ incentive to change her strategy. 
 
-Despite much research in this direction, only constant $\eps$'s can be achieved in polynomial time. Yet, an approximate Nash equilibrium in which the players have regret equal to a significant fraction of their payoffs is not an attractive solution concept. On the contrary, if $\eps$ is small, then maybe there is a switching cost. So is there a Polynomial Time Approximation Schme for approximate Nash equilibria?
+Despite much research in this direction, only constant $\eps$'s can be achieved in polynomial time. Yet, an approximate Nash equilibrium in which the players have regret equal to a significant fraction of their payoffs is not an attractive solution concept. On the contrary, if $\eps$ is small, then maybe there is a switching cost. So is there a \emph{Polynomial Time Approximation Scheme} for approximate Nash equilibria?
 
+Question remains open for general game, but there are special classes known to be tractable. For example, it is well known that zero-sum games are solvable in polynomial time by Linear Programming. Trabtability result has been extended to a generalization of zero-sum games, called \emph{two-player low-rank games}. In this case there is a PTAS for approximate Nash Equilibria. \citet{PR-2005} show that symmetric multi-player games with (about logarithmically) few strategies per players can be solved exactly in polynomial times. 
+
+This paper considers another important class of games, called \emph{anonymous}. These are games in which each player's utility function does not differentiate among the identities of the other players. That is, the payoff of each player depends only on the strategy that she chooses and the number of other players choosing each strategy. These capture important aspects of auctions and markets.
+
+In this paper, present a more effecient alogrithm for 2-strategy anonymous games, which runs in time $\poly(n)\cdot(1/\eps)^{O(1/\eps^2)}$, improved running time is due to a novel understanding of certain structural of approximate Nash equilibria. In particular, show that for any integer $k$, exists an $\eps$-approximate Nash equilibrium, with $\eps = O(1/k)$ in which
+\begin{enumerate}
+	\item either at most $k^3 = O((1/\eps)^3)$ players used randomized strategies and their strategies are integer multiples of $1/k^2$\footnote{A mixed strategy is a number between 0 and 1.}
+	\item or all players chose the same mixed strategy which is also an integer multiple of $\frac{1}{kn}$.
+\end{enumerate}
+
+To derive the above characterization, study mixed strategies in the proximity of a Nash equilibrium. Establish that there always exists a nearby mixed strategy profile which of the types above and satisfies the Nash equilbrium conditions to within an additive $\eps$,thus corresponding to an $\eps$-approximate eqm. 
+
+\subsubsection{Overview of Techniques}
+
+Track down the effect in the Nash equilibrium resulting by replacing a mixed Nash equilibrium $(p_1, \dots, p_n) \in [0,1]^n$ by another strategy profile $(q_1, \dots, q_n)\in [0,1]^n$ where the probabilities $p_i$ and $q_i$ correspond to the mixed strategy of player $i$ in the two-strategy profiles. It is not hard to see that the approximation achieved by the strategy profile $(q_1, \dots, q_n)$ can be, loosely speaking, bounded by the total variation distance between the distribution of the sum of $n$ Bernoulli random variables with expectation $p_1, \dots, p_n$ and another sum of Bernoulli random variables with expectations $q_1, \dots, q_n$. Hence, to establish the structural property above, it is suffecient to show that, given any set of probability values $(p_1, \dots, p_n)$ there is another set $(q_1, \dots, q_n)$ which satisfies either of the properties above. 

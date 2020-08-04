@@ -91,4 +91,11 @@ Papadimitriou, C. and Roughgarden, T. (2008).
 \newblock Computing correlated equilibria in multi-player games.
 \newblock {\em J. ACM}, 55.
 
+\bibitem[Papadimitriou and Roughgarden, 2005]{PR-2005}
+Papadimitriou, C.~H. and Roughgarden, T. (2005).
+\newblock Computing equilibria in multi-player games.
+\newblock In {\em Proceedings of the Sixteenth Annual ACM-SIAM Symposium on
+  Discrete Algorithms}, SODA ’05, page 82–91, USA. Society for Industrial
+  and Applied Mathematics.
+
 \end{thebibliography}

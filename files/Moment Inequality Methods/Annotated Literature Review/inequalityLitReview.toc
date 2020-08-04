@@ -53,3 +53,4 @@
 \contentsline {subsubsection}{\numberline {5.2.2}Size of an AGG-\(\emptyset \) Representation}{39}{subsubsection.5.2.2}% 
 \contentsline {section}{\numberline {6}A Effecient PTAS for Two-Strategy Anonymous Games \textit {\relax \fontsize {9}{11}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \topsep \z@ \parsep \parskip \itemsep \z@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Constantinos Daskalakis (ArXiv, 2008)}}{42}{section.6}% 
 \contentsline {subsection}{\numberline {6.1}Introduction}{42}{subsection.6.1}% 
+\contentsline {subsubsection}{\numberline {6.1.1}Overview of Techniques}{42}{subsubsection.6.1.1}% 
