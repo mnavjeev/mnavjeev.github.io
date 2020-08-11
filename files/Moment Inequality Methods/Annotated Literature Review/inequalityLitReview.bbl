@@ -53,6 +53,12 @@ Daskalakis, C. (2008).
 \newblock An efficient {PTAS} for two-strategy anonymous games.
 \newblock {\em CoRR}, abs/0812.2277.
 
+\bibitem[Daskalakis and Papadimitriou, 2007]{DP-2007}
+Daskalakis, C. and Papadimitriou, C. (2007).
+\newblock Computing equilibria in anonymous games.
+\newblock In {\em Proceedings of the 48th Annual IEEE Symposium on Foundations
+  of Computer Science}, FOCS ’07, page 83–93, USA. IEEE Computer Society.
+
 \bibitem[Daskalakis and Papadimitriou, 2008]{DP-2008}
 Daskalakis, C. and Papadimitriou, C.~H. (2008).
 \newblock Discretized multinomial distributions and nash equilibria in
@@ -97,5 +103,10 @@ Papadimitriou, C.~H. and Roughgarden, T. (2005).
 \newblock In {\em Proceedings of the Sixteenth Annual ACM-SIAM Symposium on
   Discrete Algorithms}, SODA ’05, page 82–91, USA. Society for Industrial
   and Applied Mathematics.
+
+\bibitem[Röllin, 2007]{rollin2007}
+Röllin, A. (2007).
+\newblock Translated poisson approximation using exchangeable pair couplings.
+\newblock {\em Ann. Appl. Probab.}, 17(5-6):1596--1614.
 
 \end{thebibliography}

@@ -39,6 +39,10 @@
 \BOOKMARK [2][-]{subsection.5.2}{Action Graph Games}{section.5}% 39
 \BOOKMARK [3][-]{subsubsection.5.2.1}{Basic Action Graph Games}{subsection.5.2}% 40
 \BOOKMARK [3][-]{subsubsection.5.2.2}{Size of an AGG- Representation}{subsection.5.2}% 41
-\BOOKMARK [1][-]{section.6}{A Effecient PTAS for Two-Strategy Anonymous Games Constantinos Daskalakis \(ArXiv, 2008\)}{}% 42
+\BOOKMARK [1][-]{section.6}{An Efficient PTAS for Two-Strategy Anonymous Games Constantinos Daskalakis \(ArXiv, 2008\)}{}% 42
 \BOOKMARK [2][-]{subsection.6.1}{Introduction}{section.6}% 43
 \BOOKMARK [3][-]{subsubsection.6.1.1}{Overview of Techniques}{subsection.6.1}% 44
+\BOOKMARK [2][-]{subsection.6.2}{Definitions and Notations}{section.6}% 45
+\BOOKMARK [2][-]{subsection.6.3}{Statement of Results}{section.6}% 46
+\BOOKMARK [3][-]{subsubsection.6.3.1}{A Probabilistic Lemma}{subsection.6.3}% 47
+\BOOKMARK [3][-]{subsubsection.6.3.2}{Efficient PTAS}{subsection.6.3}% 48

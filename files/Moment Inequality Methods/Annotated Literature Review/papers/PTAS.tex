@@ -1,9 +1,9 @@
 %!TEX root = /Users/manunavjeevan/Documents/GitHub/mnavjeev.github.io/files/Moment Inequality Methods/Annotated Literature Review/inequalityLitReview.tex
 
 \newpage
-\section{A Effecient PTAS for Two-Strategy Anonymous Games \textit{\small Constantinos Daskalakis (ArXiv, 2008)}}
+\section{An Efficient PTAS for Two-Strategy Anonymous Games \textit{\small Constantinos Daskalakis (ArXiv, 2008)}}
 
-\citet{D-2008} was put on ArXiv in 2008. Much of the work was done while Daskalakis was a grad student at UC Berkeley. It can be found online \href{https://arxiv.org/abs/0812.2277}{here}. The paper presents a novel polynomial time approzimation scheme for two strategy anonymous games. 
+\citet{D-2008} was put on ArXiv in 2008. Much of the work was done while Daskalakis was a grad student at UC Berkeley. It can be found online \href{https://arxiv.org/abs/0812.2277}{here}. The paper presents a novel polynomial time approximation scheme for two strategy anonymous games. 
 
 \subsection{Introduction}
 
@@ -11,18 +11,101 @@ Recently been established that computing a Nash equilibrium is an intractable pr
 
 Despite much research in this direction, only constant $\eps$'s can be achieved in polynomial time. Yet, an approximate Nash equilibrium in which the players have regret equal to a significant fraction of their payoffs is not an attractive solution concept. On the contrary, if $\eps$ is small, then maybe there is a switching cost. So is there a \emph{Polynomial Time Approximation Scheme} for approximate Nash equilibria?
 
-Question remains open for general game, but there are special classes known to be tractable. For example, it is well known that zero-sum games are solvable in polynomial time by Linear Programming. Trabtability result has been extended to a generalization of zero-sum games, called \emph{two-player low-rank games}. In this case there is a PTAS for approximate Nash Equilibria. \citet{PR-2005} show that symmetric multi-player games with (about logarithmically) few strategies per players can be solved exactly in polynomial times. 
+Question remains open for general game, but there are special classes known to be tractable. For example, it is well known that zero-sum games are solvable in polynomial time by Linear Programming. Tractability result has been extended to a generalization of zero-sum games, called \emph{two-player low-rank games}. In this case there is a PTAS for approximate Nash Equilibria. \citet{PR-2005} show that symmetric multi-player games with (about logarithmically) few strategies per players can be solved exactly in polynomial times. 
 
 This paper considers another important class of games, called \emph{anonymous}. These are games in which each player's utility function does not differentiate among the identities of the other players. That is, the payoff of each player depends only on the strategy that she chooses and the number of other players choosing each strategy. These capture important aspects of auctions and markets.
 
-In this paper, present a more effecient alogrithm for 2-strategy anonymous games, which runs in time $\poly(n)\cdot(1/\eps)^{O(1/\eps^2)}$, improved running time is due to a novel understanding of certain structural of approximate Nash equilibria. In particular, show that for any integer $k$, exists an $\eps$-approximate Nash equilibrium, with $\eps = O(1/k)$ in which
+In this paper, present a more efficient algorithm for 2-strategy anonymous games, which runs in time $\poly(n)\cdot(1/\eps)^{O(1/\eps^2)}$, improved running time is due to a novel understanding of certain structural of approximate Nash equilibria. In particular, show that for any integer $k$, exists an $\eps$-approximate Nash equilibrium, with $\eps = O(1/k)$ in which
 \begin{enumerate}
 	\item either at most $k^3 = O((1/\eps)^3)$ players used randomized strategies and their strategies are integer multiples of $1/k^2$\footnote{A mixed strategy is a number between 0 and 1.}
 	\item or all players chose the same mixed strategy which is also an integer multiple of $\frac{1}{kn}$.
 \end{enumerate}
 
-To derive the above characterization, study mixed strategies in the proximity of a Nash equilibrium. Establish that there always exists a nearby mixed strategy profile which of the types above and satisfies the Nash equilbrium conditions to within an additive $\eps$,thus corresponding to an $\eps$-approximate eqm. 
+To derive the above characterization, study mixed strategies in the proximity of a Nash equilibrium. Establish that there always exists a nearby mixed strategy profile which of the types above and satisfies the Nash equilibrium conditions to within an additive $\eps$,thus corresponding to an $\eps$-approximate eqm. 
 
 \subsubsection{Overview of Techniques}
 
-Track down the effect in the Nash equilibrium resulting by replacing a mixed Nash equilibrium $(p_1, \dots, p_n) \in [0,1]^n$ by another strategy profile $(q_1, \dots, q_n)\in [0,1]^n$ where the probabilities $p_i$ and $q_i$ correspond to the mixed strategy of player $i$ in the two-strategy profiles. It is not hard to see that the approximation achieved by the strategy profile $(q_1, \dots, q_n)$ can be, loosely speaking, bounded by the total variation distance between the distribution of the sum of $n$ Bernoulli random variables with expectation $p_1, \dots, p_n$ and another sum of Bernoulli random variables with expectations $q_1, \dots, q_n$. Hence, to establish the structural property above, it is suffecient to show that, given any set of probability values $(p_1, \dots, p_n)$ there is another set $(q_1, \dots, q_n)$ which satisfies either of the properties above. 
+Track down the effect in the Nash equilibrium resulting by replacing a mixed Nash equilibrium $(p_1, \dots, p_n) \in [0,1]^n$ by another strategy profile $(q_1, \dots, q_n)\in [0,1]^n$ where the probabilities $p_i$ and $q_i$ correspond to the mixed strategy of player $i$ in the two-strategy profiles. It is not hard to see that the approximation achieved by the strategy profile $(q_1, \dots, q_n)$ can be, loosely speaking, bounded by the total variation distance between the distribution of the sum of $n$ Bernoulli random variables with expectation $p_1, \dots, p_n$ and another sum of Bernoulli random variables with expectations $q_1, \dots, q_n$\footnote{The total variation distance, $\delta(\cdot)$ between two measures $P$ and $Q$ defined over the same $\sigma$-algebra, $\calB$, is given \[\delta(P,Q) = \sup_{B\in\calB} |P(B)-Q(B)|\]}. Hence, to establish the structural property above, it is sufficient to show that, given any set of probability values $(p_1, \dots, p_n)$ there is another set $(q_1, \dots, q_n)$ which satisfies either of the properties above and is such that he total variation distance between the two sums of Bernoulli random variables with expectations $\{p_i\}$ and $\{q_i\}$ respectively is at most $\eps$.
+
+To give some insight into the construction of the set $\{q_i\}_i$, consider the following scenarios for an integer $k$:
+\begin{enumerate}
+	\item at least $k^3$ of the $p_i$'s fall in the set $[1/k, 1 - 1/k]$ and the others are either 0 or 1 
+	\item at most $k^3$ of the $p_i$'s fall into the set $[1/k, 1- 1/k]$ and the others are either 0 or 1
+\end{enumerate}
+Consider Case 1 first. Reasonable to expect, by the Central Limit Theorem, or finitary versions thereof, that the sum of at least $k^3$ Bernoulli random variables, with expectations from the set $[1/k, 1-1/k]$ is close in total variation distance to a Normal distribution, with the appropriate mean and variance, and, hence, to a Binomial distribution which approximates that normal distribution. In a later section, show that this is the case, even if only allow the probability of the Binomial distribution to be an integer multiple of $1/kn$. So, the sum of the original Bernoulli random variables with expectations from the set $[1/k, 1- 1/k]$ can be approximated by another set of Bernoulli random variables which all share the same mean, which , moreover, is an integer multiple of $1/kn$. Hence, an approximate equilibrium satisfying the second property (far above) can be defined. 
+
+In the case 2 directly above, approximating a normal distribution is not tight enough to give overall total variation distance of $O(1/k)$. Resort instead to the following structural result shown in \citet{DP-2007}: Given any set of Bernoulli random variables with expectations $p_1, \dots, p_n$, there is a way to round the probabilities to multiples of $1/k^2$, for any $k$, so that the distribution of the sum of these $n$ variables is affected by an additive $O(1/k)$ in total variation distance. So an approximate eqm satisfying property 1 far above can be defined. 
+
+\subsection{Definitions and Notations}
+
+A game has $n$ players, $1, \dots, n$ and $t$ strategies, $1, 2, \dots, t$ available to them, so that each player gets some payoff for every selection of strategies by her and the other players. The game is called \emph{anonymous} if the payoff of each player depends on her strategy and only the \textbf{number}, but not the identities of, the other players who choose each of the $t$ strategies. 
+
+This paper studies two-strategy anonymous games. In these games, the payoff function of each player $i$ is specified by giving $u_1^i, u_2^i: \{0,1,\dots, n-1\}\to [0,1]\footnote{In the literature on Nash approximation, utilities are usually normalized in this way so that the approximation error is additive}$ so that $u_s^i(m)$ is the payoff of $i$ if she chooses strategy $s$ and $m$ other players choose strategy $2$. Hence, the game is \emph{succinctly representable}, in the sense that its representation requires $2n^2$ numbers, as opposed to the (exponential in the number of players) \(nt^n\) numbers required for general games. \citet{PR-2005} discusses an argument that succinct games are the only multi-player games that are computationally meaningful.
+
+A \emph{mixed-strategy profile} is a set of $n$ probability values $p_1,p_2, \dots, p_n\in [0,1]$ corresponding to the probability with which each player chooses strategy 2. A mixed strategy profile is an $\eps$-Nash equilibrium if, for all $i \in [n]$, the following hold:
+\begin{align*}
+	\E_{\{p_j\}_{j\neq i}}[u_1^i(x)] > \E_{\{p_j\}_{j\neq i}}[u_2^i(x)] + \eps &\implies p_i = 0 \\
+	\E_{\{p_j\}_{j\neq i}}[u_2^i(x)] > \E_{\{p_j\}_{j\neq i}}[u_1^i(x)] + \eps &\implies p_i = 1
+\end{align*}
+where for the purposes of the expectation $x$ is drawn from ${0,\dots, n-1}$ by tossing $n-1$ independent coins with probabilities $\{p_j\}_{j\neq i}$. That is, a mixed strategy profile is an $\eps$-Nash equilibrium if every player is only randomizing among strategies which, when played against the mixed strategies of other players, achieve expected payoff within (additive) $\eps$ from the expected payoff achieved by the best strategy. 
+
+Notion of a $\eps$-Nash equilibrium is closely related to the notion of an $\eps$-approximate Nash equilibrium, defined as any mixed strategy profile in which no player can improve his expected payoff by more than $\eps$ by changing to a different mixed strategy. It is easy to see that any $\eps$-Nash equilibrium is an $\eps$-approximate equilibrium, but that the opposite implication is not true in general. This paper considers the stronger notion of $\eps$-Nash equilibria. 
+
+Anonymous games can be extended to ones in which there is also a finite number of $\emph{types}$ of players, and utilities depend on how many players of each type play each of the available strategies. Algorithm can be easily generalized to this framework. Conclude this section with a few more definitions. Define the \emph{total variation distance} between two distributions $\P$ and $\mathbb{Q}$ supported on a finite $\sigma$-algebra, $\calA$ as follows 
+\[\|\P; \mathbb{Q}\| := \frac{1}{2}\sum_{\alpha \in \calA} \left|\P(\alpha) - \mathbb{Q}(\alpha)\right|\]
+
+Also define a \emph{Translated Poisson Distribution} as defined in \cite{rollin2007}.
+\begin{definition}[Translated Poisson Distribution]
+		\label{def:PTAS-2.1}
+		Say that an in integer random variable $Y$ has a \underline{Translated Poisson Distribution} with parameters $\mu$ and $\sigma^2$ and write 
+		\[\calL(Y) = TP(\mu, \sigma^2)\]
+		if $\calL(Y - \lfloor\mu -\sigma^2\rfloor) = \Poisson(\sigma^2 + \{\mu - \sigma^2\})$ where $\{\mu - \sigma^2\}$ represents the fractional part of $\mu - \sigma^2$.
+\end{definition}
+Finally, for a positive integer $\ell$, denote $[\ell] := \{1,\dots, \ell\}$.
+
+\subsection{Statement of Results}
+\subsubsection{A Probabilistic Lemma} 
+
+\begin{theorem}
+	\label{thm:PTAS-3.1}
+	Let $\{p_i\}_{i=1}^n$ be arbitrary probability values $p_i \in [0,1]$ for all $i= 1,\dots, n$. Let $\{X_i\}_{i=1}^n$ be independent indicator random variables that $X_i$ has expectations $\E[X_i] = p_i$ and let $k$ be a positive integer. Then there exists another set of probabilities $\{q_i\}_{i=1}^n$, $q_i \in [0,1]$, $i = 1, \dots, n$, which satisfy the following properties:
+	\begin{enumerate}
+		\item If $\{Y_i\}_{i=1}^n$ are independent indicator random variables such that $Y_i$ has expectation $q_i$ then 
+		\label{item:PTAS-1}
+		\begin{align}
+			\label{eq:PTAS-1}
+		    \left\|\sum_{i}X_i;\sum_i Y_i\right\| &= O(1/k) \\
+		    \label{eq:PTAS-2}
+		    \text{ and, for all $j = 1,\dots, n$ }\left\|\sum_{i\neq j }X_i ; \sum_{i \neq j} Y_i \right\| &= O(1/k)
+		\end{align}
+		
+		\item The set $\{q_i\}_{i=1}^n$ is such that 
+		\label{item:PTAS-2}
+		\begin{enumerate}
+			\item If $p_i = 0$ then $q_i = 0$ \label{item:PTAS-2a}
+			\item One of the following is true: \label{item:PTAS-2b}
+			\begin{enumerate}
+				\item There exists $S\subseteq [n]$ and some value $q$ which is an integer multiple of $\frac{1}{kn}$ such that, for all $i\not\in S, q_i \in \{0,1\}$ and, for all $i \in S$ $q_i = q$.
+				\label{item:PTAS-2bi}
+				\item or, there exists $S \subset N$, $|S| < k^3$ such that, for all $i\not\in S$, $q_i \in \{0,1\}$, and, for all $i \in S$, $q_i$ is an integer multiple of $\frac{1}{k^2}$
+				\label{item:PTAS-2bii}
+			\end{enumerate}
+		\end{enumerate}
+	\end{enumerate}
+\end{theorem}
+\subsubsection{Efficient PTAS}
+Main result follows from Theorem~\ref{thm:PTAS-3.1}. Proof is based on the following observation. If we replace a strategy profile $(p_i)_{i=1}^n$ that is a Nash equilibrium, by the nearby strategy profile $(q_i)_{i=1}^n$ specified by Theorem~\ref{thm:PTAS-3.1}, the the change in each players utility is bounded by the total variation distance between the number of players playing their second strategy in the two strategy profiles. It follows that the search for approximate Nash equilibria can be restricted to the strategy profiles of the form \ref{item:PTAS-2bi} or \ref{item:PTAS-2bii} as specified in Theorem~\ref{thm:PTAS-3.1}. This search can be done efficiently with dynamic programming. 
+
+\begin{theorem}
+	\label{thm:PTAS-3.2}
+	For any $\eps < 1$, an $\eps$-Nash equilibrium of a two-strategy anonymous game with $n$ players can be computed in time 
+	\[\poly(n)\cdot U \cdot (1/\eps)^{O(1/\eps^2)}\]
+	where $U$ is the number of bits required to represent a payoff value of the game.
+\end{theorem}
+\begin{proof}
+	Consider a mixed Nash equilibrium $(p_1, \dots, p_n)$ of the game. Claim that any mixed strategy profile $(q_1, \dots, q_n)$ satisfying \ref{item:PTAS-1} and \ref{item:PTAS-2} of Theorem~\ref{thm:PTAS-3.1} is a $O(1/k)$-Nash equilibrium. Indeed, for every player $i \in [n]$ and every pure strategy $s\in\{1,2\}$ for that player, let us track down the change in expected utility of the player for playing strategy $s$ when the distribution of $\{0,\dots, n-1\}$ defined by the probability values $\{p_j\}_{j\neq i}$ is replaced by the distribution defined by the probability values $\{q_j\}_{j\neq i}$. It is not hard to see that the absolute change is bounded by the total variation distance between the distributions of the random variables $\sum_{j\neq i} X_i$ and $\sum_{j\neq i}Y_i$ where $\{X_j\}_{j\neq i}$ are independent Bernoulli random variables with expectations $\E[X_j] = q_j$ and $\{Y_j\}_{j\neq i}$ are independent Bernoulli random variables with $\E[Y_j] = q_j$, and this total variation distance is $O(1/k)$ by Theorem~\ref{thm:PTAS-3.1}. This holds for every choice of $i$ and $s$, since the $q_i$'s' also satisfy property~\ref{item:PTAS-2a} of Theorem~\ref{thm:PTAS-3.1} we have that the $q_i$'s constitute an $O(1/k)$-Nash equilibrium of the game. If we take $k = O(1/\eps)$ this is an $\eps$-Nash equilibrium.
+
+	From the previous discussion, it follows that there exists a mixed strategy profile $\{q_i\}_i$ which is of the very special kind described by property \ref{item:PTAS-2b} in the statement of Theorem~\ref{thm:PTAS-3.1} and that constitutes an $\eps$-Nash equilibrium of the game.
+\end{proof}
+
+ 

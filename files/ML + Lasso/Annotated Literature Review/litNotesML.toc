@@ -44,3 +44,10 @@
 \contentsline {paragraph}{First Stage: Treatment Network}{35}{paragraph*.10}% 
 \contentsline {paragraph}{Second Stage: Outcome Network}{35}{paragraph*.11}% 
 \contentsline {subsubsection}{\numberline {6.3.1}Optimization for DeepIV Networks}{35}{subsubsection.6.3.1}% 
+\contentsline {section}{\numberline {7}Causal Forests \text {\relax \fontsize {9}{11}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \topsep \z@ \parsep \parskip \itemsep \z@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Stegan Wager and Susan Athey (JASA, 2018)}}{37}{section.7}% 
+\contentsline {subsection}{\numberline {7.1}Introduction}{37}{subsection.7.1}% 
+\contentsline {subsection}{\numberline {7.2}Causal Forests}{37}{subsection.7.2}% 
+\contentsline {subsubsection}{\numberline {7.2.1}Treatment Estimation with Unconfoundedness}{37}{subsubsection.7.2.1}% 
+\contentsline {subsubsection}{\numberline {7.2.2}From Regression Trees to Causal Forests}{38}{subsubsection.7.2.2}% 
+\contentsline {subsubsection}{\numberline {7.2.3}Asymptotic Inference with Causal Forests}{38}{subsubsection.7.2.3}% 
+\contentsline {subsubsection}{\numberline {7.2.4}Honest Trees and Forests}{39}{subsubsection.7.2.4}% 
