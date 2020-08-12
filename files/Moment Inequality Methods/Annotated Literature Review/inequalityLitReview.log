@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  10 AUG 2020 19:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  11 AUG 2020 16:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1430,10 +1430,10 @@ fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texmf-d
 ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2019/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2019/
 texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on inequalityLitReview.pdf (46 pages, 1158407 bytes).
+Output written on inequalityLitReview.pdf (46 pages, 1159584 bytes).
 PDF statistics:
- 1114 PDF objects out of 1200 (max. 8388607)
- 1011 compressed objects within 11 object streams
+ 1119 PDF objects out of 1200 (max. 8388607)
+ 1016 compressed objects within 11 object streams
  334 named destinations out of 1000 (max. 500000)
  410 words of extra memory for PDF output out of 10000 (max. 10000000)
 
