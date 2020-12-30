@@ -26,9 +26,9 @@ h1 {
   color: #2774AE;
   font-family: latobold;
   padding-top: 4%;
-  margin: 0;
   font-size: 36px;
   line-height: 36px;
+  margin-bottom: -1%;
 }
 
 h2 {
@@ -40,20 +40,20 @@ body {
   font-family: latolight;
   line-height: 1.6em;
   font-size: 14px;
-  max-width: 700px
+  max-width: 700px;
+  margin: auto;
 }
 
 header {
   text-align: left;
   margin-top: 5%;
-  margin: auto;
   background-color: inherit;
   margin-left: 3%;
   max-width: 700px
 }
 
 main {
-  margin: auto;
+  max-width: 700px;
   margin-left: 3%;
 }
 
@@ -155,7 +155,8 @@ img {
     font-family: latolight;
     line-height: 3.8vw;
     font-size: 2vw;
-    max-width: 700px
+    max-width: 700px;
+	margin: auto;
   }
 
   header {
