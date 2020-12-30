@@ -178,8 +178,24 @@ So $\E[Y | X, D_1 > D_0]$ is the LARF. Important special case arises when $\P(D_
 
 The face that the conditional expectation of $Y$ given $D$ and $X$ holds for compliers has an interpretation as an average treatment response function would not be very useful in the absence of Theorem~\ref{thm:abadie-3.1}. 
 
+\subsubsection{Estimation}
 
+Section describes two ways to learn about the LARF: (i) estimate a parameterization of the LARF by Least Squares, (ii) Specify a parametric distribution for $P(Y|X,D,D_1>D_0)$ and estimate the parameters of the LARF by a Maximum Likelihood. Since identification does not depend on these parametric specifications have an appealing interpretations under misspecification of the parameterization in (i) or (ii). Through this $W = (Y,D,X,Z)$ and $\{w_i\}_{i=1}^n$ is a sample of realizations of $W$. 
 
+\paragraph{Least Squares}
+
+Suppose that the LARF belongs to some class of parametric functions $\mathcal{H} = \{h(D,X;\theta): \theta \in \Theta \subset \SR^m\}$ in the Lebesgue space of square-integrable functions. Let $\theta_0$ be the vector of parameters such that $\E[Y|X,D,D_1> D_0] = h(D,X;\theta)$. Then
+\begin{equation}
+	\label{eq:abdaie-5}
+	\begin{split}
+		\theta_0 &= \arg\min_{\theta \in \Theta} \E\left[(Y-h(D,X;\theta))^2|D_1 > D_0\right] \\
+		&= \arg\min_{\theta\in\Theta}\E\left[\kappa(Y-h(D,X;\theta))^2\right]
+	\end{split}
+\end{equation}
+Under functional form misspecification (LARF does not belong to $\calH$), $\theta_0$ are the parameters of the best least squares approximation from $\calH$ to $\E[Y|D,X,D_1 > D_0]$:
+\begin{equation*}
+	\theta_0 = \arg\min_{\theta\in\Theta} \E\left[\left(\E[Y|D,X,D_1 > D_0] - h(D,X;\theta)\right)^2\right]
+\end{equation*}
 
 
 

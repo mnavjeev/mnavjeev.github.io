@@ -16,3 +16,5 @@
 \contentsline {subsection}{\numberline {3.3}Identification of Statistical Characteristics for Compliers}{11}{subsection.3.3}% 
 \contentsline {subsection}{\numberline {3.4}Estimation of Average Response Functions}{13}{subsection.3.4}% 
 \contentsline {subsubsection}{\numberline {3.4.1}Local Average Response Functions}{13}{subsubsection.3.4.1}% 
+\contentsline {subsubsection}{\numberline {3.4.2}Estimation}{14}{subsubsection.3.4.2}% 
+\contentsline {paragraph}{Least Squares}{14}{paragraph*.1}% 
