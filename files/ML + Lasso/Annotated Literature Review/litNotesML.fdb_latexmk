@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1597019687 "litNotesML.tex" "litNotesML.pdf" "litNotesML" 1597019689
-  "/dev/null" 1597019689 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1609654439 "litNotesML.tex" "litNotesML.pdf" "litNotesML" 1609654441
+  "/dev/null" 1609654440 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/jknappen/ec/tcrm0500.tfm" 1136768653 1536 b3387106d9afecbfe14bde2de6eadf47 ""
@@ -204,11 +204,12 @@
   "Figures/DLNPR-Fig2.png" 1592517419 69947 891e5e17dc011a2b1ce6cc9f21775870 ""
   "Figures/grf/grfAlgo1.png" 1589496570 265174 085ee01014d7c135cf71fbaa50f9eff5 ""
   "Figures/grf/grfAlgo2.png" 1589496585 232834 792439dbbb1eacb4d6b929fddde94daa ""
-  "litNotesML.aux" 1597019689 20026 9be8a0e9196ded34f97f90dbbfa6665b "pdflatex"
-  "litNotesML.out" 1597019689 4079 d2a627a2f8b2262bca29f80fcd6933ee "pdflatex"
-  "litNotesML.tex" 1596677788 5332 df76bb70d9af28f76c98e4abd92aa96f ""
-  "litNotesML.toc" 1597019689 8052 bfcb8389ab890ce09784d517ea3d5cd1 "pdflatex"
-  "papers/causalforests.tex" 1597019687 10291 eaad6f24e76f4159aea02640afca8b9d ""
+  "calpha.tex" 1609654439 241 0916d20f791c58d137296942c6952c0b ""
+  "litNotesML.aux" 1609654441 20558 a9d542c98aa8ab55c0e2797b77b43029 "pdflatex"
+  "litNotesML.out" 1609654441 4170 4efd0ea49cbef50349eb3450f5b282e6 "pdflatex"
+  "litNotesML.tex" 1609654353 5360 123410c918c1f9176cf48d5b6a9a8237 ""
+  "litNotesML.toc" 1609654441 8542 6a7cbbb7be9e1d66069b609472597233 "pdflatex"
+  "papers/causalforests.tex" 1597083603 10295 2ee6f40f410c54c7aec841c4505040ac ""
   "papers/cck17.tex" 1594159835 14701 524379417e3e68423e19df297295994d ""
   "papers/deepIV.tex" 1594845450 9296 95fac28d34740b3c922a9e9cb1f617f9 ""
   "papers/dl_npr.tex" 1592970296 24754 9397ba4eca89b577ab02ab879dfb5127 ""
@@ -216,8 +217,8 @@
   "papers/sh_neural.tex" 1593138486 27521 5d47d0f6bb77436b0e4f84857929106f ""
   "papers/spca.tex" 1596667525 10261 0c7f12a5625bce38bf7d1735cc8bf3ac ""
   (generated)
-  "litNotesML.log"
   "litNotesML.out"
-  "litNotesML.aux"
-  "litNotesML.pdf"
   "litNotesML.toc"
+  "litNotesML.pdf"
+  "litNotesML.log"
+  "litNotesML.aux"
