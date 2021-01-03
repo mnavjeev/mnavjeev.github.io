@@ -52,3 +52,4 @@
 \contentsline {subsubsection}{\numberline {7.2.3}Asymptotic Inference with Causal Forests}{38}{subsubsection.7.2.3}% 
 \contentsline {subsubsection}{\numberline {7.2.4}Honest Trees and Forests}{39}{subsubsection.7.2.4}% 
 \contentsline {section}{\numberline {8}C-alpha Tests and Their Use {\relax \fontsize {9}{11}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \topsep \z@ \parsep \parskip \itemsep \z@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Jerzy Neyman, (IJS, 1979)}}{40}{section.8}% 
+\contentsline {subsection}{\numberline {8.1}General Idea of C-alpha Tests}{40}{subsection.8.1}% 

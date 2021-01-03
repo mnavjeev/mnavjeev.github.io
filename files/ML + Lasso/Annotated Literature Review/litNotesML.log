@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  2 JAN 2021 22:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  2 JAN 2021 22:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1098,23 +1098,23 @@ LaTeX Font Info:    Try loading font information for U+eus on input line 8.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
 ) [3] [4] [5]
-<Figures/grf/grfAlgo1.png, id=325, 765.86125pt x 467.7475pt>
+<Figures/grf/grfAlgo1.png, id=330, 765.86125pt x 467.7475pt>
 File: Figures/grf/grfAlgo1.png Graphic file (type png)
 <use Figures/grf/grfAlgo1.png>
 Package pdftex.def Info: Figures/grf/grfAlgo1.png  used on input line 138.
 (pdftex.def)             Requested size: 223.13412pt x 128.03499pt.
-<Figures/grf/grfAlgo2.png, id=327, 763.85374pt x 420.57124pt>
+<Figures/grf/grfAlgo2.png, id=332, 763.85374pt x 420.57124pt>
 File: Figures/grf/grfAlgo2.png Graphic file (type png)
 <use Figures/grf/grfAlgo2.png>
 Package pdftex.def Info: Figures/grf/grfAlgo2.png  used on input line 141.
 (pdftex.def)             Requested size: 223.13202pt x 128.03339pt.
  [6 <./Figures/grf/grfAlgo1.png> <./Figures/grf/grfAlgo2.png>] [7] [8] [9]) [10] (./papers/dl_npr.tex [11] [12] [13] [14]
-<Figures/DLNPR-Fig1.png, id=442, 1001.7425pt x 915.42pt>
+<Figures/DLNPR-Fig1.png, id=447, 1001.7425pt x 915.42pt>
 File: Figures/DLNPR-Fig1.png Graphic file (type png)
 <use Figures/DLNPR-Fig1.png>
 Package pdftex.def Info: Figures/DLNPR-Fig1.png  used on input line 120.
 (pdftex.def)             Requested size: 352.31625pt x 321.95227pt.
-<Figures/DLNPR-Fig2.png, id=445, 683.55376pt x 264.99pt>
+<Figures/DLNPR-Fig2.png, id=450, 683.55376pt x 264.99pt>
 File: Figures/DLNPR-Fig2.png Graphic file (type png)
 <use Figures/DLNPR-Fig2.png>
 Package pdftex.def Info: Figures/DLNPR-Fig2.png  used on input line 135.
@@ -1163,7 +1163,96 @@ $[] \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 R\OT1/cmr/m/n/10 ([]\OML/cmm/m/it/10 ;
 LaTeX Font Info:    Try loading font information for U+dsrom on input line 46.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-) [27] [28] [29]) [30] (./papers/spca.tex [31] [32]) [33] (./papers/deepIV.tex [34] [35]) [36] (./papers/causalforests.tex [37] [38]) [39] (./calpha.tex)
+) [27] [28] [29]) [30] (./papers/spca.tex [31] [32]) [33] (./papers/deepIV.tex [34] [35]) [36] (./papers/causalforests.tex [37] [38]) [39] (./papers/calpha.tex
+
+LaTeX Font Warning: Command \large invalid in math mode on input line 31.
+
+LaTeX Font Info:    Calculating math sizes for size <> on input line 32.
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <> not available
+(Font)              size <5> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.7> not available
+(Font)              size <5> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.5> not available
+(Font)              size <5> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <> not available
+(Font)              size <5> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.7> not available
+(Font)              size <5> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.5> not available
+(Font)              size <5> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <> not available
+(Font)              size <5> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.7> not available
+(Font)              size <5> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.5> not available
+(Font)              size <5> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <> not available
+(Font)              size <5> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <0.7> not available
+(Font)              size <5> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <0.5> not available
+(Font)              size <5> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <> not available
+(Font)              size <5> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <0.7> not available
+(Font)              size <5> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <0.5> not available
+(Font)              size <5> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <> not available
+(Font)              size <5> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <0.7> not available
+(Font)              size <5> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <0.5> not available
+(Font)              size <5> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `TS1/cmr/m/n' in size <> not available
+(Font)              size <5> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `TS1/cmr/m/n' in size <0.7> not available
+(Font)              size <5> substituted on input line 32.
+
+
+LaTeX Font Warning: Font shape `TS1/cmr/m/n' in size <0.5> not available
+(Font)              size <5> substituted on input line 32.
+
+)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 211.
  [40]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 211.
@@ -1171,15 +1260,20 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 211.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 211.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 211.
 Package rerunfilecheck Info: File `litNotesML.out' has not changed.
-(rerunfilecheck)             Checksum: 4EFD0EA49CBEF50349EB3450F5B282E6;4170.
+(rerunfilecheck)             Checksum: 3A089DBD2DCA232B30CAE4AFB1DA1F24;4249.
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 4.5pt have occurred.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 211.
  ) 
 Here is how much of TeX's memory you used:
- 22589 strings out of 492616
- 377771 string characters out of 6129482
- 489816 words of memory out of 5000000
- 25910 multiletter control sequences out of 15000+600000
- 551439 words of font info for 95 fonts, out of 8000000 for 9000
+ 22640 strings out of 492616
+ 378471 string characters out of 6129482
+ 490103 words of memory out of 5000000
+ 25955 multiletter control sequences out of 15000+600000
+ 554558 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,18n,65p,1199b,472s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.27} has been referenced but does not exist, replaced by a fixed one
@@ -1236,12 +1330,12 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on litNotesML.pdf (40 pages, 1483726 bytes).
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on litNotesML.pdf (40 pages, 1497115 bytes).
 PDF statistics:
- 970 PDF objects out of 1000 (max. 8388607)
- 871 compressed objects within 9 object streams
- 267 named destinations out of 1000 (max. 500000)
- 405 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 984 PDF objects out of 1000 (max. 8388607)
+ 884 compressed objects within 9 object streams
+ 272 named destinations out of 1000 (max. 500000)
+ 413 words of extra memory for PDF output out of 10000 (max. 10000000)
 
