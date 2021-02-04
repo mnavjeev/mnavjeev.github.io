@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex inequalityLitReview"] 1597112388 "inequalityLitReview.aux" "inequalityLitReview.bbl" "inequalityLitReview" 1597188434
+["bibtex inequalityLitReview"] 1597112388 "inequalityLitReview.aux" "inequalityLitReview.bbl" "inequalityLitReview" 1612228147
   "/usr/local/texlive/2019/texmf-dist/bibtex/bst/base/apalike.bst" 1292289607 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "inequalityLitReview.aux" 1597188433 21909 78681a3373d14c6e4bdec476037f7aa3 "pdflatex"
+  "inequalityLitReview.aux" 1612228146 21909 78681a3373d14c6e4bdec476037f7aa3 "pdflatex"
   "references.bib" 1596659398 24515 9dda26eaf3f559bde0fda305436c9231 ""
   (generated)
   "inequalityLitReview.bbl"
   "inequalityLitReview.blg"
-["pdflatex"] 1597188432 "inequalityLitReview.tex" "inequalityLitReview.pdf" "inequalityLitReview" 1597188434
-  "/dev/null" 1597188432 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1612228144 "inequalityLitReview.tex" "inequalityLitReview.pdf" "inequalityLitReview" 1612228147
+  "/dev/null" 1612228146 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/jknappen/ec/tcrm0500.tfm" 1136768653 1536 b3387106d9afecbfe14bde2de6eadf47 ""
@@ -205,11 +205,11 @@
   "figures/GH-Fig1.png" 1592604039 243873 c2a62f3615129af59e45112d6e9c0a9e ""
   "figures/GH-Fig2.png" 1593751744 298720 27bde23c311191e6841fe4a0f09e1672 ""
   "figures/GH-Fig3.png" 1594320506 64487 d2bbf153fef0d77bc29643d72ed02aad ""
-  "inequalityLitReview.aux" 1597188433 21909 78681a3373d14c6e4bdec476037f7aa3 "pdflatex"
+  "inequalityLitReview.aux" 1612228146 21909 78681a3373d14c6e4bdec476037f7aa3 "pdflatex"
   "inequalityLitReview.bbl" 1597112388 4399 f5ed0f8542e8857053006683a6f14caa "bibtex inequalityLitReview"
-  "inequalityLitReview.out" 1597188433 4257 1878a87931d9a1fda733eeea0d78c5ee "pdflatex"
-  "inequalityLitReview.tex" 1596569143 5834 90a263aae2b64d9c63cc5c135f3ce38e ""
-  "inequalityLitReview.toc" 1597188433 8330 6aa09855ec1209af7fdfdf68432558e5 "pdflatex"
+  "inequalityLitReview.out" 1612228147 4257 1878a87931d9a1fda733eeea0d78c5ee "pdflatex"
+  "inequalityLitReview.tex" 1598389801 5835 a707ceef08e50881b914954f716d9182 ""
+  "inequalityLitReview.toc" 1612228147 8330 6aa09855ec1209af7fdfdf68432558e5 "pdflatex"
   "papers/AGG.tex" 1596501419 13366 eddfd8bd6c9e17ecfef78737a5ca2007 ""
   "papers/BK-2020.tex" 1595803614 38614 3d2d0cb9c854f0fdb5355f0baf301aa7 ""
   "papers/CCK-2019.tex" 1593734371 36605 6a80746525f3647547f94b3c934dc194 ""
@@ -217,8 +217,8 @@
   "papers/PTAS.tex" 1597188432 15590 fef5fcd8935b563e7676a691b0efcb47 ""
   "papers/baiSantosShaikh.tex" 1593733921 8904 a98b5151971841dcc2200a90549f6e4b ""
   (generated)
-  "inequalityLitReview.toc"
-  "inequalityLitReview.pdf"
-  "inequalityLitReview.log"
   "inequalityLitReview.aux"
+  "inequalityLitReview.log"
+  "inequalityLitReview.pdf"
+  "inequalityLitReview.toc"
   "inequalityLitReview.out"
