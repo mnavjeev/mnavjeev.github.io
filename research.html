@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Manu Navjeevan</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Manu Navjeevan Useful Files">
+	<meta name="author" content="Manu">
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0">
+	<title>Manu's Website</title>
+	<link rel="stylesheet" type="text/css" href="css/index_style.css">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+	<header>
+		<h1>Manu Navjeevan</h1>
+		<nav><a href="index.html">
+				<h2>Home</h2>
+            </a><a class="active" href="research.html">
+                <h2>Research</h2>
+			</a><a href="notes.html">
+				<h2>Useful Files</h2>
+			</a><a href="navjeevan_cv.pdf">
+				<h2>CV</h2>
+			</a>
+        </nav>
+	</header>
+	<hr>
+	<main>
+        <section class="section">
+			<h3 class="subhead">Working Papers</h3>
+            <h3>Model Assisted Inference for Conditional Average Treatment Effects with High Dimensional Controls (with Adam Baybutt)</h3> 
+			<aside>	
+                <!--<p><b>Abstract:</b> Plausible identification of conditional average treatment effects (CATE) may rely on controlling for a large number of variables so that all confounding factors are accounted for. To estimate the conditional average treatment effect in this setting, a propensity score model and an outcome regression model must first be estimated. The resulting second stage CATE estimator is said to be doubly robust if it remains consistent if only one of the first stage models is consistently estimated. Inference procedures based off of the estimator are model assisted if they are asymptotically valid if only one of the first stage models is consistently estimated. These properties are especially important in a high dimensional setting where consistency of the first stage estimators often relies on correctly specifying their parametric forms.</p>-->
+                <p><b>Abstract:</b> While doubly robust estimators of the conditional average treatment effect are common the exact convergence rate of these estimators depends on correct specification of the nuisance parameter models and so the resulting inference is not model assisted. By assuming a logistic model for the propensity score and a linear model for the outcome regression we demonstrate how to construct an estimator for the CATE that is doubly robust and whose resulting Wald-type confidence intervals are model assisted. Our proposed estimator remains consistent at the nonparametric rate and our proposed pointwise and uniform confidence intervals remain asymptotically valid even if one of the logistic propensity score or linear outcome regression models are misspecified. These results are obtained under similar conditions to existing analysis in high dimensional and nonparametric
+                settings.</p>			
+            </aside>
+            <h3>Ordered, Unordered and Minimal Monotonicity Criteria (with Rodrigo Pinto)</h3>
+			<aside>	
+                <p><b>Abstract:</b> This paper performs a comparative analysis between ordered and unordered choice models. We present non-trivial symmetries between ordered and unordered monotonicity conditions. We show that these seemingly unrelated models share a weaker and more general condition called Minimal Monotonicity. This novel condition captures an essential property for the identification analysis of causal parameters while being necessary to ascribe causal interpretation to Two Stage Least Squares estimands. We show that minimal monotonicity naturally arises from revealed preference analysis. The condition is associated with a notion of rationality and can serve as a theoretical foundation for a wide range of economic choice behaviors that do not conform with the narrative imposed by ordered or unordered choice models.</p>			
+            </aside>
+		</section>
+
+	</main>
+	<footer>
+	</footer>
+</body>
+
+</html>
