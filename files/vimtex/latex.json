@@ -1,0 +1,518 @@
+{
+ 	// Place your snippets for latex here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Math Inline":{
+		"prefix": "mk",
+		"body":[
+			"\\($1\\)$0"
+		],
+		"description": "Math Inline"
+	},
+	"Display Math":{
+		"prefix": "dm",
+		"body": [
+			"\\[",
+			"\t\t$1",
+			"\\]"
+		],
+		"description": "Display Math"
+	},
+	"Figure":{
+		"prefix": "fig",
+		"body": [
+		"\\begin{figure}[${1:htbp}]",
+		"\t\\centering",
+		"\t\\includegraphics[width=${2:0.8}\\linewidth]{$3}"
+		"\t\\caption{$4}",
+		"\t\\label{$5}",
+		"\\end{figure}",
+		"$0"
+		],
+		"description": "Figure"
+	},
+	"Description":{
+		"prefix": "desc",
+		"body": [
+			"\\begin{description}",
+			"\t\\item[$1] $0",
+			"\\end{description}"
+		]
+	},
+	"Individual Item":{ 
+		"prefix":"it",
+		"body":"\\item $0"
+	},
+	"Section":{ 
+		"prefix":"sec",
+		"body":[ 
+			"\\section{$1}%",
+			"\\label{sec:$2}",
+			"$0"
+		]
+	},
+	"Section*":{ 
+		"prefix":"sec*",
+		"body":"\\section*{$0}"
+	},
+	"Subsection":{ 
+		"prefix": "subsec",
+		"body":[ 
+			"\\subsection{$1}", 
+			"\\label{subsec:$2}",
+			"$0",
+		]
+	},
+	"Paragraph":{ 
+		"prefix": "par",
+		"body":[ 
+			"\\paragraph{$1}", 
+			"\\label{par:$2}",
+			"$0",
+		]
+	},
+	"Paragraph*":{ 
+		"prefix": "par*",
+		"body":[ 
+			"\\paragraph*{$1}", 
+			"$0",
+		]
+	},
+	"Emph":{
+		"prefix": "emph",
+		"body": "\\emph{$0}"
+	},
+	"Bold Text":{
+		"prefix": "bf",
+		"body": "\\textbf{$0}"
+	},
+	"Italic Text":{
+		"prefix": "ita",
+		"body": "\\textit{$0}"
+	},
+	"Underlined Text":{
+		"prefix": "und",
+		"body": "\\underline{$0} $0"
+	},
+	"Bar":{
+		"prefix": "bar",
+		"body": "\\overline{$1} $0"
+	},
+	"Fraction":{
+		"prefix": "frac",
+		"body": "\\frac{$1}{$2}$0"
+	},
+	"Norm":{
+		"prefix": "\\|",
+		"body": "\\|$0\\|"
+	},
+	"Left Right Norm":{
+		"prefix":"\\lnm",
+		"body": "\\left\\|$0\\right\\|"
+	},
+	"Left Right Angle":{
+		"prefix": "\\lang",
+		"body": "\\langle $0\\rangle",
+		"description": "Inner Product"
+	},
+	"Left Bracket":{
+		"prefix": "\\lb",
+		"body": "\\left[$0\\right]"
+	},
+	"Left Curly Bracket":{	
+		"prefix": "\\lcb",
+		"body": ["\\left\\{$0\\right\\}"]
+	},
+	"Left Parantheses":{
+		"prefix": "\\lp",
+		"body": "\\left($0\\right)"
+	},
+	"Theorem":{
+		"prefix":"thm",
+		"body": [
+			"\\begin{theorem}[$1]", 
+			"\t\\label{thm:$2}",
+			"\t$0",
+			"\\end{theorem}"
+		]
+	},
+	"Theorem*":{
+		"prefix":"thm*",
+		"body": [
+			"\\begin{theorem*}[$1]", 
+			"\t$0",
+			"\\end{theorem*}"
+		]
+	},
+	"Proposition":{
+		"prefix": "prop",
+		"body": [
+			"\\begin{prop}[$1]", 
+			"\t\\label{prop:$2}",
+			"\t$0",
+			"\\end{prop}"
+		]
+	},
+	"Proposition*":{
+		"prefix": "prop*",
+		"body": [
+			"\\begin{prop*}[$1]", 
+			"\t$0",
+			"\\end{prop*}"
+		]
+	},
+	"Remark":{
+		"prefix": "remark",
+		"body": [
+			"\\begin{remark}[$1]", 
+			"\t\\label{rem:$2}",
+			"\t$0",
+			"\\end{remark}"
+		]
+	},
+	"Remark*":{
+		"prefix": "remark*",
+		"body": [
+			"\\begin{remark*}[$1]", 
+			"\t$0",
+			"\\end{remark*}"
+		]
+	},
+	"Assumption":{
+		"prefix": "assm",
+		"body": [
+			"\\begin{assumption}[$1]", 
+			"\t\\label{assm:$2}",
+			"\t$0",
+			"\\end{assumption}"
+		]
+	},
+	"Assumption*":{
+		"prefix": "assm*",
+		"body": [
+			"\\begin{assumption*}[$1]", 
+			"\t$0",
+			"\\end{assumption*}"
+		]
+	},
+	"Lemma":{
+		"prefix": "lemma",
+		"body": [
+			"\\begin{lemma}[$1]", 
+			"\t\\label{lemma:$2}",
+			"\t$0",
+			"\\end{lemma}"
+		]
+	},
+	"lemma*":{
+		"prefix": "lemma*",
+		"body": [
+			"\\begin{lemma*}[$1]", 
+			"\t$0",
+			"\\end{lemma*}"
+		]
+	},
+	"Example":{
+		"prefix": "ex",
+		"body": [
+			"\\begin{example}[$1]", 
+			"\t\\label{ex:$2}",
+			"\t$0",
+			"\\end{example}"
+		]
+	},
+	"Example*":{
+		"prefix": "ex*",
+		"body": [
+			"\\begin{example*}[$1]", 
+			"\t$0",
+			"\\end{example*}"
+		]
+	},
+	"Definition":{
+		"prefix": "def",
+		"body": [
+			"\\begin{definition}[$1]", 
+			"\t\\label{def:$2}",
+			"\t$0",
+			"\\end{definition}"
+		]
+	},
+	"Definition*":{
+		"prefix": "def*",
+		"body": [
+			"\\begin{definition*}[$1]", 
+			"\t$0",
+			"\\end{definition*}"
+		]
+	},
+	"Corrollary":{
+		"prefix": "corr",
+		"body": [
+			"\\begin{corollary}[$1]", 
+			"\t\\label{corr:$2}",
+			"\t$0",
+			"\\end{corollary}"
+		]
+	},
+	"Corollary*":{
+		"prefix": "corr*",
+		"body": [
+			"\\begin{corollary*}[$1]", 
+			"\t$0",
+			"\\end{corollary*}"
+		]
+	},
+	"Equation":{
+		"prefix": "eqn",
+		"body": [
+			"\\begin{equation}",
+			"\t\\label{eq:$1}",
+			"\t$0",
+			"\\end{equation}",
+		]
+	},
+	"Equation*":{
+		"prefix": "eqn",
+		"body": [
+			"\\begin{equation*}",
+			"\t$0",
+			"\\end{equation*}",
+		]
+	},
+	"Align":{
+		"prefix": "algn",
+		"body": [
+			"\\begin{align}",
+			"\t$0",
+			"\\end{align}",
+		]
+	},
+	"Align*":{
+		"prefix": "algn*",
+		"body": [
+			"\\begin{align}*",
+			"\t$1",
+			"\\end{align*}",
+			"$0"
+		]
+	},
+	"Split":{
+		"prefix": "split",
+		"body": [
+			"\\begin{split}",
+			"\t$0",
+			"\\end{split}"
+		]
+	},
+	"Subsection*":{ 
+		"prefix": "subsec*",
+		"body":"\\subsection*{$0}"
+	},
+	"Bracket Matrix":{
+		"prefix": "bmat",
+		"body": "\\begin{bmatrix} $0 \\end{bmatrix}"
+	},
+	"Parantheses Matrix":{
+		"prefix": "pmat",
+		"body": "\\begin{pmatrix} $0 \\end{pmatrix}"
+	},
+	"Cases":{
+		"prefix": "cases",
+		"body": [
+			"\\begin{cases}",
+			"\t$1 & \\text{if }$0",
+			"\\end{cases}"
+		]
+	},
+	"Proof":{
+		"prefix": "proof",
+		"body": [
+			"\\begin{proof}",
+			"\t$0",
+			"\\end{proof}"
+		]
+	},
+	"Setminus":{
+		"prefix": "\\smn",
+		"body": "\\setminus $0"
+	},
+	"Widehat":{
+		"prefix": "\\what",
+		"body": "\\widehat",
+	},
+	"Reals":{
+		"prefix": "\\sr",
+		"body": "\\SR"
+	},
+	"Standard Sum":{
+		"prefix": "\\isum",
+		"body": "\\sum_{i=1}^n $0"
+	},
+	"Footnote":{
+		"prefix": "fnote",
+		"body": "\\footnote{$0}"
+	},
+	"Trace":{
+		"prefix": "trace",
+		"body": "\\text{$trace}$0"
+	},
+	"Greater Than":{
+		"prefix": "ge",
+		"body": "\\geq $0"
+	},
+	"Less Than":{
+		"prefix": "le",
+		"body": "\\leq $0"
+	},
+	"Definite Integral":{
+		"prefix": "dint",
+		"body": "\\int_{$1}^{$2}$0"
+	},
+	"Q-Hat Inverse":{
+		"prefix": "qhi",
+		"body": "\\widehat{Q}^{-1}$0"
+	},
+	"For All":{
+		"prefix": "\\fa",
+		"body": "\\forall$0"
+	},
+	"Partial Derivative":{
+		"prefix": "pderiv",
+		"body": "\\frac{\\partial $1}{\\partial $2}$0"
+	},
+	"Binomial":{
+		"prefix": "binom",
+		"body": "\\binom{$1}{$2}$0"
+	},
+	"Indicator":{
+		"prefix": "ind",
+		"body": "\\mathds{1}$0"
+	},
+	"Text Subscript":{
+		"prefix": "tsub",
+		"body": "{\\text{\\tiny $1}}$0"
+	},
+	"Assumption Reference":{
+		"prefix": "\\aref",
+		"body": "\\ref{assm:$1}$0"
+	},
+	"Lemma Reference":{
+		"prefix": "\\lref",
+		"body": "\\ref{lemma:$1}$0"
+	},
+	"Theorem Reference":{
+		"prefix": "\\tref",
+		"body": "\\ref{thm:$1}$0"
+	},
+	"Proposition Reference":{
+		"prefix": "\\pref",
+		"body": "\\ref{prop:$1}$0"
+	},
+	"Section Reference":{
+		"prefix": "\\sref",
+		"body": "\\ref{sec:$1}$0"
+	},
+	"Definition Reference":{
+		"prefix": "\\dref",
+		"body": "\\ref{def:$1}$0"
+	},
+	"Text Box":{
+		"prefix": "textbox",
+		"body": [
+			"\\begin{center}",
+			"\\fbox{",
+			"\t\\parbox{0.95\\textwidth}{",
+			"\t\t$0",
+			"\t}",
+			"}",
+			"\\end{center}"
+		]
+	},
+	"Dots":{
+		"prefix": "...",
+		"body": "\\dots$0"
+	},
+	"Less Sim":{
+		"prefix": "lsim",
+		"body": "\\lessim$0"
+	},
+	"Greater Sim":{
+		"prefix": "gsim",
+		"body": "\\gtrsim$0"
+	},
+	"Bold Symbol":{
+		"prefix": "\\bsym",
+		"body": "\\boldsymbol{$1}$0"
+	},
+	"Frac 1/n":{
+		"prefix": "1/n",
+		"body": "\\frac{1}{n}$0"
+	},
+	"Hyperref":{
+		"prefix": "\\href",
+		"body": "\\href{$1}{$2}$0"
+	},
+	"Diag":{
+		"prefix": "diag",
+		"body": "\\text{diag}$0"
+	},
+	"Convergence in Law":{
+		"prefix": "\\lcov",
+		"body": "\\overset{L}{\\to}$0"
+	},
+	"Stochastic Process":{
+		"prefix": "\\bbg",
+		"body": "\\mathbb{G}$0"
+	},
+	"Short Template":{
+		"prefix": "tshort",
+		"body":[
+			"\\documentclass[10pt]{article}",
+			"",
+			"% Packages with options",	
+			"\\usepackage[english]{babel}",
+			"\\usepackage[mathscr]{euscript}",
+			"\\usepackage[margin=1in]{geometry}",
+			"\\usepackage[utf8]{inputenc}",
+			"\\usepackage[small]{titlesec}",
+			"",
+			"% Primary Packages",
+			"\\usepackage{adjustbox, amsbsy, amsmath, amssymb, amsthm, bm, commath, chngcntr, dsfont, econometrics, fancyhdr, gensymb, graphicx, IEEEtrantools, longtable, marginnote, mathrsfs, mathtools, mdframed, natbib, parskip, pgf, setspace, subfigure, tabularx, textcomp, tikz}",
+			"",
+			"% Hyperref Setup",
+			"\\usepackage[pdfauthor={${3:Manu Navjeevan}},",
+			"\t\t\tbookmarks=false,%",
+			"\t\t\tpdftitle={$2},%",
+			"\t\t\tpdftoolbar=false,%",
+			"\t\t\tpdfmenubar=true]{hyperref} %hyperref needs to be last",
+			"",
+			"% Rest of the setup is in the \"manu/manu_long\" package",
+			"\\usepackage{manu${1:_long}}",
+			"",
+			"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+			"",
+			"\\title{$2} %Title",
+			"\\author{${3:Manu Navjeevan}}",
+			"\\date{${4:\\today}}",
+			"",
+			"\\begin{document}",
+			"\\maketitle",
+			"$0",
+			"",
+			"",
+			"\\end{document}"	
+		],
+		"description": "Short Template"
+	}
+}
