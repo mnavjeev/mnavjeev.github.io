@@ -35,15 +35,15 @@
 	<main>
 		<section class="subsection">
 			<h4 class="subsubhead">Notes on Econometric Literature and Theory </h4>
-			<aside>	
+			<p>	
 				Below are some notes on empirical process theory comiled during a reading group that met from January-April, 2021. 
-            </aside>
+            </p>
 			<ul>
 				<li>Notes on Empirical Process Theory: <a href="files/Weak Convergence/wcep.pdf" target="_blank">Notes</a>, <a href="https://github.com/mnavjeev/portmanteau" target="_blank">GitHub</a></li> 
 			</ul>
-			<aside>
+			<p>
             I've also attached assorted notes from some of the literature I've been working through below in this section. As I read more I will try and keep this site updated.
-			</aside>
+			</p>
             <ul>
 				<li>Notes on ML+High Dimensional Methods: <a href="files/ML + Lasso/Annotated Literature Review/litNotesML.pdf" target="_blank">LitReview</a> </li>
 				<li>Notes on Moment Inequality Methods: <a href="files/Moment Inequality Methods/Annotated Literature Review/inequalityLitReview.pdf" target="_blank">LitReview</a></li>
@@ -52,11 +52,9 @@
 		</section>
 		<section class="subsection">
 			<h4 class="subsubhead">Notes from Econ 103</h4>
-			<aside>
-                <p>Here are my slides from teaching Econ 103, Introduction to Econometrics, in the Summer of 2021. The full files, including .tex files for the slides as well as homeworks, midterms, and the final project, can be found hosted on GitHub <a href = "https://github.com/mnavjeev/Econ103-Summer-2021" target="_blank">here</a> or downloaded in a .zip file <a href = "files/Econ 103/Econ103Summer.zip">here</a>. Anyone should feel free to use these files without having to give credit or obtain permission.</p>
+            <p>Here are my slides from teaching Econ 103, Introduction to Econometrics, in the Summer of 2021. The full files, including .tex files for the slides as well as homeworks, midterms, and the final project, can be found hosted on GitHub <a href = "https://github.com/mnavjeev/Econ103-Summer-2021" target="_blank">here</a> or downloaded in a .zip file <a href = "files/Econ 103/Econ103Summer.zip">here</a>. Anyone should feel free to use these files without having to give credit or obtain permission. Many thanks go to my students who helped me catch a broad array of typos.</p>
 
-                <p>The main difference in my approach over the summer vs. a standard approach was that I started off by defining the linear regression parameters as the solution to a minimization problem as opposed to as characterizing the conditional mean. I think this was slightly confusing to students at first, but I like it for a couple reasons. First it motivates least squares estimation of the parameters much more simply. Second, it shows linear regression retains interpretability even when the conditional mean is not exactly linear (in fact, we can more or less bypass discussion of conditional means altogether).</p>
-            </aside>
+            <p>The main difference in my approach over the summer vs. a standard approach was that I started off by defining the linear regression parameters as the solution to a minimization problem as opposed to as characterizing the conditional mean. I think this was slightly confusing to students at first, but I like it for a couple reasons. First it motivates least squares estimation of the parameters much more simply. Second, it shows linear regression retains interpretability even when the conditional mean is not exactly linear (in fact, we can more or less bypass discussion of conditional means altogether).</p>
             <ol class="weeklist">
                 <li> <a href="files/Econ 103/courseIntro.pdf"> Course Intro </a>, <a href="files/Econ 103/review.pdf"> Probability Review </a>
                 <li> <a href="files/Econ 103/regression_i.pdf"> Single Regression I </a>, <a href="files/Econ 103/hw1_sol.pdf"> Homework 1 </a>
@@ -65,9 +63,9 @@
                 <li> <a href="files/Econ 103/multiple_regression_ii.pdf"> Multiple Regression II </a>, <a href="files/Econ 103/hw3_sol.pdf"> Homework 3 </a>
                 <li> <a href="files/Econ 103/Causality.pdf"> Causality </a>, <a href="files/Econ 103/final.pdf"</a> Final Project </a>
             </ol>
-		    <aside>
+		    <p>
             In addition, here are my notes from TA'ing Econ 103.  They do not have as many examples as they should, and focus more on intuition and theory for linear regression. Despite this, I hope they are a helpful resource. Again anyone should feel free to use the files....
-            </aside>
+            </p>
             	<ol class="weeklist">
 				<li> <a href="files/Econ 103/handout1.pdf"> Introduction </a>, <a href="files/econ103/week1.zip" target="_blank" class="suppFile">LaTeX</a></li>
 				<li> <a href="files/Econ 103/handout2.pdf">Indicators and Nonlinear Terms</a>, <a href="files/econ103/week2.zip" target="_blank" class="suppFile">LaTeX</a></li>
@@ -79,7 +77,30 @@
 				<li> <a href="files/Econ 103/handout8.pdf"> More Heteroskedasticity</a>, <a href="files/econ103/week8.zip" target="_blank" class="suppFile">LaTeX</a></li>
 				<li> <a href="files/Econ 103/handout9.pdf"> Time Series</a>, <a href="files/econ103/week9.zip" target="_blank" class="suppFile">LaTeX</a></li>
 			</ol>
-
+         </section>
+        <section class="subsection">
+            <h4 class="subsubhead">Typesetting with (Neo)Vim and LaTeX</h4>
+            <p>
+            Inspired by <a target = _blank href="https://castel.dev/post/lecture-notes-1/">this</a> blog post I switched my main text editing tool to vim and then neoVim. The main benefit for me has been the use of the UltiSnips plugin and autoexpanding snippets. However, the modal text editing schema of vim offers a range of <a target=_blank href="http://www.viemu.com/a-why-vi-vim.html">other benefits</a> that improve effeciency, especially when editing files. Terminal based editors also are quicker to launch than graphical IDEs such as TeXStudio or VSCode, though can have a somehwat steeper learning curve. A recent and complete guide for setting up NeoVim to work with LaTeX can be found <a target=_blank href="https://ejmastnak.github.io/tutorials/vim-latex/intro.html">here</a>.
+            </p>
+            <p>
+            Over time, I have augmented the snippets in Gilles Castel's blog post with some of my own snippets that may be particularly useful for econometrics. An example of these is demonstrated below, and the full snippets file for use with UltiSnips can be found <a target=_blank href="files/vimtex/tex.snippets">here</a>. A version of these snippets for use with VSCode can also be found <a target=_blank href="files/vimtex/latex.json">here</a>.
+            </p>
+            <div>
+            <video width="100%" controls>
+                <source src="images/test2.mp4" type="video/mp4">
+            </video>
+            <i>Above: An example of autoexpanding snippets</i>
+            </div>
+            <p>
+            One may also notice in the above that most of the setup in the preamble has been relegated to an external setup ".sty" file. I like this approach mainly because it significantly shortens the preamble and makes the raw tex file more readable. It also makes it somewhat easier to modify latex settings across projects. Installing the setup file as a global package saves the hassle of having to carry it around everytime a new project is started. On MacOS at least this can be done by following the steps below:
+            <ol>
+                <li> Make sure that the .sty file starts with "\ProvidesPackage{name_of_package}". It is also useful to use "\RequiresPackage{dependencies}" to handle any other packages that may need to be loaded prior to setup.</li>
+                <li> Navigate to "~/usr/local/texlive/2021/texmf-dist/tex/latex" and create a folder titled "name_of_package". The "2021" should be replaced with whatever year your latex distribution is from. Place the .sty setup file in this folder. </li>
+                <li> Finally, run "sudo mktexlsr" to complete the installation. You may need to enter admin password for this step.</li>
+            </ol>
+            My specific setup files can be found here: <a target=_blank href="files/vimtex/setup_long.sty">article</a>, <a target=_blank href="files/vimtex/setup_beamer.sty">beamer</a>.  For examples of how these look, see the empirical process notes and the Econ 103 slides above.
+            </p>
         </section>
 		<br>
 	</main>
