@@ -95,8 +95,8 @@
             <p>
             One may also notice in the above that most of the setup in the preamble has been relegated to an external setup ".sty" file. I like this approach mainly because it significantly shortens the preamble and makes the raw tex file more readable. It also makes it somewhat easier to modify latex settings across projects. Installing the setup file as a global package saves the hassle of having to carry it around everytime a new project is started. On MacOS at least this can be done by following the steps below:
             <ol>
-                <li> Make sure that the .sty file starts with "\ProvidesPackage{name_of_package}". It is also useful to use "\RequiresPackage{dependencies}" to handle any other packages that may need to be loaded prior to setup.</li>
-                <li> Navigate to "~/usr/local/texlive/2021/texmf-dist/tex/latex" and create a folder titled "name_of_package". The "2021" should be replaced with whatever year your latex distribution is from. Place the .sty setup file in this folder. </li>
+                <li> Make sure that the .sty file starts with \ProvidesPackage{name_of_package}. It is also useful to use \RequiresPackage{dependencies} to handle any other packages that may need to be loaded prior to setup.</li>
+                <li> Navigate to ~/usr/local/texlive/2021/texmf-dist/tex/latex and create a folder titled "name_of_package". The "2021" should be replaced with whatever year your latex distribution is from. Place the .sty setup file in this folder. </li>
                 <li> Finally, run "sudo mktexlsr" to complete the installation. You may need to enter admin password for this step.</li>
             </ol>
             My specific setup files can be found here: <a target=_blank href="files/vimtex/setup_long.sty">article</a>, <a target=_blank href="files/vimtex/setup_beamer.sty">beamer</a>.  For examples of how these look, see the empirical process notes and the Econ 103 slides above.
