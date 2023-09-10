@@ -21,7 +21,7 @@
 	<header>
 		<h1>Manu Navjeevan</h1>
         <nav><a href="index.html">
-				<h2>Home</h2>
+				<h2>About</h2>
             </a><a href="research.html">
                 <h2>Research</h2>
 			</a><a class="active" href="notes.html">
@@ -32,6 +32,7 @@
         </nav>
 	</header>
 	<hr>
+    <!-- <br><br> -->
 	<main>
 			<section class="subsection">
 			<h4 class="subsubhead">Notes from Econ 103</h4>
@@ -64,42 +65,43 @@
          	<section class="subsection">
 			<h4 class="subsubhead">Notes on Econometric Literature and Theory </h4>
 			<p>	
-				Below are some notes on empirical process theory comiled during a reading group that met from January-April, 2021. 
+				Attached are some notes on empirical process theory compiled during a reading group that met from January-April, 2021. <a href="files/Weak Convergence/wcep.pdf" target="_blank">Notes</a>, <a href="https://github.com/mnavjeev/portmanteau" target="_blank">GitHub</a></li>  
             </p>
-			<ul>
-				<li>Notes on Empirical Process Theory: <a href="files/Weak Convergence/wcep.pdf" target="_blank">Notes</a>, <a href="https://github.com/mnavjeev/portmanteau" target="_blank">GitHub</a></li> 
-			</ul>
-			<p>
-            I've also attached assorted notes from some of the literature I've been working through below in this section. As I read more I will try and keep this site updated.
-			</p>
-            <ul>
-				<li>Notes on ML+High Dimensional Methods: <a href="files/ML + Lasso/Annotated Literature Review/litNotesML.pdf" target="_blank">LitReview</a> </li>
-				<li>Notes on Moment Inequality Methods: <a href="files/Moment Inequality Methods/Annotated Literature Review/inequalityLitReview.pdf" target="_blank">LitReview</a></li>
-				<li>Notes on Demand Identification/Estimation: <a href="files/Identification/Annotated Literature Review/identificationLitReview.pdf" , target="_blank">LitReview</a></li>
-			</ul>
+		<!-- <ul> -->
+			<!-- 	<li>Notes on Empirical Process Theory:  -->
+			<!-- </ul> -->
+			<!-- <p> -->
+   <!--          I've also attached assorted notes from some of the literature I've been working through below in this section. As I read more I will try and keep this site updated. -->
+			<!-- </p> -->
+   <!--          <ul> -->
+			<!-- 	<li>Notes on ML+High Dimensional Methods: <a href="files/ML + Lasso/Annotated Literature Review/litNotesML.pdf" target="_blank">LitReview</a> </li> -->
+			<!-- 	<li>Notes on Moment Inequality Methods: <a href="files/Moment Inequality Methods/Annotated Literature Review/inequalityLitReview.pdf" target="_blank">LitReview</a></li> -->
+			<!-- 	<li>Notes on Demand Identification/Estimation: <a href="files/Identification/Annotated Literature Review/identificationLitReview.pdf" , target="_blank">LitRevieww></li> -->
+			<!--</ul> -->
 		</section>
         <section class="subsection">
             <h4 class="subsubhead">Typesetting with (neo)Vim and LaTeX</h4>
             <p>
-            Inspired by <a target = _blank href="https://castel.dev/post/lecture-notes-1/">this</a> blog post I switched my main text editing tool to vim and then neoVim. The main benefit for me has been the use of the UltiSnips plugin and autoexpanding snippets. However, the modal text editing schema of vim offers a range of <a target=_blank href="http://www.viemu.com/a-why-vi-vim.html">other benefits</a> that improve effeciency, especially when editing files. Terminal based editors also are quicker to launch than graphical IDEs such as TeXStudio or VSCode, though can have a somehwat steeper learning curve. A recent and complete guide for setting up NeoVim to work with LaTeX can be found <a target=_blank href="https://ejmastnak.github.io/tutorials/vim-latex/intro.html">here</a>.
+            Inspired by <a target = _blank href="https://castel.dev/post/lecture-notes-1/">this</a> blog post I switched my main text editing tool to vim and then neoVim. The main benefit for me has been the use of the UltiSnips plugin and autoexpanding snippets. However, the modal text editing schema of vim offers a range of <a target=_blank href="http://www.viemu.com/a-why-vi-vim.html">other benefits</a> that improve effeciency, especially when editing files. A recent and complete guide for setting up NeoVim to work with LaTeX can be found <a target=_blank href="https://ejmastnak.github.io/tutorials/vim-latex/intro.html">here</a>. Over time, I have augmented the snippets in Gilles Castel's blog post with some of my own snippets that may be particularly useful for econometrics. They are available for the <a target=_blank href="files/vimtex/tex.snippets">UltiSnips</a>
+            plugin on Vim/NeoVim or for use with <a target=_blank href="files/vimtex/latex.json">VSCode</a>.
             </p>
+            <!-- <div> -->
+            <!-- <video width="100%" controls> -->
+            <!--     <source src="images/test2.mp4" type="video/mp4"> -->
+            <!-- </video> -->
+            <!-- <i>Above: An example of autoexpanding snippets</i> -->
+            <!-- </div> -->
             <p>
-            Over time, I have augmented the snippets in Gilles Castel's blog post with some of my own snippets that may be particularly useful for econometrics. An example of these is demonstrated below, and the full snippets file for use with UltiSnips can be found <a target=_blank href="files/vimtex/tex.snippets">here</a>. A version of these snippets for use with VSCode can also be found <a target=_blank href="files/vimtex/latex.json">here</a>.
-            </p>
-            <div>
-            <video width="100%" controls>
-                <source src="images/test2.mp4" type="video/mp4">
-            </video>
-            <i>Above: An example of autoexpanding snippets</i>
-            </div>
-            <p>
-            One may also notice in the above that most of the setup in the preamble has been relegated to an external setup ".sty" file. I like this approach mainly because it significantly shortens the preamble and makes the raw tex file more readable. It also makes it somewhat easier to modify latex settings across projects. Installing the setup file as a global package saves the hassle of having to carry it around everytime a new project is started. On MacOS at least this can be done by following the steps below:
+            I have also found it useful to move most of my LaTeX preamble to an external setup ".sty" file. I find this makes raw .tex files more cleaner looking and more readable. It also makes it easier to modify setting across projects. Installing the basic setup file as a global package saves the hassle of carrying style file around from project to project. On MacOS at least this can be done by following the steps below.   My specific setup files can be found here: <a target=_blank href="files/vimtex/setup_long.sty">article</a>, <a target=_blank href="files/vimtex/setup_beamer.sty">beamer</a>.  For examples of how these look, see the empirical process notes and the Econ 103 slides above.
+            <details style="margin-bottom:2px">
+            <summary>Installation Steps</summary>
             <ol>
                 <li> Make sure that the .sty file starts with \ProvidesPackage{name_of_package}. It is also useful to use \RequiresPackage{dependencies} to handle any other packages that may need to be loaded prior to setup.</li>
-                <li> Navigate to ~/usr/local/texlive/2021/texmf-dist/tex/latex and create a folder titled "name_of_package". The "2021" should be replaced with whatever year your latex distribution is from. Place the .sty setup file in this folder. </li>
+                <li> Navigate to ~/usr/local/texlive/2021/texmf-dist/tex/latex and create a folder titled "name_of_package". The "2021" should be replaced with whatever year your LaTeX distribution is from. Place the .sty setup file in this folder. </li>
                 <li> Finally, run "sudo mktexlsr" to complete the installation. You may need to enter admin password for this step.</li>
             </ol>
-            My specific setup files can be found here: <a target=_blank href="files/vimtex/setup_long.sty">article</a>, <a target=_blank href="files/vimtex/setup_beamer.sty">beamer</a>.  For examples of how these look, see the empirical process notes and the Econ 103 slides above.
+            </details>
+          
             </p>
         </section>
 		<br>
