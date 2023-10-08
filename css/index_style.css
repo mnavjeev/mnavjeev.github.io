@@ -44,8 +44,10 @@ h2 {
 }
 
 body {
-    background-color: #f9f9f9;
-    /* background-color:#FFF8E7; */
+    /* background-color: #f9f9f9; */
+    /* background-color:#F9F6EE; */
+    /* background-color: #FFFAFA; */
+    background-color: #FEFEFA;
     font-family: latolight;
     line-height: 1.6em;
     font-size: 14px;
