@@ -31,6 +31,9 @@
 }
 
 h1 {
+    color: #005587; /* Darker UCLA*/
+    color: #003B5C; /* Darkest UCLA */ 
+    color: #000000;
     color: #2774AE;
     font-family: latobold;
     padding-top: 4%;
@@ -122,12 +125,14 @@ main {
 
 main a {
     color: #003B5C;
+    /* color: #000000; */
     text-decoration: none;
     font-family: 'latoregular';
 }
 
 main a:hover {
     color: #2774AE;
+    /* color: #FFB81C; */
 }
 
 main a:visited {
