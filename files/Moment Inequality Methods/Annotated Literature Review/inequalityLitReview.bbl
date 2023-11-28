@@ -1,0 +1,112 @@
+\begin{thebibliography}{}
+
+\bibitem[Beresteanu et~al., 2011]{BMM-2011}
+Beresteanu, A., Molchanov, I., and Molinari, F. (2011).
+\newblock Sharp identification regions in models with convex moment
+  predictions.
+\newblock {\em Econometrica}, 79(6):1785--1821.
+
+\bibitem[Beresteanu and Molinari, 2008]{BM-2008}
+Beresteanu, A. and Molinari, F. (2008).
+\newblock Asymptotic properties for a class of partially identified models.
+\newblock {\em Econometrica}, 76(4):763--814.
+
+\bibitem[Berry and Tamer, 2007]{BT-2007}
+Berry, S. and Tamer, E. (2007).
+\newblock {\em Identification in Models of Oligopoly Entry}, volume~2 of {\em
+  Econometric Society Monographs}, page 46–85.
+\newblock Cambridge University Press.
+
+\bibitem[Bontemps and Kumar, 2020]{BK-2020}
+Bontemps, C. and Kumar, R. (2020).
+\newblock A geometric approach to inference in set-identified entry games.
+\newblock {\em Journal of Econometrics}.
+
+\bibitem[Bontemps et~al., 2012]{BMM-2012}
+Bontemps, C., Magnac, T., and Maurin, E. (2012).
+\newblock Set identified linear models.
+\newblock {\em Econometrica}, 80(3):1129--1155.
+
+\bibitem[Brandt et~al., 2011]{BFH-2011}
+Brandt, F., Fischer, F., and Holzer, M. (2011).
+\newblock Equilibria of graphical games with symmetries.
+\newblock {\em Theor. Comput. Sci.}, 412:675--685.
+
+\bibitem[Chernozhukov et~al., 2018]{CCK-2018}
+Chernozhukov, V., Chetverikov, D., and Kato, K. (2018).
+\newblock {Inference on Causal and Structural Parameters using Many Moment
+  Inequalities}.
+\newblock {\em The Review of Economic Studies}, 86(5):1867--1900.
+
+\bibitem[Chesher and Rosen, 2017]{CR-2017}
+Chesher, A. and Rosen, A.~M. (2017).
+\newblock Generalized instrumental variable models.
+\newblock {\em Econometrica}, 85(3):959--989.
+
+\bibitem[Ciliberto and Tamer, 2009]{CT-2009}
+Ciliberto, F. and Tamer, E. (2009).
+\newblock Market structure and multiple equilibria in airline markets.
+\newblock {\em Econometrica}, 77(6):1791--1828.
+
+\bibitem[Daskalakis, 2008]{D-2008}
+Daskalakis, C. (2008).
+\newblock An efficient {PTAS} for two-strategy anonymous games.
+\newblock {\em CoRR}, abs/0812.2277.
+
+\bibitem[Daskalakis and Papadimitriou, 2007]{DP-2007}
+Daskalakis, C. and Papadimitriou, C. (2007).
+\newblock Computing equilibria in anonymous games.
+\newblock In {\em Proceedings of the 48th Annual IEEE Symposium on Foundations
+  of Computer Science}, FOCS ’07, page 83–93, USA. IEEE Computer Society.
+
+\bibitem[Daskalakis and Papadimitriou, 2008]{DP-2008}
+Daskalakis, C. and Papadimitriou, C.~H. (2008).
+\newblock Discretized multinomial distributions and nash equilibria in
+  anonymous games.
+\newblock {\em CoRR}, abs/0808.2801.
+
+\bibitem[Galichon and Henry, 2006]{GH-2006}
+Galichon, A. and Henry, M. (2006).
+\newblock Inference in incomplete models.
+
+\bibitem[Galichon and Henry, 2011]{GH-2011}
+Galichon, A. and Henry, M. (2011).
+\newblock Set identification in models with multiple equilibria.
+\newblock {\em Review of Economic Studies}, 78(4):1264--1298.
+
+\bibitem[Jiang et~al., 2011]{AGG-2011}
+Jiang, A.~X., Leyton-Brown, K., and Bhat, N.~A. (2011).
+\newblock Action-graph games.
+\newblock {\em Games and Economic Behavior}, 71(1):141 -- 173.
+\newblock Special Issue In Honor of John Nash.
+
+\bibitem[Kaido and Santos, 2014]{KS-2014}
+Kaido, H. and Santos, A. (2014).
+\newblock Asymptotically efficient estimation of models defined by convex
+  moment inequalities.
+\newblock {\em Econometrica}, 82(1):387--413.
+
+\bibitem[Kalai and Vempala, 2005]{KV-200}
+Kalai, A. and Vempala, S. (2005).
+\newblock Efficient algorithms for online decision problems.
+\newblock {\em Journal of Computer and System Sciences}, 71(3):291 -- 307.
+\newblock Learning Theory 2003.
+
+\bibitem[Papadimitriou and Roughgarden, 2008]{PR-2008}
+Papadimitriou, C. and Roughgarden, T. (2008).
+\newblock Computing correlated equilibria in multi-player games.
+\newblock {\em J. ACM}, 55.
+
+\bibitem[Papadimitriou and Roughgarden, 2005]{PR-2005}
+Papadimitriou, C.~H. and Roughgarden, T. (2005).
+\newblock Computing equilibria in multi-player games.
+\newblock In {\em Proceedings of the Sixteenth Annual ACM-SIAM Symposium on
+  Discrete Algorithms}, SODA ’05, page 82–91, USA. Society for Industrial
+  and Applied Mathematics.
+
+\bibitem[Röllin, 2007]{rollin2007}
+Röllin, A. (2007).
+\newblock Translated poisson approximation using exchangeable pair couplings.
+\newblock {\em Ann. Appl. Probab.}, 17(5-6):1596--1614.
+
+\end{thebibliography}

@@ -1,0 +1,99 @@
+%!TEX root = /Users/manunavjeevan/Desktop/Research/ML + Lasso/Annotated Literature Review/litNotesML.tex
+
+\section{Deep IV\textit{\small Jason Hartford, Greg Lewis, Kevin Leyton Brown , Matt Taddy}}
+ 
+ Full paper title is ``Deep IV: A Flexible Approach for Counterfactual Prediction.'' Paper provides a recipe for augmenting deep learning methods to accurately estimate these relationships and can be found \href{http://proceedings.mlr.press/v70/hartford17a/hartford17a.pdf}{here}.
+
+ \subsection{Introduction}
+
+ Supervised machine learning (ML) provides effective methods for tasks in which a model is learned based on samples collected from some DGP. Generally, this model is then used to make predictions about new samples from the same distribution. However, decision makers often would like to predict the effects of \emph{interventions into the DGP} through policy changes. The rest of this assumption just explains what IV is.
+
+ \subsection{Counterfactual Prediction}
+
+ Aim to predict the value of some outcome variable $y$ under an intervention in a policy or treatment variable $p$. There exists a set of observable covariate features $x$, that we know affect both $p$ and the outcome $y$. Also exist unobservable latent variables $e$ that may affect $x,p$, and $y$. Assume that the structural relationship $\E[y |\Do(p),x]$ has the additively separable form 
+ \begin{equation}
+ 	\label{eq:deepIV-1}
+ 	y = g(p, x) + e
+ \end{equation}
+That is, $g(\cdot)$ is some unknown and potentially non-linear continuous function of both $x$ and $p$, and we assume that the latent variables (or ``error'') $e$, enters additively with unconditional mean $\E[e] = 0$. Allow for errors that are potentially correlated with the inputs $\E[e|x,p] \neq 0$ and, in particular, $\E[pe|x]\neq 0$. 
+
+Define the counterfactual prediction function 
+\begin{equation}
+	\label{eq:deepIV-2}
+	h(p,x) \equiv g(p,x) + \E[e|x]
+\end{equation}
+which is the conditional expectation of $y$ given the observables $p$ and $x$, \emph{holding the distribution of $e$ constant} as $p$ is changed. This explains the lack of conditioning on $p$ in $\E[e|x]$. So $h(p,x)$ is the target structural equation this paper is concerned with estimating. Useful because we can look at differences in outcomes $h(p_1, x) - h(p_0, x) = g(p_1, x)- g(p_0,x)$.
+
+In standard supervised learning settings, the prediction model is trained to fit $\E[y | p,x]$. This will typically be biased against the structural equation in (\ref{eq:deepIV-2}) because 
+\begin{equation}
+	\label{eq:deepIV-3}
+	\E[y|p,x] = g(p,x) + \E[e|p,x] \neq h(p,x)
+\end{equation}
+This is the ``endogeneity problem.'' The presence of instruments allows for the resolution of this problem. A valid instrument $z$ satisfies by the following conditions:
+\begin{assumption}[Instrument Validity]
+	A valid instrument satisfies the following conditions:
+	\begin{enumerate}
+		\item \textbf{Relevance} \(F(p|x,z)\), the distribution of $p$ given $x$ and $z$ is not constant in $z$. 
+		\item \textbf{Exclusion} $z$ does not enter equation (\ref{eq:deepIV-1})-i.e $z \perp (x,p,e)$.\footnote{This means that $z$ does not directly affect $y.$}
+		\item \textbf{Unconfounded Instrument} $z$ is conditionally independent of the error-i.e $z\perp e | x$\footnote{Could replace this with the assumption $\E[e|p,x] \equiv 0$.}
+	\end{enumerate}
+\end{assumption}
+Under these assumptions, taking the expectation of both sides of (\ref{eq:deepIV-1}) conditional on $x$ and $z$ yields 
+\begin{equation}
+	\label{eq:deepIV-5}
+	\begin{split}
+		\E[y|x,z] &= \E[g(p,x)|x,z] + \E[e|x] \\
+		&= \int g(p,x) dF(p|x,z)
+	\end{split}
+\end{equation}
+The relationship in (\ref{eq:deepIV-5}) defines an inverse problem for $h$ in terms of two observable functions, $\E[y|x,z]$ and $F(p|x,z)$. IV analysis typically splits this into two stages: first estimating $\hat{F}(p|x_t, z_t) \approx F(p|x_t, z_t)$, and then estimating $\hat{h}$ after plugging in $\hat{F}$.
+
+Most existing IV approaches assume linear models for the treatment density function $\hat{F}$ and the counterfactual prediction function $\hat{h}$ to solve (\ref{eq:deepIV-5}) in closed form, i.e 2SLS of IA (1994, 1996).  Flexible nonparametric extensions of 2SLS replace the linear regressions with a linear projection onto a series of known basis functions, or use kernel-based methods. This system of series estimators is an effective strategy for introducing flexibility and heterogeneity with low dimensional inputs, but the approach faces the same limitations as kernel methods in general: their performance depends on the choice of kernel function; and they often become computationally intractable in high dimensional feature spaces $[x,z]$ or with a large number of samples.
+
+\subsection{Estimating and Validating DeepIV}
+
+Now describe how one can use deep networks to perform flexible, scalable, IV analysis in a framework called DeepIV. Make two contributions that are necessary components of the approach. First, propose a loss function and optimization procedure that allows for the optimization of deep networks for counterfactual prediction. Second, describe a general procedure for out-of-sample validation of two-stage IV methods. This allows for hyper-parameter tuning, which is necessary for achieving good predictive performance using deep networks. 
+
+Approach is conceptually simple given the counterfactual prediction framework describes in the previous section. Rather than constraining to analytic solutions to the integral in (\ref{eq:deepIV-5}), instead directly optimize the estimate of the structural equation, $\hat{h}$. Specifically, to minimize the $\ell_2$ loss given $n$ data points and given function space $\calH$ solve 
+\begin{equation}
+	\label{eq:deepIV-6}
+	\min_{\hat{h}\in \calH} \sum_{t=1}^n\left(y_t - \int \hat{h}(p,x_t)dF(p|x_t, z_t)\right)^2
+\end{equation}
+Since the treatment distribution is unknown, estimate $\hat{F}(p|x,z)$ in a separate, first stage.\footnote{In this way, we can think of the first stage estimation of $\hat{F}(p|x,z)$ as a nuisance parameter that has to be estimated prior.}
+
+So DeepIV procedure has two stages; a first stage density estimation procedure to estimate $\hat{F}(p|x,z)$ and a second procedure that optimizes the loss function described in Equation (\ref{eq:deepIV-6}).
+
+\paragraph{First Stage: Treatment Network}
+
+In the first stage estimate $\hat{F}(p|x,z)$ using an appropriately chosen distribution chosen by a deep neural network (DNN) say $\hat{F} = F_\phi(p|x,z)$ where $\phi$ is the set of network parameters. Since the second stage involves integrating over $F_\phi$, must fully specify this distribution. 
+
+In the case of discrete $p$, model $F_\phi(p|x,z)$ as a categorical DNN given with a softmax\footnote{smooth approximation to the $\argmax$ function} output. For continuous treatment, model $F$ as a mixture of Gaussian distributions, where component weights $\pi_k(x,z,;\theta)$ and parameters $[\mu_k(x,z;\phi),\sigma_k(x,z;\phi)]$ form the final layer of a neural network parameterized by $\phi$. This model is known as a mixture density network, as detailed in Bishop (2006). 
+
+
+\paragraph{Second Stage: Outcome Network}
+
+In the second stage, the counterfactual prediction function $h$ is approximated by a $DNN$ with a real valued output, say $h_\theta$. Optimize the network parameters $\theta$ to minimize the integral loss function in (\ref{eq:deepIV-6}) over training data $D$ of size $T = |D|$ from the joint DGP $\calD$,
+\begin{equation}
+	\label{eq:deepIV-7}
+	\calL(D;\theta) = |D|^{-1}\sum_t\left(y_t - \int h_\theta(p,x_t) d\hat{F}_\phi(p|x_t,z_t)\right)^2
+\end{equation}
+
+
+\subsubsection{Optimization for DeepIV Networks}
+
+Use stochastic gradient descent to train the network weights. For the first stage, $F_\phi$, standard off the shelf methods apply, but for the second stage one needs to account for the integral in (\ref{eq:deepIV-7}). Can approximate the integral with respect to a probability measure with the average of draws from the associated probability distribution: $\int h(p)dFP(p) \approx  \sum B^{-1}\sum_b h(p_b)$ for $p_b \overset{iid}{\sim} F$. So can get an unbiased estimate of (\ref{eq:deepIV-7}) by replacing the integral with a sum over samples from fitted treatment distribution function $\hat{F}_\phi$:
+\begin{equation}
+	\label{eq:deepIV-8}
+	\calL(D;\theta)\approx \hat{\calL}(D;\theta) := |D|^{-1}\sum_t\left(y_t - \frac{1}{B} \sum_{\dot{p}\sum \hat{F}_\phi(p|x_1,z_t)} h_\theta (\dot{p},x_t)\right)^2 
+\end{equation}
+Equation above can be used to estimate $\nabla_\theta \calL$ with a caveat, if one wants to maintain unbiased gradient estimates, \emph{independent} samples must be used for each instance of the integral in the gradient calculation. To see this, note that the gradient of (\ref{eq:deepIV-8}) has expectation 
+\begin{equation}
+	\label{eq:deepIV-9}
+	\begin{split}
+		\E_\calD\left[\nabla_\theta\calL_t\right] &= -2\E_\calD\left[\E_{F_\phi(p|x_t,z_t)}\left[y_t - h_\theta(p^k,x_t)\right]\cdot \E_{F_\phi(p|x_t,z_t)}\left[h_\theta'(p^k,x_t)\right]\right] \\
+		&\neq -2\E_\calD\left[ \E_{F_\phi(p|x_t,z_t)}\left[\left(y_t - h_\theta(p^k,x_t)\right)h_\theta'(p^k,x_t)\right]\right]
+	\end{split}
+\end{equation}
+The above is contains a law of iterated expectations written in some different notation.
+
+

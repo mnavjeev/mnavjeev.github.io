@@ -1,0 +1,129 @@
+%!TEX root = /Users/manunavjeevan/Desktop/Research/Identification/Annotated Literature Review/identificationLitReview.tex
+
+\section{Matzkin Identification Chapter}
+
+Here mainly focus on section 3.5, Identification in Simultaneous Equation Models. Based off of Matzkin (2008), which should also be covered in these notes. \emph{Main Results here are Theorems 1 and 2 from Matzin (2008)}.
+
+Focus is on the simultaneous equations model, where $Y \in \SR^G$ denotes a vector of observable dependent variables, $X \in \SR^K$ denotes a vector of observable explanatory variables, $\eps \in \SR^G$ denotes a vector of unobservable explanatory variables and the relationship between these vectors is specified by a function $r^*: \SR^G \times \SR^K \rightarrow \SR^G$ such that
+\[\eps = r^*(Y,X)\]
+
+The set $S$ of $r^*, F_{\eps,X}$ that are  considered consist of twice differentiable functions $r: \SR^G \times \SR^K \rightarrow \SR^G$ and twice differentiable, strictly increasing distributions $F_{\epsilon, X}: \SR^G \times \SR^K \rightarrow \SR$ such that (i) for all $F_{\eps, X}, \eps$ and $X$ are distributed independently of each other (ii) for all $r$ and $y,x$, $|\partial r(y,x)/ \partial y | > 0 $ (iii) for all $r$ and all $x,\eps$ there exists a unique value of $y$ such that $\eps = r(y,x)$, and (iv) for all $r$, all $F_{\eps, X}$ and all $x$, the distribution of $Y$ given $X = x$, induced by $r$ and $F_{\eps|X=x}$ has support $\SR^G$. 
+
+For any $(r, F_{\eps, X}) \in S$ condition (iii) implies that there exists a function $h$ such that for all $\eps, X$ 
+\[Y = h(X,\eps)\]
+This is the reduced form system of the structural equations system determined by $r$. Will let $h^*$ denote the reduced form function determined by $r^*$ (the ``true'' value of $r$). 
+
+A special case of this model is the linear system of simultaneous equations, where for some invertible $G \times G$ matrix $A$ and some $G \times K$ matrix B,
+\[\eps = AY + BX\]
+Premultiplication by $A^{-1}$ yields the reduced form system
+\[Y = \Pi X + \nu\] 
+where $\Pi = -A^{-1}B$ and $\nu = A^{-1}\eps$. The identification of the true values $A^*, B^*$ is well studied (Koopmans (1949), Koopmans, Rubin, Leipnik (1950), and Fisher (1966) as well as most econometrics textbooks).
+\begin{itemize}
+  \item My guess is that full nonparametric identification would amount to the conditions for identification of the linear system holding locally, evverywhere.
+\end{itemize}
+Main results here, assume that $\E(\eps) = 0$ and $\Var(\eps) = \Sigma^*$, an unkown matrix. Let $W$ denote the varianve of $\nu$. The identification of $(A^*, B^*, \Sigma^*)$ is achieved when it can be uniqely recovered from $\Pi$ and $\Var(\nu)$. A priori restrictions on $A^*, B^*, \Sigma^*$ are typically used to determine the existence of a unique solution for any element of the above triple.
+
+Analagoulsy, one can obstain necessary and suffecient conditions to uniquely recover $r^*$ and $F_\eps^*$ from the distribution of the observable variables $(Y,X)$, when the system of structural equations is nonparametric. The question of identification is whether we can uniquely recover the density $f^*_\epsilon$ and the function $r^*$ from the conditional densities $f_{Y|X=x}$. 
+
+Following from the definition of observational equivalence, can state that two fucntions $r, \tilde{r}$ satisfying (i)-(iv) are obs. equivalent iff $\exists f_\eps, \tilde{f}_\eps$ such that $(f_\eps, r), (\tilde{f}_\eps, \tilde{r}) \in S$ and for all $y,x$
+\begin{equation}
+  \label{eq:handbook-3.5.1}
+  \tilde{f}_\eps(\tilde{r}(y,x)) \left| \pderiv{\tilde{r}(y,x)}{y} \right| = f_\eps(r(y,x)) \left| \pderiv{r(y,x)}{y} \right|
+\end{equation}
+The function $\tilde{r}$ can be re-expressed as a transformation of $(\eps,x)$. To see this, define 
+\[g(\epsilon, x) = \tilde{r}(h(x,\eps), x)\]
+where $h$ is the reduced form equation corresponding to $r$ above. Since
+\[\left|\pderiv{g(\epsilon, x)}{\eps}\right| = \left|\pderiv{\tilde{r}(h(x,\eps),x)}{y}\right| \left| \pderiv{h(x,\eps)}{\eps}\right|\]
+it follows from assumption (ii) that $\left|\pderiv{g(\epsilon, x)}{\eps}\right| > 0$ everywhere. Since, conditional on $x$, $h$ is invertible in $\eps$ and $\tilde{r}$ is invertible in $y$, it follows that $g$ is invertible in $\eps$. Substituting into (\ref{eq:handbook-3.5.1}), we can see that $(\tilde{r}, \tilde{f}_\eps) \in S$ is observationally equivalent to $(r,f_\eps)\in S$ iff $\forall \eps, x$ 
+\[\tilde{f}_\eps(g(\eps, x))\left|\pderiv{g(\epsilon, x)}{\eps}\right| = f_\eps(\eps)\]
+The following theorem provides conditions garunteeing a transformation $g$ of $\epsilon$ does not generate an observationally equivalent pair $(\tilde{r}, \tilde{f}_\eps)$. 
+\begin{theorem}[Matzkin, 2005]
+  Let $(r, f_\eps)\in S$. Let $g(\eps,x)$ be such that $\tilde{r}(y,x) = g(r(y,x),x)$ and $\tilde{\eps} = g(\eps,x)$ are such that $(\tilde{r}, \tilde{f}_\eps) \in S$. If for some $\eps, x$, the rank of the matrix 
+  \[\begin{pmatrix}
+    \left(\pderiv{g(\eps,x)}{\eps}\right)' & \pderiv{\log f_\eps(u)}{\eps} - \pderiv{\log\left|\pderiv{g(\eps,x)}{\eps}\right|}{\eps} \\
+    \left(\pderiv{g(\eps,x)}{x}\right)' &  - \pderiv{\log\left|\pderiv{g(\eps,x)}{\eps}\right|}{x}
+  \end{pmatrix}\]
+\end{theorem}
+Alternatively, can express this as an identification result for the function $r^*$
+\begin{theorem}[Matzkin, 2005]
+  Let $M \times \Gamma$ denote the set of pairs $(r,f_\eps)\in S$. The function $r^*$ is identified in $M$ if  $r^* \in M$ and, for all $f_\eps \in \Gamma$ and all $\tilde{r},r \in M$ such that $\tilde{r}\neq r$, there exist $y,x$ such that the matrix 
+  \[\begin{pmatrix}
+      \left(\pderiv{\tilde{r}(y,x)}{y}\right)'& \Delta_y(y,x; \partial r, \partial^2 r, \partial \tilde{r}, \partial^2\tilde{r}) + \pderiv{\log(f_\eps(r(y,x)))}{\eps} \pderiv{r(y,x)}{y} \\
+      \left(\pderiv{\tilde{r}(y,x)}{x}\right)'& \Delta_y(y,x; \partial r, \partial^2 r, \partial \tilde{r}, \partial^2\tilde{r}) + \pderiv{\log(f_\eps(r(y,x)))}{\eps} \pderiv{r(y,x)}{x} 
+  \end{pmatrix}\]  
+  is strictly larger than $G$, where 
+  \begin{align*}
+    \Delta_y(y,x; \partial r, \partial^2 r, \partial \tilde{r}, \partial^2\tilde{r}) &= \pderiv{}{y}\log\left|\pderiv{r(y,x)}{y}\right| - \pderiv{}{y}\log\left|\pderiv{\tilde{r}(y,x)}{y}\right| \\
+    \Delta_x(y,x; \partial r, \partial^2 r, \partial \tilde{r}, \partial^2\tilde{r}) &= \pderiv{}{x}\log\left|\pderiv{r(y,x)}{y}\right| - \pderiv{}{x}\log\left|\pderiv{\tilde{r}(y,x)}{y}\right|
+  \end{align*}
+\end{theorem}
+\begin{example}
+  As a simple example, consider the simultaneous equations model analyzed by Matzkin (2007c), where for some unknown function $g^*$ and some parameter values $\beta^*, \gamma^*$,
+  \begin{align*}
+    y_1 &= g^*(y_2) + \eps_1\\
+    y_2 &= \beta^*y_1 + \gamma^*x + \eps_2
+  \end{align*}
+\end{example}
+Further, assume that $(\eps_1, \eps_2)$ has an everywehre positive, differentiable desnsity $f^*_{\eps_1,\eps_2}$ such that, for two not necessarily known a-priori values $(\bar{\eps}_1, \bar{\eps}_2)$ and $(\eps_1'', \eps_2'')$ 
+\begin{align*}
+    0 \neq \pderiv{\log f^*_{\eps_1,\eps_2}(\bar{\eps}_1,\bar{\eps}_2)}{\eps_1} &\neq \pderiv{\log f^*_{\eps_1,\eps_2}(\eps_1'', \eps_2'')}{\eps_1} \neq 0 \\ 
+    \pderiv{\log f^*_{\eps_1,\eps_2}(\bar{\eps}_1, \bar{\eps}_2)}{\eps_2} &= \pderiv{\log f^*_{\eps_1,\eps_2}(\eps_1'', \eps_2'')}{\eps_2} = 0
+\end{align*}
+The observable exogeneous variable $x$ is assumed to be distributed independently of $(\eps_1, \eps_2)$ and to possess support $\SR$. In this model 
+\begin{align*}
+  \eps_1 &= r^*_1(y_1, y_2, x) = y_1 - g^*(y_2) \\
+  \eps_2 &= r^*_2(y_1, y_2, x) = -\beta^*y_1 + y_2 - \gamma^*x
+\end{align*}
+The Jacobian determinant is 
+\[
+\left|\begin{pmatrix}
+1 & -\pderiv{g^*(y_2)}{y_2} \\ 
+-\beta^* & 1
+\end{pmatrix}\right| = 1 - \beta^* \pderiv{g^*(y_2)}{y_2}
+\]
+which will be positive so long as $1 > \beta^* \partial g^*(y_2)/\partial y_2$. Since the first element in the diagonal is positive, it follows from Gale and Nikaido (1965) that the function $r^*$ is globally invertible if the conditionl $1 > \beta^* \pderiv{g^*(y_2)}{y_2}$ holds for all $y$\footnote{like a global extension to the implicit function theorem}. Let $r,\tilde{r}$ be any two differentiable functions satisfying this condition and the other properties assumed about $r^*$. Suppose that at some $y_2$, $\pderiv{\tilde{g}(y_2)}{y_2} \neq \pderiv{g(y_2)}{y_2}$. Assume also that $\gamma \neq 0$ and $\tilde{\gamma} \neq 0$. Let $f_{\eps_1,\eps_2}$ denote any density satisfying the same properties that $f^*_{\eps_1,\eps_2}$ is assumed to satisfy. Denote by $(\eps_1,\eps_2)$ and $(\eps_1',\eps_2')$ the two points such that 
+\begin{align*}
+  0 \neq \pderiv{f_{\eps_1,\eps_2}(\eps_1,\eps_2)}{\eps_1} &\neq \pderiv{\log f_{\eps_1,\eps_2}(\eps_1,\eps_2')}{\eps_1} \neq 0 \\
+  \pderiv{\log f_{\eps_1,\eps_2}(\eps_1,\eps_2)}{\eps_2} &= \pderiv{\log f_{\eps_1,\eps_2}(\eps_1', \eps_2')}{\eps_2} = 0
+\end{align*}
+Define 
+\begin{align*}
+    a_1(y_1,y_2,x) &:= \pderiv{\log f_{\eps_1,\eps_2}(y_1 - g(y_2), -\beta y_1 + y_2 -\gamma x)}{\eps_1} - \beta\pderiv{\log f_{\eps_1,\eps_2}(y_1 - g(y_2), -\beta y_1 + y_2 - \gamma x)}{\eps_2} \\
+    a_2(y_1, y_2,x) &:= \left(\frac{\pderiv[2]{g(y_2)}{y_2}}{1 - \beta\pderiv{g(y_2)}{y_2}} -  \frac{\pderiv[2]{\tilde{g}(y_2)}{y_2}}{1 - \beta\pderiv{\tilde{g}(y_2)}{y_2}}\right) - \pderiv{g(y_2)}{y_2}\pderiv{\log f_{\eps_1,\eps_2}(y_1 - g(y_2), -\beta y_1 + y_2 -\gamma x)}{\eps_1} \\
+    &\hbox{ }\text{ }\hbox{ }\hbox{ }\text{ }\hbox{ }\hbox{ }\text{ }\hbox{ }+ \pderiv{\log f_{\eps_1,\eps_2}(y_1 - g(y_2), -\beta y_1 + y_2 -\gamma x)}{\eps_2} \\
+    a_3(y_1, y_2, x) &:= -\gamma \pderiv{\log f_{\eps_1,\eps_2}(y_1 - g(y_2), -\beta y_1 + y_2 -\gamma x)}{\eps_2}
+\end{align*}
+By Theorem 3.4, $r$ and $\tilde{r}$ will not be observationally equivalent if for all $f_{\eps_1,\eps_2}$ there exists $(y_1, x)$ such that the rank of the matrix 
+\[
+\begin{pmatrix}
+  1 & - \tilde{\beta} & a_1(y_1, y_2, x) \\
+  -\pderiv{\tilde{g}(y_2)}{y_2} & 1 & a_2(y_1,y_2,x) \\
+  0 & -\tilde{\gamma} & a_3(y_1,y_2,x)
+\end{pmatrix}
+\]
+is 3. Let 
+\begin{align*}
+    a_1'(y_1,y_2,x) &:= \left(\tilde{\beta} - \beta\right)\pderiv{\log f_{\eps_1,\eps_2}(y_1 - g(y_2), -\beta y_1 + y_2 -\gamma x)}{\eps_2} \\ 
+    a_2'(y_1, y_2,x) &:= \left(\frac{\pderiv[2]{g(y_2)}{y_2}}{1 - \beta\pderiv{g(y_2)}{y_2}} -  \frac{\pderiv[2]{\tilde{g}(y_2)}{y_2}}{1 - \beta\pderiv{\tilde{g}(y_2)}{y_2}}\right) + \left(\pderiv{\tilde{g}(y_2)}{y_2} - \pderiv{g(y_2)}{y_2}\right)\left(\pderiv{\log f_{\eps_1,\eps_2}(y_1 - g(y_2), -\beta y_1 + y_2  - \gamma x)}{\eps_1}\right) \\
+    a_3'(y_1, y_2, x) &= (\tilde{\gamma} - \gamma)\pderiv{\log f_{\eps_1,\eps_2}(y_1 - g(y_2), -\beta y_1 + y_2 - \gamma x)}{\eps_2}
+\end{align*}
+Multiplying the first column of $A$ by $-\pderiv{\log f_{\eps_1,\eps_2}(y_1 - g(y_2), -\beta y_1 + y_2 -\gamma x)}{\eps_1}$ and adding it to the third column, and multiplying the second column by $\pderiv{\log f_{\eps_1,\eps_2}(y_1 - g(y_2), -\beta y_1 + y_2 -\gamma x)}{\eps_2}$ and adding it to the third column\footnote{Therse are standard row operations and do not change the invertibility}, one obtains the matrix 
+\[
+\begin{pmatrix}
+  1 & -\tilde{\beta} & a_1'(y_1,y_2,x) \\
+  -\pderiv{\tilde{g}(y_2)}{y_2} & 1 & a_2'(y_1, y_2, x) \\ 
+  0 & -\tilde{\gamma} & a_3'(y_1, y_2, x)\\
+\end{pmatrix}
+\]
+By assumption either 
+\[a_2'(\bar{y}_1, \bar{y}_2, \bar{x})\neq 0\hbox{ }\text{ or }\hbox{ }a_2'(\tilde{y}_1,\tilde{y}_2,\tilde{x}) \neq 0\] where $(\bar{y}_1, \bar{y}_2, \bar{x})$ correspond to an arbitrary $(\eps_1,\eps_2)$, and $(\tilde{y}_1,\tilde{y}_2,\tilde{x})$ correspond to $(\eps_1'', \eps_2'')$ from above.\footnote{Actually I'm a bit unsure here}. 
+
+Suppose the later. Let $y_1 = g(y_2 + \eps_1)$ and let $x = \frac{-\beta y_1 + y_2 - \eps_2'}{\gamma}$. Follows that 
+\[\pderiv{\log f_{\eps_1,\eps_2} (y_1 - g(y_2), -\beta y_1 + y_2  - \gamma x)}{\eps_2} = 0\]
+At such a $y_1,x$ the matrix above becomes the rank 3 matrix 
+\[\begin{pmatrix}
+  1 & -\tilde{\beta} & 0 \\ 
+  -\pderiv{\tilde{g}(y_2)}{y_2} & 1 & a_2'(y_1,y_2,x) \\
+  0 & -\tilde{\gamma} & 0
+\end{pmatrix}\]
+so the derivatives of $g^*$ are identified.

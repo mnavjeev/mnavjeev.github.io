@@ -1,0 +1,131 @@
+%!TEX root = /Users/manunavjeevan/Documents/GitHub//mnavjeev.github.io/files/ML + Lasso/Annotated Literature Review/litNotesML.tex
+
+\section{Sparse Principal Component Analysis \textit{\small Hui Zou, Trevor Hastie, Robert Tisbirani (JCGS, 2006)}}
+
+Paper appeared in Journal of Computational and Graphical Statistics in 2006. Extends PCA to the high dimensional setting so there is consistency when $p \gg n$. 
+
+\subsection{Introduction}
+
+Principal Component Analysis is a popular data-processing and dimension reduction technique, with many applications in engineering, biology, and social science. PCA seeks the linear combinations of the original variables such that the derived variables capture maximal variance. It can be computed via the singular value decomposition (SVD) of the data matrix. 
+
+In detail, let the data $\vX$ be an $n\times p$ matrix, where $n$ and $p$ are the number of observations and the number of variables, respectively. Without loss of generality, assume the column means of $\vX$ are all zero and let the SVD of $\vX$ be 
+\begin{equation}
+	\label{eq:scpa-1.1}
+	\vX = \vU \vD \vV^T
+\end{equation}
+where $\vZ = \vU\vD$ are the principle components and the columns $\vV$ are the corresponding loadings of the principal components. The sample variance of the $i^{th}$ PC is $\vD^2_{ii}/n$. In gene expression data the standardized PCs $\vU$ are called the \emph{eigen-arrays} and $\vV$ are called the \emph{eigen-genes}. Usually the first $q$, $q \ll \min(n,p)$, principal components are used to represent that data, and so a dimensionality reduction is achieved. 
+
+Success of PCA is due to the following important properties: 
+\begin{enumerate}
+ 	\item Principal components sequentially capture the maximum variability among the columns of $X$, guarenteeing minimal information loss.
+ 	\item Principal components are uncorrelated, so we can talk about one principal component without referring to others
+ \end{enumerate} 
+
+However, PCA also has an obvious drawback, that is, each PC is a linear combination of $p$ variables and the loadings are typically non-zero. This makes it difficult to interpret the derived PCs. Rotation techniques are commonly used to help practitioners interpret the derived PCs, Joliffe (1995). Vines (2000) considered simple principal components by restricting the loadings to take values from a small set of allowable integers such as $0, 1$, and $-1$.
+
+Feel it is desirable not only to achieve the dimensionality reduction, but also reduce the number of explicitly used variables. Ad-hoc way to achieve this is to artificially set the loadings with absolute values smaller than a threshold to zero. The same interpretation issues arise in multiple linear regression, where the response is predicted by a linear combination of the predictors in lasso. 
+
+This article introduces a new approach for estimating PCs with sparse loading, which we call sparse principal component analysis. SPCA is built on the fact that a PCA can be written as a regression-type optimization problem. 
+
+\subsection{Motivation and Details of SPCA}
+
+In both lasso and elastic net, the sparse coefficients are a direct consequence of the $L_1$ penalty, and do not depend on the square error loss function. Jolliffe, Trendafilov, and Uddin (2003) proposed SCoTLASS, an interesting procedure that obtains sparse loadings by directly imposting an $L_1$ constraint on PCA. SCoTLASS \emph{successively} maximizes the variance 
+\begin{align}
+\label{eq:spca-3.1}
+\max              &\;\;\; a_k^T(\vX^T \vX)a_k \\
+\text{subject to} &\;\;\;
+\label{eq:spca-3.2}
+\begin{alignedat}[t]{2}
+    a_k^T a_k &= 1 \\ 
+    a_h^T a_k &= 0\text{ for \(k \geq 2\) and \(h < k\)} \\
+\end{alignedat}\\
+\text{and the extra constraint}&\;\;\;
+\label{eq:spca-3.3}
+\begin{alignedat}[t]{2}
+    \sum_{j=1}^p |a_{kj}| \leq t\\
+\end{alignedat}
+\end{align}
+For some tuning parameter $t$. Although a sufficiently small $t$ yields some exact zero loadings, there is not much guidance with SCoTLASS in choosing an appropriate value for $t$. One could try several $t$ values, but the high computational cost of SCoTLASS makes this an impractical solution. Instead consider a different approach to modifying PCA. First show how PCA can be recast in terms of a ridge-regression problem. Then the lasso penalty by changing this ridge regression to an elastic-net regression. 
+
+\subsubsection{Direct Sparse Approximation}
+
+First discuss a simple regression approach to PCA. Observe that each PC is a linear combination of the $p$ variables, thus its loadings can be recovered by regressing the PC on the $p$ variables. 
+\begin{theorem}
+	\label{thm:spca-1}
+	For each $i$ denote by $Z_i = \vU_i \vD_{ii}$ the $i$th principal component. Consider a positive $\lambda$ and the ridge estimates $\hat{\beta}_{\emph{\text{ridge}}}$ given by 
+	\begin{equation}
+		\label{eq:spca-3.4}
+		\hat{\beta}_{\emph{\text{ridge}}} = \argmin_\beta \|Z_i - \vX\beta\|^2 + \lambda \|\beta\|^2
+	\end{equation}
+	Let $\hat{v} := \frac{\hat{\beta}_{\emph{\text{ridge}}}}{\|\hat{\beta}_{\emph{\text{ridge}}}\|}$. The $\hat{v} = V_i.$
+\end{theorem}
+Theorem \ref{thm:spca-1} shows the connection between PCA and a regression methods. Regressing PCs on variables was discussing in Cadima and Jolliffe (1995) where they focused on approximating PCs by a subset of $k$ variables. 
+
+This is extended to a more general case of ridge regression in order to handle all kinds of data, especially gene expression data. Obviously, when $n > p$ and $\vX$ is a full rank matrix, the theorem does not require a positive $\lambda$. Note that if $p > n$ and $\lambda = 0 =$, ordinary multiple regression has no unique solution that is exactly $V_i$. The same happens here when $n > p$ and $\vX$ is not a full rank matrix. However,  PCA always gives a unique solution in all situations. As shown in Theorem \ref{thm:spca-1}, this indeterminacy is eliminated by the positive ridge penalty. Note that, after normalization, the coefficients are independent of $\lambda$, therefore the ridge penalty is not used to penalize the regression coefficients but to ensure the reconstruction of the principal components. 
+
+No add the $L_1$ penalty to \ref{eq:spca-3.4} and consider the following optimization problem 
+\begin{equation}
+	\label{eq:spca-3.5}
+	\hat{\beta} = \argmin_\beta \|Z_i - \vX\beta\|^2 + \lambda \|\beta\|^2 + \lambda_1 \|\beta\|_1
+\end{equation}
+Call $\hat{V}_i = \frac{\hat{\beta}}{\|\hat{\beta}\|}$ an approximation to $V_i$ and $\vX \hat{V}_i$ the $i$th approximated principal component. Zou and Hastie (2005) called (\ref{eq:spca-3.5}) a \emph{naive} elastic net, which differs from the elastic net by a scaling factor $(1 + \lambda)$. Since we are using the normalized fitted coefficients, the scaling factor does not affect $\hat{V}_i$. Clearly, large enough $\lambda_1$ gives sparse $\hat{\beta}$ and hence a sparse $\hat{V}_i$. So can flexible choose a sparse approximation to the $i$th principal component. 
+
+\subsubsection{Sparse Principal Components Based on the SPCA Criterion}
+
+Theorem \ref{thm:spca-1} depends on the results of PCA, so it is not a genuine alternative. However, it can be used in a two-stage exploratory analysis. First, perform PCA then use (3.5) to find suitable sparse approximations. 
+
+Now present a ``self-contained'' regression-type criterion to derive PCs. Let $\vx_i$ denote the $i$th row vector of the matrix $\vX$. First consider the leading principal component. 
+\begin{theorem}
+	\label{thm:spca-2}
+	For any $\lambda > 0$, let 
+	\begin{align*}
+	\label{eq:spca-3.6}
+	(\hat{\alpha}, \hat{\beta}) = \arg\min_{\alpha, \beta}&\; \sum_{i=1}^n \|\vx_i - \alpha \beta^T \vx_i \|^2 + \lambda \|\beta\|^2 \numberthis \\
+	\text{subject to} &\;
+		\begin{alignedat}[t]{1}
+		\|\alpha\|^2 & = 1
+		\end{alignedat}
+	\end{align*}
+	Then $\hat{\beta}$ is proportional to $V_1$ ($\hat{\beta} \propto V_1$).
+\end{theorem}
+Next theorem can be used to derive the whole sequence of PCs
+\begin{theorem}
+	\label{thm:spca-3}
+	Suppose we are considering the first $k$ principal components. Let $\vA_{p\times k} = [\alpha_1, \dots, \alpha_k]$ and $\vB_{p\times k} = [\beta_1, \dots, \beta_k]$. For any $\lambda > 0$, let 
+	\begin{align*}
+	\label{eq:spca-3.7}
+	(\hat{\vA}, \hat{\vB}) = \arg\min_{\vA, \vB}&\; \sum_{i=1}^n \|\vx_i - \vA \vB^T \vx_i \|^2 + \lambda \|\beta\|^2 \numberthis \\
+	\text{subject to} &\;
+		\begin{alignedat}[t]{1}
+		\vA^T\vA & = I_{k\times k}
+		\end{alignedat}
+	\end{align*}
+	Then $\hat{\beta}_j$ is proportional to $V_j$ for all $j = 1,2,\dots, k$ (\(\forall j, \hat{\beta}_j \propto V_j\)).
+\end{theorem}
+Theorems \ref{thm:spca-2} and \ref{thm:spca-3} effectively transform the PCA problem into a regression-type problem. The critical element is the objective function $\sum_{i=1}^n \|\vx_i - \vA\vB^T\vx_i\|^2$. If we restrict $\vB = \vA$, then 
+\[\sum_{i=1}^n \|\vx_i - \vA\vB^T\vx_i\|^2 = \sum_{i=1}^n \|\vx_i - \vA\vA^T\vx_i\|^2\]
+whose minimizer under the orthonormal constraint on $\vA$ is exactly the first $k$ loading vectors of ordinary PCA. This formulation arises int he ``closest approximating linear manifold'' derivation of PCA (Hastie, Tibshirani, Friedman 2001). Theorem \ref{thm:spca-3} shows that we can still have exact PCA while relaxing the restriction that $\vB = \vA$ and adding the ridge penalty term. 
+
+As can be seen later, these generalizations enable us to flexibly modify PCA. The proofs of Theorems \ref{thm:spca-2} and \ref{thm:spca-3} are given in Appendix, below is an intuitive explanation. 
+
+Note that 
+\begin{equation}
+	\label{eq:spca-3.8}
+	\sum_{i=1}^n \|\vx_i - \vA\vB^T \vx_i\|^2 = \|\vX - \vX\vB\vA^T\|^2
+\end{equation}
+Since $\vA$ is orthonormal, let $\vA_\perp$ be any orthonormal matrix such that $[\vA;\vA_\perp]$ is a $p\times p$ orthonormal. Then, we have 
+\begin{align}
+	\label{eq:spca-3.9}
+    \|\vX^T - \vX\vB\vA^T\|^2 &= \|\vX\vA_\perp\|^2 + \|\vX\vA -\vX\vB\|^2 \\
+    \label{eq:spca-3.10}
+    &= \|\vX\vA\|^2 + \sum_{j=1}^k \|\vX\alpha_j - \vX\beta_j\|^2
+\end{align}
+Suppose $\vA$ is given, then the optimal $\vB$ minimizing (\ref{eq:spca-3.7}) should minimize 
+\begin{equation}
+ 	\label{eq:spca-3.11}
+ 	\argmin_\vB \sum_{j=1}^k \left\{\|\vX\alpha_j - \vX\beta_j\|^2 + \lambda \|\beta_j\|^2\right\}
+ \end{equation} 
+
+
+
+

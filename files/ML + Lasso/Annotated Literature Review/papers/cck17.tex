@@ -1,0 +1,164 @@
+%!TEX root = /Users/manunavjeevan/Desktop/Research/ML + Lasso/Annotated Literature Review/litNotesML.tex
+
+\section{Central Limit Theorems and Bootstrap in High Dimensions \textit{\small Victor Chernozhukov, Denis Chetverikov, Kengo Kato (AoP 2017)}}
+
+Article appeared in Annals of Probability in 2017. It can be found through the AoP website \href{https://projecteuclid.org/euclid.aop/1502438428}{here} or from ArXiv \href{https://arxiv.org/pdf/1412.3661.pdf}{here}.
+
+Paper derives central limit theorems and bootstrap theorems for probabilities that sums of centered high dimensional random vectors hit hyperrectangles and sparsely convex sets. 
+
+\subsection{Introduction}
+
+Let $X_1, \dots, X_n$ be independent random vectors in $\SR^p$ where $p\geq 3$ may be large or even much larger than $n$. Denote by $X_{ij}$ the $j$-th coordinate of $X_i$ so that $X_i = (X_{i1},\dots,X_{ip})'$. Assume that each $X_i$ is centered, so that $\E[X_ij] = 0$ and $\E[X_{ij}^2] < \infty$ for all $i = 1, \dots, n$ and $j = 1, \dots, p$. Define the normalized sum 
+\[S_n^X := \left(S_{n1}^X, \dots, S_{np}^X\right)' := \frac{1}{\sqrt{n}} \sum_{i=1}^n X_i\]
+Paper considers Gaussian approximations to $S_n^X$ and, to this end, let $Y_1, \dots, Y_n$ be independent centered Gaussian random vectors in $\SR^p$ such that each $Y_i$ has the same covariance matrix as $X_i$, that is $Y_i \sim N(0,\E[X_iX_i'])$. Define the normalized sum for the Gaussian random vectors 
+\[S_n^Y := \left(S_{n1}^Y, \dots, S_{np}^Y\right)' := \frac{1}{\sqrt{n}}\sum_{i=1}^n Y_i\]
+Interested in bounding the quantity 
+\begin{equation}
+	\label{eq:cck17-1}
+	\rho_n(\calA) := \sup_{A\in \calA}\left| \P(S_n^X \in A) - \P(S_n^Y\in A)\right|
+\end{equation}
+where $\calA$ is a class of Borel sets in $\SR^p$. Section 2 derives this bound for $\calA = \calA^{\text{re}}$, the class of all hyperrectangles ans shows that this bound converges to 0 under some conditions. 
+
+Bounding $\rho_n(\calA)$ for various classes $\calA$ of sets in $\SR^p$ with a special emphasis on explicit dependence on the dimension $p$ in the bounds has been studied. The appendix for the 2013 Annals of Statistics Paper, ``Gaussian approximations and multiplier bootstrap for maxima of sums of high dimensional random vectors'' also by Chernozhukov, Chetverkiov, Kato offers a literature review. Typically interested in how fast $p = p_n \rightarrow \infty$ is allowed to grow while guaranteeing $\rho_n(\calA)\to 0$. In particular, Bentkus (2003) establishes one of the sharpest results in this direction, which states tht when $X_1, \dots, X_n$ are i.i.d with $\E[X_i X_i'] = I_p$
+\begin{equation}
+	\label{eq:cck17-2}
+	\rho_n(\calA)\leq C_p(\calA)\frac{\E[\|X_1\|^3]}{\sqrt{n}}
+\end{equation}
+where $C_p(\calA)$ is a constant that depends only on $p$ and $\calA$. For example if $\calA$ is the class of all Euclidean balls in $\SR^p$ then $C_p(\calA)$ is bounded by a universal constant. This bound does not allow $p$ to be larger to $n$, however, if we need that $\rho_n(\calA)\rightarrow 0$. By Jensen's inequality, when $\E[X_1 X_1']= I_p$, $\E[\|X_1\|^3] \geq (\E[\|X_1\|^2])^{3/2} = p^{3/2}$, and hence in order to make the right-hand side of (\ref{eq:cck17-2}) be o(1) we need $p = o(n^{1/3})$. 
+
+In modern statistical applications, however, $p$ is often much larger than $n$. So it may be interesting to ask whether it is possible to provide a nontrivial class of sets $\calA$ in $\SR^p$ for which one could have that 
+\begin{equation}
+	\label{eq:cck17-3}
+	\rho_n(\calA)\to 0 \text{ even if $p$ is potentially larger than or much larger than }n
+\end{equation}
+This paper derives bounds on $\rho_n(\calA)$ for $\calA = \calA^{\text{re}}$, the class of all hyperrectangles, or more generally for $\calA\subset \calA^{\text{si}}$, a class of all simple convex sets and shows that these bounds lead to results of type (\ref{eq:cck17-3}). 
+
+Any convex set is a simple convex set if it can be approximated by a convex polytope whose number of facets is (potentially very large but) not too large. This is discussed in Section 3. This is interesting because it allows for the derivation of similar bounds for $\calA = \calA^{\text{sp}}(s)$, the set of (s-)sparsely convex sets. These are sets that can be represented as a intersection of many convex sets whose indicator functions depend non-trivially on at most $s$ elements of their arguments (for some small $s$).
+
+These sets are useful for applications to statistics. In particular, the results for hyperrectangles and sparsely convex sets are of importance because they allow for approximating the distributions of various key statistics that arise in high-dimensional models. For example, the probability that a collections of Kolmogorov-Smirinov type statistics falls below a collection of thresholds
+\[\P\left(\max_{j\in J_k} S_{nj}^K \leq t_k\text{ for all }k = 1, \dots, \kappa \right) = P\left(S_n^X \in A\right)\]
+can be approximated by $P(S_n^Y \in A)$ within the error margin $\rho_n(\calA^{\text{re}})$; here $J_k$ are non-intersecting subsets of $\{1, \dots, p\}$, $\{t_k\}$ are thresholds in the interval $(-\infty, \infty)$, $\kappa \geq 1$ is an integer, and $A\in \calA^{\text{re}}$ is a hyperrectangle of the form 
+\[\{w\in \SR^P: \max_{j\in J_k} w_j \leq t_k \text{ for all }k=1, \dots, \kappa\}\]
+
+
+\paragraph{Some Notation} 
+
+Use notation $\|v\|_0 = \sum_{j=1}^p \mathds{1}\{v_j\neq 0\}$ and $\|v\| = (\sum_{j=1}^p v_j^2)^{1/2}$. For $\alpha > 0$, defined the function $\psi_a :[0, \infty) \to [0, \infty)$ by $\phi_\alpha := \exp(x^\alpha) - 1$. Consider 
+\[ \|\xi\|_{\psi_\alpha} := \inf \{\lambda > 0: \E[\psi_\alpha(|\xi|/\lambda)] \leq 1 \} \]
+For $\alpha \in [1,\infty)$ this is a well defined norm, whereas for $\alpha \in (0,1)$ this is a quasi-norm. That is, there exists a constant $K_\alpha$ depending only on $\alpha$ such that 
+\[\|\xi_1 + \xi_2\|_{\psi_\alpha} \leq K_\alpha (\|\xi_1\|_{\psi_\alpha} + \|\xi_2\|_{\psi_\alpha})\]
+Throughout the paper assume $n\geq 4$ and $p \geq 3$
+
+\subsection{High-dimensional CLT for hyperrectangles}
+
+Begin by presenting an abstract theorem. General but depends on the tail properties of the distributions of the coordinates of $X_i$ in a nontrivial way. Next, apply this theorem under simple moment conditions and derive more explicit bounds. 
+
+Let $\calA^{\text{re}}$ be the class of all hyperrectangles in $\SR^p$; that is $\calA^{\text{re}}$ consists of all sets $A$ of the form 
+\begin{equation}
+	\label{eq:cck17-4}
+	A = \{w \in \SR^P: a_j \leq w_j \leq b_j\text{ for all }j = 1, \dots, p\}
+\end{equation}
+for some $-\infty \leq a_j \leq b_j \leq \infty$, $j = 1, \dots, p$. Will derive a bound on $\rho_n(\calA^{\text{re}})$ and show that, under certain conditions it converges to 0, even in the high dimensional setting. 
+
+To describe the bound, need to prepare some notation. Define 
+\[L_n := \max_{1\leq j \leq p} \sum_{i=1}^n \E\left[|X_{ij}|^3\right]/n\]
+and for $\phi \geq 1$, define for $Z = X,Y$
+\begin{equation}
+	\label{eq:cck17-5}
+	M_{n,Z}(\phi) := n^{-1}\sum_{i=1}^n \E\left[\max_{1\leq j \leq p}\mathds{1}\left\{\max_{1\leq j \leq p} |X_{ij}| < \sqrt{n}/(4\phi\log p)\right\}\right]
+\end{equation}
+and let 
+\[M_n(\phi) := M_{n,X}(\phi) + M_{n,Y}(\phi)\]
+The following is the main result of the paper 
+\begin{theorem}[Abstract high-dimensional CLT for hyper-rectangles]
+	\label{thm:ckk17-1}
+	Suppose that there exists some constant $b > 0$ such that $n^{-1}\sum_{i=1}^n \E[X_{ij}^2] \geq b$ for all $j = 1, \dots, p$. Then tere exist constants $K_1, K_2 > 0$ depending only on $b$ such that, for every constant $\bar{L}_n \geq L_n$,
+	\begin{equation}
+		\label{eq:cck17-6}
+		\rho_n(\calA^{\text{re}}) \leq K_1 \left[\left(\frac{\bar{L}^2_n\log^7 p}{n}\right)^{\frac{1}{6}} + \frac{M_n(\phi_n)}{\bar{L}_n}\_\right]
+	\end{equation}
+	with 
+	\begin{equation}
+		\label{eq:cck17-7}
+		\phi_n := K_2\left(\frac{\bar{L}_n^2 \log^4 p}{n} \right)^{-\frac{1}{6}}
+	\end{equation}
+\end{theorem}
+
+\begin{remark}[Key Features of Theorem \ref{thm:ckk17-1}]
+	The bound in (\ref{eq:cck17-6}) can be contrasted with the Bentkus bound. Assume that the vectors $X_1, \dots, X_n$ all have second moment of 1 and are bounded by $B_n \geq 1$. Then (\ref{eq:cck17-6}) reduces to 
+	\begin{equation}
+		\label{eq:cck17-8}
+		\rho_n(\calA^{\text{re}})\leq K(n^{-1}B_n^@\log^7(pn))^{1/6}
+	\end{equation}
+	Importantly, the RHS above converges to 0 even when $p$ is much larger than $n$. Indeed, one needs $B_n^2\log^7(pn)= o(n)$. In contrast, the Bentkus bound requires $\sqrt{p} = o(n^{1/7})$.
+\end{remark}
+
+\subsection{High-dimensional CLT for simple and sparsely convex sets}
+Section extends the result of Section 2 by considering larger classes of sets. In particular, consider classes of simple convex sets and obtain, under certain conditions, bounds that are similar to those in the previous section. In particular this allows us to derive bounds for classes of sparsely convex sets, which may be of interest in statistics where sparse models and techniques have been of canonical importance in past years. 
+
+\subsubsection{Simple Convex Sets}
+
+Consider a closed convex set $A\subset \SR^p$. This set can be characterized by its support function
+\[\calS_A: \mathbb{S}^{p-1}\to\SR\cup\{\infty\}, \hbox{ } \hbox{ } v\mapsto \calS_A(v):= \sup\{w'v: w\in A\}\]
+where $\mathbb{S}^{p-1}:= \{v\in\SR^p: \|v\| = 1\}$.  In particular, note that \[A = \bigcap_{v\in \mathbb{S}^{p-1}}\{w\in \SR^p: w'v\leq \calS_A(v)\}\]
+Say that $A$ is $m$-generated if it is generated by the intersection of $m$ half-spaces.\footnote{A closed half space in $\SR^p$ is one defined by the inequality \(a_1 x_1 + \dots a_p x_p \geq b\), where at least on of the $a_i$ above is non-zero. In an open half-space the inequality is strict.} 
+That is, $A$ is a convex polytope with at most $m$ facets. The support function $\calS_A$ of such a set $A$ can be characterized completely by it's values $\{\calS_A(v):v\in \calV(A)\}$ for the set $\calV(A)$ of unit vectors that are outward normal to the facets of $A$. Indeed 
+\[A = \bigcap_{v\in\calV(A)} \{w\in\SR^p: w'b\leq \calS_{A^m}(v)\}\]
+For $\eps > 0$ and an $m$-generated convex set $A^m$, define 
+\[A^{m,\eps} = \bigcap_{v\in\calV(A^m)} \{w\in\SR^p: w'b\leq \calS_{A^m}(v) + \eps\}\]
+Say that a convex set $A$ admits an approximation with precision $\eps$ by an $m$-generated convex set $A^m$ if \(A^m \subset A \subset A^{m,\eps}\).
+
+Let $a, d > 0$ be some constants and let $\calA^{\text{si}}(a,d)$ be the class of all Borel sets $A\subset \SR^P$ such that $A$ admits an approximation with precision $\eps = a/n$ by an $m$-generated convex set $A^m$ where $m\leq (pn)^d$.
+
+Refer to sets that satisfy the condition above as \emph{simple convex sets}. note that any hyperrectangle $A\in\calA^{\text{re}}$ is a simple convex set with $a = 0, d = 1$. For any $A \in \calA^{\text{si}}(a,d)$, let $A^m(A)$ denote the approximating m-polytope. 
+
+Proposition will consider subclasses $\calA$ of the class $\calA^{\text{si}}(a,d)$ consisting of sets $A$ such that for $A^m = A^m(A)$ and $\tilde{X}_i = (\tilde{X}_{i1}, \dots, \tilde{X}_{im})' = (v'X_i)_{v\in\calV(A^m)}$ the following conditions are satisfied: 
+\begin{enumerate}
+	\item (M.1$'$) \(n^{-1}\sum_{i=1}^n \E[\tilde{X}_{ij}^2]\geq b\) for all $j = 1, \dots, m$
+	\item (M.2$'$)\(n^{-1}\sum_{i=1}^n \E[|\tilde{X}_{ij}|^{2+k}]\leq B_n^k\) for all $j = 1, \dots, m$ and $k = 1,2$
+\end{enumerate}
+and, in addition, one of the following conditions is satisfied 
+\begin{enumerate}
+	\item (E.1$'$) \(\E[\exp(|\tilde{X}_{ij}|/B_n])]\leq 2 \) for $i = 1, \dots, n$ and $j = 1, \dots, m$
+	\item (E.2$'$) \(\E[(\max_{1\leq j \leq m} |\tilde{X}_{ij}|/B_n)^q]\leq 2\) for all $i = 1,\dots, n$
+\end{enumerate}
+Define the following
+\begin{equation}
+	\label{eq:cck17-9}
+	D_n^{(1)} = \left(\frac{B_n^2 \log^7 (pn)}{n}\right)^{1/6}, \hbox{ }\hbox{ }\hbox{ }D_{n,q}^{(2)} = \left(
+	\frac{B_n^2 \log^3(pn)}{n^{1-2/q}}\right)^{1/3}
+\end{equation}
+This leads to the following proposition 
+\begin{prop}[High-dimensional CLT for simple convex sets]
+	Let $\calA$ be a subclass of $\calA^{\text{si}}(a,d)$ such that conditions \emph{(M.1$'$), (M.2$'$)}, and \emph{(E.1$'$)}. Then 
+	\begin{equation}
+		\label{eq:cck17-10}
+		\rho_n(\calA) \leq C D_n^{(1)},
+	\end{equation}
+	where the constant $C$ depends only on $b$, while if \emph{(E.2$'$)} is satisfied for every $A\in\calA$, then
+	\begin{equation}
+		\label{eq:cck17-11}
+		\rho_n(\calA) \leq C\{D_n^{(1)} + D_{n,q}^{(2)}\}
+	\end{equation}
+	where the constant $C$ depends only on $a,b,d,$ and $q$
+\end{prop}
+
+Worthwhile to mention that a sufficient condition for the transformed variables $\tilde{X}_i = (v'X_i)_{v\in \calV(A^m)}$ satisfying condition (E.1$'$) is the case where each $X_i$ obeys a log-concave distribution. A Borel probability measure $\mu$ on $\SR^p$ is \emph{log-concave} if for any compact sets $A_1, A_2$ in $\SR^p$ and $\lambda \in (0,1)$, 
+\[\mu(\lambda A_1 + (1-\lambda)A_2) \geq \mu(A_1)^\lambda \mu(A_2)^{1-\lambda}\]
+where $xA_1 + yA_2 = \{xa_1 + ya_2: a_i \in A_i\}$. 
+\begin{corollary}[High-dimensional CLT for simple convex sets with log-concave distributions]
+	Suppose that each $X_i$ obeys a centered log-concave distribution on $\SR^p$ and that all the eigenvalues of $\E[X_i X_i']$ are bounded from below by a constant $k_1 > 0$ and from above by a constant $k_2 \geq k_1$ for every $i = 1, \dots, n$. Then 
+	\[\rho_n\left(\calA^{\text{si}}(a,d)\right)\leq C_n^{-1/6} \log^{7/6}(pn)\]
+	where the constants $C_n$ depend only on $a,b,d,k_1$ and $k_2$.
+\end{corollary}
+
+\subsubsection{Sparsely Convex Sets}
+\begin{definition}[Sparsely Convex Sets]
+	\label{def:cck17-3.1}
+	For integers $s > 0$, we say that $A \subset \SR^p$ is an $s$-sparsely convex set if there exists an integer $Q > 0$ and convex sets $A_q \subset \SR^p$, $q = 1, \dots, Q$ such that $A = \cap_{q=1}^Q A_q$ and the indicator function of each $A_q$, $w\mapsto \mathds{1}(q\in A_q)$ depends on at most $s$ elements of its arguments $q = (q_1, \dots, w_p)$. Also say that $A = \cap_{q = 1}^Q A_q$ is a sparse representation of $A$. 
+\end{definition}
+
+Observe that for any $s$-sparsely convex set $A\subset \SR^p$, the integer $Q$ in Definition \ref{def:cck17-3.1} can be chose to satisfy $Q \leq C_s^p \leq p^s$, where $C^p_2$ is the number of combinations of size $s$ from $p$ objects. Indeed, if we have a sparse representation $A = \cap_{q=1}^Q A_q$ for $Q > C_s^p$. 
+
+The proof of the proposition below reveals that $s$-sparsely convex sets are closely related to simple convex sets. In particular, can split any $s$-sparsely convex set $A\subset \SR^p$ into $A \cap B$ and $A\cap B'$ for a cube $B = \{w\in \SR^p: \max_{1\leq j \leq p} |w_j| \leq R\}$.
+

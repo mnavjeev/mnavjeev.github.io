@@ -1,0 +1,221 @@
+%!TEX root = /Users/manunavjeevan/Desktop/Research/ML + Lasso/Annotated Literature Review/litNotesML.tex
+
+\section{NPR Using Deep Neural Networks \textit{\small Johannes Schmidt-Hieber (ArXiv, 2017)}}
+
+Full paper title is ``Nonparametric regression using deep beural networks with ReLU activation function.'' Paper appeared on ArXiv in 2019 and (I believe) is due to appear in Annals at some point. It can be found \href{https://arxiv.org/pdf/1708.06633.pdf}{here}.
+
+\subsection{Introduction}
+
+In nonparametric regression model with random covariates in unit hypercube, observe $n$ i.i.d vectors $\mathbf{X}_i \in [0,1]^d$ and $n$ responses $Y_i \in \SR$ from the model $\vX$
+\begin{equation}
+	\label{eq:sh-1}
+	Y_i = f_0(\mathbf{X}_i) + \eps_i
+\end{equation}
+The noise variables $\eps_i$ are assumed to be $i.i.d$ standard normal and independent of $\vX_i$. Statistical problem is to recover the unkown function $f_0: [0,1]^d\to\SR$ from the sample $(\vX, Y_i)_i$. Various methods exist that allow one to estimate the regression function nonparametrically, including kernel regression, smoothing, series estimators/wavelets, and splines. This paper considers fitting a multilayer feedforward artificial neural network to the data. Shown that estimator achieves nearly optimal convergence rates under various constraints on the regression function.
+
+Deep neural networks have been used in practice from some time, but there is not much mathematrical understanding. Problem is that fitting a neural network to data is highly nonlinear in the parameters. Moreover, the function class is non-convex and various regularization methods are combined in practice. 
+
+Article inspired by the idea to build a statistical theory that provides some understanding of these procedures. Method is too complex to be theoretically tractible, so some selection of important characteristics must be done in analysis. 
+
+To fit a neural network, an activation function $\sigma: \SR\to\SR$ needs to be chosen. Traditionally, sigmoidal activation functions were employed (as in Secition \ref{sec:dl_npr}). For deep neural networks, however, there is a clear gain to using the non-sigmoidal rectifier linear unit (ReLU) 
+\[\sigma(x) = \max(x,0) = (x)_+\]
+In practice, ReLU outperforms other activation functions with regards to performance and computational cost. Statistical analysis for ReLU activation function is quite different from earlier approaches. Viewed as a nonparametric method, ReLU networks have some suprising properties. Deep networks with ReLU activation produce functions that are piecewise linear in the input. Nonparametric methods based on piecewise linear approacimations are typically not able to capture higher  order smoothness in the signal and are rate-optimal only up to smoothness index two. Paper shows that ReLU combined with deep network architecture achieves near minimax rates for arbitrary smoothness of the regression function. 
+
+Number of hidden layers has been growing, results support this. Further, generally contain many more network parameters than sample size. Paper accounts for this by assuming number of potential nework parameters is much larger than the sample size. For noisy data generated from the nonparameteric regression model, overfitting leads to generalization errors and incorporating regularization becomes esential.
+
+Existing statistical theoery often requires that the size of the network parameteres tends to infinity as the sample size increases. In practice, estimated network weights are, however, rather samll. Paper incorporates this into theory, procing it is suffecient to consider neural networks with all network parameters bounded in absolute value by one. 
+
+Still, NPR using deep neural nets has to get around the curse of dimensionality. Paper gets around this by imposing the generalized hierarchical model structure. 
+
+\subsection{Mathematical Definition of Multilayer Neural Networks} 
+
+\paragraph{Neural Network}
+
+Fitting a nerual network requires the choice of an activatino function $\sigma: \SR\to\SR$ and the network architecture. Paper studies the ReLU activation funtion 
+\[\sigma(x) = \max(x,0)\]
+For $\mathbf{v} = (v_1, \dots, v_r)$ define the shifted activation function $\sigma_{\mathbf{v}}: \SR^r\to\SR^r$ as 
+\[\sigma_{\mathbf{v}}\begin{pmatrix}y_1 \\ \vdots \\y_r\end{pmatrix} = \begin{pmatrix} \sigma(y_1 - v_1 )\\    \vdots \\ \sigma(y_r - v_r) \end{pmatrix}\]
+The network architecture $(L, \vp)$ consists of a positive integer $L$ called the number of hidden layers or \emph{depth} and a \emph{width vector} $\vp \in \SN^{L+2}$. So a neural network with network architecture $(L, \vp)$ is then any function of the form 
+\begin{equation}
+	\label{eq:sh-2}
+	f:\SR^{p_0}\to\SR^{P_{L+1}}, \hbox{ }\hbox{ }\hbox{ }\vx\mapsto f(\vx) = W_l \sigma_{\vv_L} W_{L-1}\sigma_{\vv_{l-1}}\cdots W_1\sigma_{\vv_1}W_0\vx
+\end{equation}
+where $W_i$ is a $p_i \times p_{i+1}$ weight matrix and $\vv_i \in \SR^{p_i}$ is a shift vector. Network functions are therefore built by alternating matrix-vector multiplications with the action of the non-linear activation functions $\sigma$. In (\ref{eq:sh-2}) it is also possible to omit the shift vectors by considering the input $(\vx, 1)$ and enlarging the weight matrices by one row and one column with appropriate entries. 
+
+In the compsci literature, neural networks are more commonly introduced via their representation as directed acyclic graphs, like in a figure above in section \ref{sec:dl_npr}.
+
+\paragraph{Mathematical Modeling of Deep Network Characteristics} 
+
+Given a network function \(f(\vx)\) as defined in (\ref{eq:sh-2}), the network parameters are the entries of the matricies $(W_j)_{j = 0,\dots, L}$ and the vectors $(\vv_j)_{j = 0,\dots, L}$. These parameters need to be estimated/learned from the data. 
+
+Aim of this article is to consider a framework that incorporates essential features of modern deep network architectures. Allow for large depth $L$ and large number of potential network parameter. Thus, consider high dimensional settings with more parameters that training data. 
+
+Another characteristic of trained networks is that the size of the learned network parameters is typically not very large. Common network initialize the weight matrices $W_j$ by a nearly orthogonal random matrix if two succesive layers have the same width. IN practice, the trained network weights are typically not far from the initialized weights. In an orthogonal matrix, all entries are bounded in absolute value by one, this explains that also the trained network weights are not large. 
+
+Existing theory requires that the size of the network parameters tends to infinity. If large parameters are allowed, one can easily approximate step functions by ReLU networks. To be more in line with what is observed in practice, consider networks with all parameters bounded by one. Constraint can easily be build into the deep learning algorithm by projecting the network parameters in each iteration onto the interval [-1,1].
+
+If $\|W_i\|_{\infty}$ denotes the sup-norm of $W_j$, the space of network functions with given network architecture and network parameters bounded by one is 
+\begin{equation}
+	\label{eq:sh-3}
+	\calF(L,\vp) := \left\{ f\text{ of the form (\ref{eq:sh-2}) }: \max_{j= 0,\dots, L} \|W_j\|_\infty \vee |\vv_k|_\infty \leq 1 \right\}
+\end{equation}
+with the coefficeint that $\vv_0$ is a vector of coefficients all equal to zero. 
+
+In deep learning, sparsity of the neural network is enforced through regularization or specific forms of networks. Dropout, for instance, randomly sets units to 0 and has the effect that each unit will be active only for a small fraction of the data. In the notation of this paper, this means that each of the vectors $\sigma_{\vv_k}W_{k=1}\cdots W_1\sigma_{\vv_1}W_0\vx$, $k= 1,\dots, L$ is zero over a large range of the input space $x\in [0,1]^d$.  Convolutional neural networks filter the input over local neighborhoods. Rewritten in the form (\ref{eq:sh-2}), this essentially means that the $W_i$ are banded Toeplitz matrices\footnote{A Toeplitz matrix is one where each descending diagonal from left to right is constant. For example \[\begin{pmatrix}a & b & c \\ d & a & b \\ e & d & a\end{pmatrix}\] is a Toeplitz matrix. An $l$ banded Toeplitz matrix is one such that only the middle $l$ diagonals of the matrix are non-zero. For example, a traditional diagonal matrix is a $1$ banded Toeplitz matrix}. All network parameters corresponding to higher off-diagonal entries are thus set to zero. 
+
+This paper models sparsity by asusming that there are only a few non-zero / active network parameters. If \(\|W_j\|_0\) denotes the number of non-zero entries, then the $s$-sparse networks are given by 
+\begin{equation}
+\begin{split}
+	\label{eq:sh-4}
+	\calF(L, \vp, s) &:= \calF(L, \vp ,s, F) \\
+	&:= \left\{f\in \calF(L, \vp): \sum_{j=0}^L \|W_j\|_0 + |\vv_j|_0 \leq s, \|f\|_\infty \leq F \right\}
+\end{split}
+\end{equation}
+The upper bound on the uniform/sup norm of $f$ is most of the time not needed and omitted in the notation. Consider cases where the number of network parameters $s$ is small compared to the total number of parameters in the network. 
+
+To estimate the parameters of the model, it is common to apply variations of stochastic gradient descent combined with other techniques such as dropout to the loss induced  by the log-likelihood. For nonparametric regression with normal errors, this coincides with the least-squares loss. The common objective of all reconstruction methods is to find networds $f$ with a small empirical risk $\frac{1}{n}\sum_{i=1}^n (Y_i - f(\vX_i))^2$. For any estimator $\hat{f}_n$ that returns a network in the class $\calF(L,\vp, s, F)$ define the correspoinding quantity 
+\begin{equation}
+	\label{eq:sh-5}
+	\Delta_n(\hat{f}_n, f_0) := \E_{f_0}\left[\frac{1}{n}\sum_{i=1}^n (Y_i - \hat{f}_n(\vX)_i)^2 - \inf_{f\in\calF(L,\vp, s, F)} \frac{1}{n} \sum_{i=1}^n (Y_i - f(\vX)_i)^2\right]
+\end{equation}
+The sequence $\Delta_n(\hat{f}_n , f_0)$ measures the difference between the expected empirical risk of $\hat{f}_n$ and the global minimum over all networks in the class. The subscript $f_0$ indicates that the expectation is taken with respect to the sample generated from the nonparametric regression model with regression function $f_0$. In general $\Delta_n (\hat{f}_n, g_0) \geq 0$ and $\Delta_n(\hat{f}_n, f_0) = 0$ if $\hat{f}_n$ is an empirical risk minimizer. Note here this is just measuring the ``distance'' between the estimation technique and the global minimumum. 
+
+To evaluate the statistical performance of an estimator $\hat{f}_n$, derive bounds for the prediction error 
+\[R(\hat{f}_n, f_0) := \E_{f_0}\left[\left(\hat{f}_n(\vX)-f_0(\vX)\right)^2\right]\]
+The term $\Delta_n(\hat{f}_n, f_0)$ can be related via empirical process theory to a constant times $(R(\hat{f}_n, f_0)-R(\hat{f}_n^{\text{ERM}}, f_0))$ plus a remainder, where $\hat{f}_n^{\text{ERM}}$ being an empirical risk minimizer. So $\Delta_n(\hat{f}_n, f_0)$ in $n$ for commonly employed methods such as stochastic gradient descent is an interesting problem in its own. Only skech a possible proof strategy here: 
+\begin{enumerate}
+	\item Because of potentially local minima and saddle poins, gradient descent bethods only have a small chance to reach the global minimum w/o getting stuck in a local minimum first
+	\item Making a link to sperical spin glasses, paper cited provides a heuristic suggesting that the loss of any local minima lies in a band that is lower bounded by the loss of the global minimum
+	\item Width of the band depends on the width of the network, if the heuristic argument can be made rigorous then the width of the band provides an upper bound for $\Delta_n(\hat{f}_n, f_0)$ for all methods that converge to a local minumum 
+\end{enumerate}
+This would allow study of deep learning without an explicit analysis of the algorithm. 
+
+\subsection{Main Results}
+
+Theoretical performance of neural networks dpends on the underlying function class. Classical appraoch in nonparametric statistics is to assume that the regression function is $\beta$-smooth. The minimax estimation rate for the prediction error is then 
+\[n^{-2\beta/(2\beta + d)}\]
+Since the input dimension $d$ in neural network applications is very large, these rates are extremely slow. The huge sample sizes often encountered in these applications are by far not sufficient to compensate the slow rates.  With this in mind, consider a function class that is natural for neural nrwtorks and exhibits some low-dimensional structure that leads to input dimension free exponents in the esimation rates. 
+
+Assume that the regression function $f_0$ is a composition of several functions, that is, 
+\begin{equation}
+	\label{eq:sh-6}
+	f_0 = g_q\circ g_{q-1} \circ \dots \circ g_1 \circ g_0
+\end{equation}
+with $g_i:[a_i,b_i]^{d_i} \to [a_{i+1}, b_{i+1}]^{d_{i+1}}$. Denote by $g_i = (g_{ij})^T_{j=1,\dots,d_{i+1}}$the components of $g_i$ and let $t_i$ be the maximal number of variables on which each of the $g_{ij}$ depends on. Thus, without loss of generality, each $g_{ij}$ is a $t_i$ variate function. As an example, consider the function $f_0(x_1, x_2, x_3) = g_{11}(g_{01}(x_3), g_{02}(x_2))$ for which $d_0 = 3$, $t_0= 1$, $d_1 = t_1 = 2$, and $d_2=1$. 
+
+Always must have $t_i \leq d_i$, and for certain constraints, such as in additive models, $t_i$ mught be much smaller than $d_i$.  The single components $g_0, \dots, f_1$ and the pairs $(\beta_i, t_i)$ are clearly not identifiable. As we are only interested in estimation of $f_0$, this causes no problems. Among all possible representations, one should pick the one that leads to the fastest estimation rate. 
+
+In the $d$-variate regression model (\ref{eq:sh-1}), $f_0: [0,1]^d\to\SR$ and thus $d_0 = d$, $a_0 = 0$, $b_0 = 1$, and $d_{q+1} = 1$. One should keep in mind that (\ref{eq:sh-6}) is an assumption on the regression function that can be made independently of whether neural networks are used to fit the data or not. In particular, the number of layers $L$ in the network need not be the same as $q$. 
+
+Conceivable that for many of the problems for which neural networks perform well, a hidden hierarchical input-output relationship of the form (\ref{eq:sh-6}) is present with small values $t_i$. Slightly more specific function spaces, which alternate between summations and compositions of functions have been considered (the paper in Section \ref{sec:dl_npr}) is an example of one of these). 
+
+A function has Hölder smoothness index $\beta$ if all partial derivatives up to order $\lfloor \beta \rfloor$ exist and are bounded, and the partial derivatives of order $\lfloor \beta \rfloor$ are $\beta - \lfloor \beta \rfloor$ Hölder. The ball of $\beta$-Hölder functions with raduis $K$ is then defined as 
+\[\calC_r^\beta(D,K) = \left\{f:D\subset\SR^r\to\SR: \sum_{\valpha : |\valpha| < \beta|} \|\partial^\valpha f\|_\infty + \sum_{{\valpha}: |\valpha|= \lfloor\beta\rfloor} \sup_{\substack{\vx,\vy \in D \\ \vx \neq \vy}}\right\}\]
+
+Assume that each of the functions $g_{ij}$ has Hölder smoothness $\beta_i$. Since $g_{ij}$ is also $t_i$-variate, $g_{ij}\in \calC_{t_i}^{\beta_i}\left([a_i,b_i]^{t_i}, K_i\right)$ and the underlying function space becomes
+\begin{align*}
+	\calG(q,\vd,\vt,\bm{\beta}, K) := \bigg\{f = g_q \circ \dots \circ g_0: g_i = (g_{ij})_j: [a_i,b_i]^{d_i}\to [a_{i+1}, b_{i+1}]^{d_{i+1}}&, \\g_{ij}\in \calC_{t_i}^{\beta_i}\left([a_i,b_i]^{t_i}, LK\right), \text{ for some }|a_i|, |b_i| \leq K&\bigg\}
+\end{align*}
+with $\vd := (d_0, \dots, d_{q+1})$, $\vt:=(t_0, \dots, t_q)$, $\bm{\beta}:= (\beta_0, \dots, \beta_q)$. 
+
+For estimation rates in the nonparametric regression model, the crucial quantity is the smoothness of $f$. Imposing smoothness on the functions $g_i$, one must be find the induced smoothness of $f$, for comparasion on the minimax rates, etc. If, for instance, \(q =1, \beta_0, \beta_1\leq 1\), and \(d_0 = d_1 = t_0 =t_1 = 1\) and $f$ has smoothness $\beta_0, \beta_1$, then one should be able to achieve at lest the convergence rate 
+\(n^{-2\beta_0\beta_1/(2\beta_0\beta_1 + 1)}\)
+
+For $\beta_1 > 1$, this rate changes. Below will show that the convergence of the network estimator is described by the effective smoothness indices 
+\[\beta_i^* := \beta_i \prod_{\ell = i+1}^q (\beta_{\ell} \wedge 1 )\]
+via the rate 
+\begin{equation}
+	\label{eq:sh-7}
+	\phi_i := \max_{i = 0,\dots, q} n^{-\frac{2\beta_i^*}{2\beta_i^* + t_i}}
+\end{equation}
+Recalling the definition of $\Delta_n(\hat{f}_n, f_0)$ in (\ref{eq:sh-5}). 
+
+\begin{theorem}[Main Result]
+	\label{thm:sh-1}
+	Consider the d-variate nonparametric model in (\ref{eq:sh-1}) for composite regression function (\ref{eq:sh-6}) in the class $\calG(q, \vd, \vt, \bm{\beta}, K)$. Let $\hat{f}_n$ be an estimator taking values in the network class $\calF(L, (p_i)_{i=0, \dots, L+1}, s, F)$ satisfying 
+	\begin{enumerate}
+		\item $F\geq \max(K,1)$
+		\item $\sum_{i=0}^q \log_2(4t_i \vee 4\beta_i)\log_2 n\leq L \lesssim n \phi_n$\footnote{From what I understand, the notation $\lesssim f_n$ means $o(f_n)$ whereas the notation $\asymp f_n$ means $O(f_n)$}
+		\item $n\phi_n \lesssim \min_{i=1,\dots,L}p_i$
+		\item $s\asymp n\phi_n \log n$
+	\end{enumerate}
+	Then there exist constants $C, C'$ only depending on $q, \vd, \vt, \bm{\beta}, F$ such that if $\Delta_n(\hat{f}_m, f_0)\leq C\phi_n L \log^2(n)$ then 
+	\begin{equation}
+		\label{eq:sh-8}
+		R(\hat{f}_n, f_0)\leq C'\phi_nL\log^2 n 
+	\end{equation}
+	and if $\Delta_n(\hat{f}_n,f_0)\geq C\phi_n L \log^2 n$ then 
+	\begin{equation}
+		\label{eq:sh-9}
+		\frac{1}{C'}\Delta_n (\hat{f}_n, f_0) \leq R(\hat{f}_n, f_0) \leq C'\Delta_n(\hat{f}_n, f_0)
+	\end{equation}
+\end{theorem}
+
+In order to minimize the rate $\phi_n L \log^2 n$ the best choice is to choose $L$ of the order $\log_2 n$. The rate in the regime $\Delta_n (\hat{f}_n, f_0)\leq C'\phi_n\log^3n$ becomes then 
+\[R(\hat{f}_n,f_0)\leq C'\phi_n \log^3 n\]
+Convergence rate in Theorem \ref{thm:sh-1} depends on $\phi_n$. Below will show that $\phi_n$ is a lower bound for the minimax estimation risk over this class. The term $\Delta_n(\hat{f}_m,f_0)$ is large if $\hat{f}_n$ has a large empirical risk compared to the empirical risk minimizer. Having this term in the convergence rate is unavoidable as it also wppears in the lower bound derived in (\ref{eq:sh-9}). Since for the empirical risk minimizer the $\delta_n$-term is zero by definition, we have the following direct consequence of the main theorem. 
+\begin{corollary}
+	\label{cor:sh-1}
+	Let $\tilde{f}_n \in \argmin_{f\in\calF(L,\vp,s,F)} \sum_{i=1}^n(Y_i - f(\vX_i))^2$ be the empirical risk minimizer. Under the same conditions as for Theorem \ref{thm:sh-1}, there exists a constant $C'$ only depending on $q,\vd,\vt,\vbeta$ such that 
+	\begin{equation}
+		\label{eq:sh-10}
+		R(\tilde{f}_n,f_0) \leq C'\phi_n L \log^2 n
+	\end{equation}
+\end{corollary}
+Condition (i) in Theorem \ref{thm:sh-1} is mild and only states that the newtwork functions should have at least the same supremum norm as the regression function. From the other assumptions in Theoream \ref{thm:sh-1} it becomes clear that there is a lot of flexibility in picking a good network architecture as long as the number of active parameters is of the ``right'' order. To choose a network depth $L$ is is suffecient to have an upper bound on the $t_i \leq d_i$ and the smoothness indices $\beta_i$. Network width can be chosen independent of the smoothness indices by taking, for instance $n\lesssim \min_i p_i$.
+
+Maybe possible to choose the sparsity $s$ adaptibely. From a practical point of view it is concievable but left to future work. 
+
+Number of network parameters in a fully connected network is of the order $\sum_{i=0}^L p_i p_{i+1}$. This shows that Theorem \ref{thm:sh-1} requires sparse networks (since it requires a condition on $L$). For clearness of exposition, Theorem \ref{thm:sh-1} is stated without explicit constants, the proofs, however, an non-asymptotic. It is well-known that depe learning outperforms other methods only for long sample size. This indicated that the method may be able to adapt to underlying structure in the signal and thereform achieving fast convergence rates but with large constants or remainder terms which spoil the results for small samples. 
+
+Proof of the risk bounds in Theorem \ref{thm:sh-1} is based on the following oracle-type inequality
+\begin{theorem}
+	\label{thm:sh-2}
+	Consider the $d$-variate nonparametric regression model specified in (\ref{eq:sh-1}) with unkown regression function $f_0$ satisfying $\|f_0\|_\infty \leq F$ for some $F\geq 1$. Let $\hat{f}_n$ be any estimator taking values in the class $\calF(L,\vp,s,F)$ and let $\Delta_n(\hat{f}_n,f_0)$ be the quantity defined in (\ref{eq:sh-5}). For any $\eps\in(0,1]$ there exists a constant $C_\eps$ depending only on $\eps$ such that with 
+	\[\tau_{\eps,n} := C_\eps F^2 \frac{(s+1)\log\left(n(s+1)^Lp_0p_{L+1}\right)}{n}\]
+	we have 
+	\begin{dmath*}
+		(1-\eps)^2\Delta_n(\hat{f}_n,f_0) -\tau_{\eps,n} \leq R(\hat{f}_n,f_0) \leq (1+\eps)^2 \left(\inf_{f\in\calF(L,\vp,s,F)} \|f-f_0\|^2_{\infty} + \Delta_n(\hat{f}_n,f_0)\right) +\tau_{\eps,n}
+	\end{dmath*}
+\end{theorem}
+A consequence of the oracle inequality is that the upper bounds on the risk become worse as the number of later increases. This is consistent with what has been observed in practice. 
+
+An inspection of the proof shows two specific properties of the ReLU function is used. One of the advantages of deep ReLU networks is the projection property 
+\begin{equation}
+	\label{eq:sh-11}
+	\sigma \circ \sigma = \sigma
+\end{equation}
+that can be used to pass a signal without change through several layers in the network. This is important since the approximation theory is based on the construction of smaller networks for simpler tasks that may not all have the same network depth. To combine these subnetworks into one needs to synchronzie network depths by adding hidden layers that do not change the output.
+
+Another advantage of the ReLU activation is that all network parameters can be taken to be bounded in absolute value by one. If all network parameters are initialized by a value in [-1,1], this means that each network parameters only need to be varied by at most two during training. It is unclear whether results in the literature for non ReLU acrivation functions hold for bounded network parameters. 
+
+The $L\log^2 n $ factor in the convergence rate $\phi_n L\log^2 n$ is likely an artifact of the proof. Nexgt show that $\phi_n$ is a lower bound for the minimax estimation risk over the class $\calG(q,\vd, \vt,\vbeta, K)$ in the interesting case that $t_i \leq \min (d_0, \dots, d_{i-1})$ for all $i$. This means that no dimensions are added on deeper abstraction levls in the composition of functions. 
+
+\begin{theorem}
+	\label{thm:sh-3}
+	Consider the nonparameteric regression model (\ref{eq:sh-1}) with $\vX_i$ drawn from a distribution with Lebesgue density on $[0,1]^d$ which is lower and upper bounded by positive constants. For any non-negative integer $q$, any dimension vectors $\vd$ and $\vt$ satisfying $t_i\leq \min(d_0, \dots, d_{i=1})$, any smoothness vector $\vbeta$ and all sufficiently large constants $K>0$, there exists a positive constant $c$ such that 
+	\[\inf_{\hat{f}_n} \sup_{f_0\in \calG(q,\vd,\vt,\vbeta,K)} R(\hat{f}_n, f_0) \geq c \phi_n\]
+	where the $\inf$ is taken over all estimators $\hat{f}_n$\footnote{This shows that $\phi_n$ is a lower bound on minimax rate of convergence for estimators}
+\end{theorem}
+Proof is in appendix. Main ideas are sketched
+\begin{enumerate}
+	\item For simplicity, assume that $t_i = d_i = 1$ for all $i$. In this case, the functions $g_i$ are all univariate and real-valued. Define $i^* \in \arg\min_{i=0,\dots,q} \beta^*_i/(2\beta^*_i + 1)$ as an index for which estimation rate is obtained. 
+	\item For any $\alpha > 0, x^\alpha$ has Hölder smoothness $\alpha$ and for $\alpha = 1$ the function is infintely differentiable and has finite Hölder norm for all smoothness indices.\footnote{Holder norm with smoothness index $\beta$ over a class of functions defined over $\Omega$ and into $\SR$, $$ \|f\|_{1,\beta} = \sup_{x\in\Omega} |f(x)| + \sup_{x\in\Omega} |f'(x)| + \sup_{\substack{x,y\in\Omega \\ x\neq y}} \frac{|f'(x) - f'(y)|}{\|x-y\|^\beta}$$}.Set $g_\ell (x) = x$ for $\ell < i^*$ and $g_\ell(x)$ = $x^{\beta_\ell \wedge 1}$ for $\ell > i^*$. Then 
+	\[f_0(x) = g_1 \circ g_{q-1} \circ \dots \circ g_1 \circ g_0(x) = \left(g_{i^*}(x)\right)^{\prod_{\ell = i^* + 1}^q \beta_\ell \wedge 1}\]
+	\item Assuming a uniform random design (errors distributed the same), the Kullback-Leibler divergence is $KL(P_f, P_g) = \frac{n}{2}\|g-f\|^2_2.$\footnote{Kullback-Leibler divergence is a measure of how ``far apart'' probability distributions are. If $P$ and $Q$ are probability distributions over a set $\calX$, and $P$ is absolutely continuous with respect to $Q$, then the Kullback-Leibler divergence from $Q$ to $P$ is defined as 
+	\[KL(P_f, P_g) = \int_\calX \log\left(\frac{dP}{dQ}\right)dP\] where $\frac{dP}{dQ}$ is the density (Radon-Nikodym derivative) of $P$ with respect to $Q$.} Take a kernel function $K$ and consider $\tilde{g}(x) = h^{\beta_{i^*}} K (x/h)$. Under standard assumptions on $K$, $\tilde{g}$ has Hölder smoothness index $\beta_{i^*}$.
+	\item  Now can generate two hypotheses $f_{00}(x)=0$ and $f_{01}(x) = (h^{\beta_{i^*}}K(x/h))^{\prod_{\ell = i^* + 1}^q \beta_\ell \wedge 1}$ by taking $g_{i^*}(x) = 0$ and $g_{i^*}(x) = \tilde{g}(x)$. Therefore, because our domain bounds $x \in [0,1]$: $\vert f_{00}(0) - f_{01}(0)\vert\hbox{}\gtrsim h^{\beta_{i^*}}$ assuming that $K(0) > 0$. 
+	\item For the Kullback-Leibler divergence, find $KL(P_{f_{00}}, P_{f_{01}}) \lesssim nh^{2\beta_{i^*}^* + 1}$. Using a theorem 2.2 from the book \textit{Introduction to nonparametric estimation} (Tsybakov 2009), this shows that the poitwise rate of convergence is 
+	\[n^{-2\beta_{i^*}^*/(2\beta_{i^*}^* + 1)} = \max_{1 = 0,\dots, q} n^{-2\beta_i^*/(2\beta_i^* +1)}\]
+	which matches with the upper bound since $t_i = 1$ for all $i$. For lower bound on the prediction error, generalize argument to a multiple testing problem.
+\end{enumerate}
+$L^2$-minimax rate coincides in most regimes with the sup-norm rate obtained for composition of two functions. But unlike the classical nonparameteric regression model, the minimax estimation rates for $L^2$-loss and sup-norm loss differ fot some setups by a polynomial power. There are several results in approximation theory that provide lower bounds on the number of required network weights $s$ such that all functions in a function class can be approximated by a $s$-sparse network up to some prescribed error. Results of this flavor can also be quite easily derived by combining the minimax lower bound with the oracle inequality. Argument is that if the same approximaation rates would hold for networks with fewer parameters, we would obtain rates that are faster than the minimax rates.
+\begin{lemma}
+	\label{lemma:sh-1}
+	Given $\beta, K > 0, d\in\SN$, there exists constants $c_1, c_2$ only depending on $\beta, K, d$ such that if 
+	\[s\leq c_1 \frac{\eps^{-d/\beta}}{L\log(1/\eps)}\]
+	for some $\eps \leq c_2$, then for any width vector $\vp$ with $p_0 = d$ and $p_{L+1} = 1$
+	\[\sup_{f_0\in \calC_d^\beta([0,1]^d, K)} \inf_{f\in\calF(L,\vp,s)} \geq \eps\]
+\end{lemma}
+This, I guess, helps establish some lower bound. 
+
