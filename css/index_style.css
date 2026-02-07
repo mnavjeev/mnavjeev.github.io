@@ -145,6 +145,19 @@ main a:hover {
 main a:visited {
 }
 
+main a.coauthor {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 2px;
+    font-family: inherit;
+}
+
+main a.coauthor:hover {
+    color: #2774AE;
+    text-decoration-style: solid;
+}
+
 nav a {
     float: left;
     color: black;

@@ -164,3 +164,16 @@ img {
     font-size: 16px;
     margin-bottom: 10px;
 }
+
+main a.coauthor {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 2px;
+    font-family: inherit;
+}
+
+main a.coauthor:hover {
+    color: #8BB8E8;
+    text-decoration-style: solid;
+}
