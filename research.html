@@ -154,6 +154,18 @@
     </main>
     <footer>
     </footer>
+    <script>
+    document.querySelector('main').addEventListener('click', function(e) {
+        var link = e.target.closest('a');
+        if (!link || link.classList.contains('coauthor')) return;
+        var href = link.getAttribute('href') || '';
+        if (!href.endsWith('.pdf') && !href.includes('arxiv.org') && !href.includes('sciencedirect.com')) return;
+        gtag('event', 'paper_click', {
+            link_type: link.textContent.trim(),
+            link_url: href
+        });
+    });
+    </script>
 </body>
 
 </html>
