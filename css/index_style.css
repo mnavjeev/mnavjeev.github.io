@@ -4,6 +4,7 @@
         url('fonts/lato/lato-regular-webfont.woff') format('woff');
     font-weight: lighter;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -12,6 +13,7 @@
         url('fonts/lato/lato-bold-webfont.woff') format('woff');
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -20,6 +22,7 @@
         url('fonts/lato/lato-light-webfont.woff') format('woff');
     font-weight: lighter;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -28,12 +31,10 @@
         url('fonts/roboto/RobotoMonoLight.woff') format('woff');
     font-weight: lighter;
     font-style: normal;
+    font-display: swap;
 }
 
 h1 {
-    color: #005587; /* Darker UCLA*/
-    color: #003B5C; /* Darkest UCLA */ 
-    color: #000000;
     color: #2774AE;
     font-family: latobold;
     padding-top: 4%;
@@ -54,9 +55,6 @@ h3 {
 
 body {
     background-color: #f9f9f9;
-    /* background-color:#F9F6EE; */
-    /* background-color: #FFFAFA; */
-    /* background-color: #FEFEFA; */
     font-family: latolight;
     line-height: 1.6em;
     font-size: 14px;
@@ -70,6 +68,10 @@ header {
     background-color: inherit;
     margin-left: 3%;
     max-width: 600px;
+}
+
+header a {
+    text-decoration: none;
 }
 
 main {
@@ -127,22 +129,14 @@ details > summary:hover {
     color:gray;
 }
 
-main {
-}
-
 main a {
     color: #003B5C;
-    /* color: #000000; */
     text-decoration: none;
     font-family: 'latoregular';
 }
 
 main a:hover {
     color: #2774AE;
-    /* color: #FFB81C; */
-}
-
-main a:visited {
 }
 
 main a.coauthor {
@@ -218,6 +212,7 @@ p {
     font-family: latolight;
     font-size: 20px;
     margin-bottom: 0px;
+    color: #1F1F1F;
 }
 
 .subsubhead {
@@ -227,3 +222,40 @@ p {
     margin-bottom: 10px;
 }
 
+.paper-links {
+    margin-top: -13px;
+}
+
+.journal-status {
+    color: #404040;
+}
+
+.error-title {
+    font-size: 30px;
+    padding-top: 25px;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+        line-height: 28px;
+    }
+
+    h2 {
+        font-size: 17px;
+    }
+
+    body {
+        padding: 0 10px;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    nav a {
+        margin-right: 14px;
+    }
+}
