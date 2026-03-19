@@ -44,7 +44,7 @@ h1 {
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 h3 {
@@ -77,7 +77,7 @@ header a {
 main {
     max-width: 600px;
     margin-left: 3%;
-    margin-top: 20px;
+    padding-top: 1px;
     padding-bottom: 40px;
     clear: both;
 }
@@ -86,7 +86,7 @@ nav {
     display: block;
     overflow: hidden;
     float: left;
-    margin-bottom: -10px;
+    margin-bottom: -5px;
 }
 
 hr {
@@ -162,7 +162,7 @@ main a.coauthor:hover {
 
 nav a {
     float: left;
-    color: black;
+    color: #333;
     text-align: center;
     text-decoration: none;
     padding: 1px 0px;
@@ -220,7 +220,7 @@ p {
     line-height: 1em;
     font-family: latolight;
     font-size: 16px;
-    margin-top: 27px;
+    margin-top: 10px;
     margin-bottom: 0px;
     color: black;
     border-left: 3px solid #2774AE;
@@ -244,7 +244,7 @@ p {
 }
 
 .journal-status {
-    color: #404040;
+    color: #333;
     font-family: latolight;
     font-weight: normal;
 }
