@@ -40,7 +40,7 @@ h1 {
     padding-top: 4%;
     font-size: 36px;
     line-height: 36px;
-    margin-bottom: -1%;
+    margin-bottom: -4px;
 }
 
 h2 {
@@ -132,6 +132,7 @@ details[open] > summary::before {
 details > summary:hover {
     cursor:pointer;
     color:gray;
+    transition: color 0.15s ease;
 }
 
 main a {
@@ -146,7 +147,7 @@ main a:hover {
 }
 
 main a.coauthor {
-    color: inherit;
+    color: #003B5C;
     text-decoration: underline;
     text-decoration-style: dotted;
     text-underline-offset: 2px;
@@ -156,7 +157,6 @@ main a.coauthor {
 
 main a.coauthor:hover {
     color: #2774AE;
-    text-decoration-style: solid;
 }
 
 nav a {
