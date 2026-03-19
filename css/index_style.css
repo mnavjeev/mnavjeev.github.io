@@ -57,7 +57,7 @@ body {
     background-color: #f9f9f9;
     font-family: latolight;
     line-height: 1.6em;
-    font-size: 14px;
+    font-size: 16px;
     max-width: 600px;
     margin: auto;
 }
@@ -77,19 +77,19 @@ header a {
 main {
     max-width: 600px;
     margin-left: 3%;
+    margin-top: 20px;
+    padding-bottom: 40px;
+    clear: both;
 }
 
 nav {
     display: block;
     overflow: hidden;
     float: left;
-    margin-bottom:-8px;
+    margin-bottom: -10px;
 }
 
 hr {
-    color:black;
-    border-color:black;
-    background-color:black;
     text-align: left;
     width: 97%;
     max-width: 600px;
@@ -97,13 +97,18 @@ hr {
     display: block;
     height: 0px;
     border: 0px;
-    border-top: 2.5px solid;
+    border-top: 2.5px solid black;
     border-bottom: 0px;
     background-color: inherit;
 }
 
 details > summary {
     list-style-type: none;
+    font-size: 14px;
+}
+
+details {
+    font-size: 14px;
 }
 
 details > summary::-webkit-details-marker {
@@ -112,14 +117,14 @@ details > summary::-webkit-details-marker {
 
 details > summary::before {
     font-family:'roboto';
-    font-size:14px;
+    font-size:13px;
     content:'[+]';
     margin-right:3px;
 }
 
 details[open] > summary::before {
     font-family:'roboto';
-    font-size:14px;
+    font-size:13px;
     content: '[-]';
     margin-right:3px;
 }
@@ -133,6 +138,7 @@ main a {
     color: #003B5C;
     text-decoration: none;
     font-family: 'latoregular';
+    transition: color 0.15s ease;
 }
 
 main a:hover {
@@ -145,6 +151,7 @@ main a.coauthor {
     text-decoration-style: dotted;
     text-underline-offset: 2px;
     font-family: inherit;
+    transition: color 0.15s ease;
 }
 
 main a.coauthor:hover {
@@ -159,6 +166,7 @@ nav a {
     text-decoration: none;
     padding: 1px 0px;
     margin-right: 21px;
+    transition: color 0.15s ease;
 }
 
 nav a.active {
@@ -182,7 +190,7 @@ p {
 .subsection {
     width: 100%;
     max-width: 600px;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .weeklist {
@@ -210,9 +218,12 @@ p {
 .subhead {
     line-height: 1em;
     font-family: latolight;
-    font-size: 20px;
+    font-size: 16px;
+    margin-top: 27px;
     margin-bottom: 0px;
-    color: #1F1F1F;
+    color: black;
+    border-left: 3px solid #2774AE;
+    padding-left: 8px;
 }
 
 .subsubhead {
@@ -224,10 +235,13 @@ p {
 
 .paper-links {
     margin-top: -13px;
+    font-size: 14px;
 }
 
 .journal-status {
-    color: #404040;
+    color: black;
+    font-family: latoregular;
+    font-weight: normal;
 }
 
 .error-title {
