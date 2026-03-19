@@ -234,14 +234,18 @@ p {
     margin-bottom: 10px;
 }
 
+.paper-title {
+    font-size: 16px;
+}
+
 .paper-links {
     margin-top: -13px;
     font-size: 14px;
 }
 
 .journal-status {
-    color: black;
-    font-family: latoregular;
+    color: #404040;
+    font-family: latolight;
     font-weight: normal;
 }
 
