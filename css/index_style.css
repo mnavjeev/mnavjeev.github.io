@@ -157,6 +157,7 @@ main a.coauthor {
 
 main a.coauthor:hover {
     color: #2774AE;
+    text-decoration-style: solid;
 }
 
 nav a {
