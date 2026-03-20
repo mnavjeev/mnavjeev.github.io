@@ -5,17 +5,18 @@
 
 % Don't like 10pt? Try 11pt or 12pt
 \documentclass[10pt]{article}
-\RequirePackage[T1]{fontenc}
+\usepackage{fontspec}
+\setmainfont{Lato}[
+    UprightFont = *-Light,
+    BoldFont = *-Bold,
+    ItalicFont = *-LightItalic,
+    BoldItalicFont = *-BoldItalic
+]
+\newfontfamily\latosemibold{Lato}[
+    UprightFont = *-Regular
+]
 
-% \usepackage[utf8]{inputenc}
-
-\usepackage[linkcolor = blue]{hyperref}
-
-% LaTeX will typeset using Computer Modern Roman, which a lot of
-% non-mathematicians and non-engineers won't like. Also, a few PDF
-% viewers may not render CMR very well. Instead, Times New Roman can
-% be used. That's what this package does.
-\usepackage{palatino}
+\usepackage[linkcolor = black]{hyperref}
 
 % The automated optical recognition software used to digitize resume
 % information works best with fonts that do not have serifs. This
@@ -92,9 +93,9 @@
 %
 % * For numbered lists of references (with hanging indents):
 %
-%   \begin{bibenum}
+%   \begin{bibsection}
 %       \item ...
-%   \end{bibenum}
+%   \end{bibsection}
 %
 %   Note that bibenum numbers continuously throughout. To reset the
 %   counter, use
@@ -111,7 +112,7 @@
 \newlist{bibsection}{itemize}{3}
 \setlist[bibsection]{label=,leftmargin=\bibhang,%
         itemindent=-\bibhang,
-        itemsep=\bibsep,parsep=\z@,partopsep=0pt,
+        itemsep=\bibsep+2pt,parsep=\z@,partopsep=0pt,
         topsep=0pt}
 \newlist{bibenum}{enumerate}{3}
 \setlist[bibenum]{label=[\arabic*],resume,leftmargin={\bibhang+\widthof{[999]}},%
@@ -124,18 +125,7 @@
 \def\endbibsection{\oldendbibsection\vspace{-.6\baselineskip}}
 \makeatother
 
-% Try to setup the colors
 \usepackage{xcolor}
-\definecolor{uclablue}{HTML}{2774AE}
-\definecolor{ucladarkblue}{RGB}{0, 85, 135}
-\definecolor{uclagold}{RGB}{255, 184, 0}
-\definecolor{pastelred}{HTML}{d62d0e}
-\definecolor{pastelgreen}{RGB}{2,117,36}
-\newcommand{\ucla}[1]{\textcolor{uclablue}{#1}}
-\newcommand{\darkucla}[1]{\textcolor{ucladarkblue}{#1}}
-\newcommand{\gold}[1]{\textcolor{uclagold}{#1}}
-\newcommand{\red}[1]{\textcolor{pastelred}{#1}}
-\newcommand{\green}[1]{\textcolor{pastelgreen}{#1}}
 
 %% Reference the last page in the page number
 %
@@ -153,11 +143,8 @@
 \newlength{\footpageshift}
 \setlength{\footpageshift}
           {0.5\textwidth+0.5\marginparsep+0.5\marginparwidth-2in}
-\lfoot{\hspace{\footpageshift}%
-       \parbox{4in}{\, \hfill %
-%                    \arabic{page} of \protect\pageref*{LastPage} % +LP
-                    \arabic{page}                               % -LP
-                    \hfill \,}}
+\lfoot{Last updated: \monthyeardate\today}
+\rfoot{\arabic{page}}
 
 \usepackage{datetime}
 
@@ -167,11 +154,9 @@
 
 % Finally, give us PDF bookmarks
 \usepackage{color,hyperref}
-\definecolor{darkblue}{rgb}{0.0,0.18,0.65}
-%\definecolor{darkblue}{rgb}{0.0, 0.28, 0.67}
 \hypersetup{colorlinks,breaklinks,
-            linkcolor=darkblue,urlcolor=black,
-            anchorcolor=darkblue,citecolor=darkblue}
+            linkcolor=black,urlcolor=black,
+            anchorcolor=black,citecolor=black}
 
 %%%%%%%%%%%%%%%%%%%%%%%% End Document Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -206,8 +191,7 @@
 \newcommand{\makeheading}[2][]%
         {\hspace*{-\marginparsep minus \marginparwidth}%
          \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
-             {\large \bfseries #2 \hfill #1}\\[-0.15\baselineskip]%
-                 \rule{\columnwidth}{1pt}%
+             {\LARGE \bfseries #2 \hfill #1}%
          \end{minipage}}
 
 %%% SECTION HEADINGS
@@ -216,9 +200,9 @@
 %
 % Usage: \section{section name}
 \renewcommand{\section}[1]{\pagebreak[3]%
-    \vspace{1.3\baselineskip}%
+    \vspace{1.6\baselineskip}%
     \phantomsection\addcontentsline{toc}{section}{#1}%
-    \noindent\llap{\scshape\smash{\parbox[t]{\marginparwidth}{\hyphenpenalty=10000\raggedright #1}}}%
+    \noindent\llap{\latosemibold\smash{\parbox[t]{\marginparwidth}{\hyphenpenalty=10000\raggedright #1}}}%
     \vspace{-\baselineskip}\par}
 
 %%% LISTS
@@ -330,19 +314,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%% Begin CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % !TeX spellcheck = en_US 
 \begin{document}
-\makeheading{\huge{Manu Navjeevan}}
+\makeheading{Manu Navjeevan}
 
 \blankline
 
 \section{Contact Information}
 
-\begin{center}
-\begin{tabular}{l @{\hskip0.9in}l}
+\begin{tabular}{@{}l @{\hskip0.9in}l}
 Texas A\&M Department of Economics      &  Email: \href{mailto:mnavjeevan@tamu.edu}     {mnavjeevan@tamu.edu} \\
 2935 Research Pw, Office 244 &   Web: \href{https://navjeevan.dev}{https:/\!\!/\! navjeevan.dev}\\
 College Station, TX 77843 \\
 \end{tabular}
-\end{center}
 
 % NOTE: Mind where the & separators and \\ breaks are in the following
 %       table. Table is one row made up of three parboxes. The left
@@ -404,15 +386,15 @@ College Station, TX 77843 \\
 
 \section{Academic Appointments}
 
-\textbf{Texas A\&M University}
+Texas A\&M University
 \begin{outerlist}
-    \item[] Assistant Professor of Economics, 2024 -
+    \item[] Assistant Professor of Economics, 2024--
 \end{outerlist}
 
 \section{Education}
 
 
-\textbf{University of California, Los Angeles}
+University of California, Los Angeles
 % , Los Angeles, California
 \begin{outerlist}
 \item[] Ph.D.,
@@ -420,7 +402,7 @@ College Station, TX 77843 \\
 
     % \begin{innerlist}
          % \item[]
-    \underline{Advisers}: {Denis Chetverikov (Primary), Andres Santos, Zhipeng Liao}
+    Advisers: {Denis Chetverikov (Primary), Andres Santos, Zhipeng Liao}
      % \end{innerlist}
             
 \end{outerlist}
@@ -428,7 +410,7 @@ College Station, TX 77843 \\
 
 \halfblankline
 
-\textbf{Carnegie Mellon University}
+Carnegie Mellon University
 % , Pittsburgh, Pennsylvania
 \begin{outerlist}
 
@@ -446,7 +428,7 @@ College Station, TX 77843 \\
 \end{outerlist}
 
 
-\section{Research Interests}
+\section{Research \texorpdfstring{\newline}{} Interests}
 
 Econometrics, Causal Inference, Machine Learning
 %
@@ -464,44 +446,44 @@ Econometrics, Causal Inference, Machine Learning
 
 \section{Publications}
 
-\begin{bibenum}
-    \item Baybutt, A. and Navjeevan, M. ``\href{https://arxiv.org/abs/2301.06283}{Doubly-Robust Inference for Conditional Average Treatment Effects with High-Dimensional Controls.}'' (\textit{Journal of Econometrics}, 2026)
-\end{bibenum}
+\begin{bibsection}
+    \item \href{https://arxiv.org/abs/2301.06283}{Doubly-Robust Inference for Conditional Average Treatment Effects with High-Dimensional Controls} (with Adam Baybutt) --- \textit{Journal of Econometrics}, 2026
+\end{bibsection}
 
-\section{Working \texorpdfstring{\newline} PPapers}
+\section{Working \texorpdfstring{\newline}{} Papers}
 
-\begin{bibenum}
+\begin{bibsection}
 
-    \item Bei, X. and Navjeevan, M. (2026) ``Inference under First-Order Degeneracy.'' 
-    \item Navjeevan, M. (2023). ``An Identification and Dimensionality Robust Test for Instrumental Variables Models.'' (\textit{Revise and Resubmit, Journal of Econometrics})
+    \item Inference under First-Order Degeneracy (with Xinyue Bei)
+    \item An Identification and Dimensionality Robust Test for Instrumental Variables Models --- \textit{Revise and Resubmit, Journal of Econometrics}
 
-    \item Navjeevan, M., Pinto, R., and Santos, A. (2023). ``Identification in Instrumental Variables Models: The Central Role of Abadie's Kappa.'' (\textit{Conditionally Accepted, Econometrica})
+    \item Identification in Instrumental Variables Models: The Central Role of Abadie's Kappa (with Rodrigo Pinto and Andres Santos) --- \textit{Conditionally Accepted, Econometrica}
 
-    \item Navjeevan, M. and Pinto, R. (2022) ``\href{https://navjeevan.dev/files/Papers/Ord_Unord_Paper.pdf}{Ordered, Unordered, and Minimal Monotonicity}.''
+    \item \href{https://navjeevan.dev/files/Papers/Ord_Unord_Paper.pdf}{Ordered, Unordered, and Minimal Monotonicity} (with Rodrigo Pinto)
 
-\end{bibenum}
+\end{bibsection}
 
 \section{In Progress}
 %
-\begin{bibenum}
-\item Garcia, J., Navjeevan, M., and Xu, H. ``On Placebo Testing.''
-\item Chetverikov, D., Navjeevan, M., and Voronin, A. ``Nonparametric Estimation Under Discrete Covariates with Large Support.''
-\item Castillo, M., Ige, M., and Navjeevan, M. ``Compliers, defiers and the evaluation of information interventions.''
-	
-\end{bibenum}
+\begin{bibsection}
+\item On Placebo Testing (with Jorge Garcia and Han Xu)
+\item Nonparametric Estimation Under Discrete Covariates with Large Support (with Denis Chetverikov and Andrei Voronin)
+\item Compliers, Defiers and the Evaluation of Information Interventions (with Marco Castillo and Mofffii Ige)
+
+\end{bibsection}
 \halfblankline
 
 \section{Awards and Fellowships}
 
-\textbf{Dissertation Year Fellowship}, UCLA Graduate Division
+Dissertation Year Fellowship, UCLA Graduate Division
 
 \halfblankline
 
-\textbf{Honors Pass, Econometrics Qualifying Exam}, Department of Economics, UCLA
+Honors Pass, Econometrics Qualifying Exam, Department of Economics, UCLA
 
 \halfblankline
 
-\textbf{Honors Pass, Microeconomics Qualifying Exam}, Department of Economics, UCLA
+Honors Pass, Microeconomics Qualifying Exam, Department of Economics, UCLA
 
 % \halfblankline
 %
@@ -528,8 +510,8 @@ Econometrics, Causal Inference, Machine Learning
 Texas A\&M University
 
 \begin{outerlist}
-    \item[] \textbf{Econ 471} (Data Science for Future Decision Makers), 2024-2026 
-    \item[] \textbf{Econ 676} (Econometrics II), 2025-2026
+    \item[] Econ 471 (Data Science for Future Decision Makers), 2024--2026
+    \item[] Econ 676 (Econometrics II), 2025--2026
 \end{outerlist}
 
 \halfblankline
@@ -537,7 +519,7 @@ Texas A\&M University
 University of California, Los Angeles
 
 \begin{outerlist}
-\item[] \textbf{Econ 103} (Introduction to Econometrics), Summer 2021- 2023. 
+\item[] Econ 103 (Introduction to Econometrics), Summer 2021--2023 
     % \begin{innerlist}
     % \item {My materials from Summer 2021 can be found on \href{https://github.com/mnavjeev/Econ103-Summer-2021}{\underline{GitHub}}}.
     % \end{innerlist}
@@ -555,11 +537,6 @@ American Economic Review, Econometric Reviews,  Econometric Theory, Journal of B
 % \item Prof.\ Zhipeng Liao: \href{mailto:zihpeng.liao@econ.ucla.edu}{zhipeng.liao@econ.ucla.edu} 
 % \end{bibsection}
 %
-\halfblankline
-
-
-\section{Last update}
-\monthyeardate\today
 
 
 % The ``More Info'' section may not be necessary; make sure it's short
