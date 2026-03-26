@@ -261,6 +261,62 @@ p {
     padding-bottom: 25px;
 }
 
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1c1c1c;
+        color: #d4d4d4;
+    }
+
+    h1 {
+        color: #8BB8E8;
+    }
+
+    hr {
+        border-top-color: #444;
+    }
+
+    nav a {
+        color: #ccc;
+    }
+
+    nav a.active {
+        color: #8BB8E8;
+    }
+
+    nav a:hover {
+        color: #888;
+    }
+
+    main a {
+        color: #8BB8E8;
+    }
+
+    main a:hover {
+        color: #b0cfed;
+    }
+
+    main a.coauthor {
+        color: #d4d4d4;
+    }
+
+    main a.coauthor:hover {
+        color: #8BB8E8;
+    }
+
+    .subhead {
+        color: #d4d4d4;
+        border-left-color: #8BB8E8;
+    }
+
+    .journal-status {
+        color: #999;
+    }
+
+    details > summary:hover {
+        color: #888;
+    }
+}
+
 @media screen and (max-width: 480px) {
     h1 {
         font-size: 24px;
