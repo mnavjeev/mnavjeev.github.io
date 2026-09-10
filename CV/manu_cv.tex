@@ -93,9 +93,9 @@
 %
 % * For numbered lists of references (with hanging indents):
 %
-%   \begin{bibsection}
+%   \begin{bibenum}
 %       \item ...
-%   \end{bibsection}
+%   \end{bibenum}
 %
 %   Note that bibenum numbers continuously throughout. To reset the
 %   counter, use
@@ -115,10 +115,9 @@
         itemsep=\bibsep+2pt,parsep=\z@,partopsep=0pt,
         topsep=0pt}
 \newlist{bibenum}{enumerate}{3}
-\setlist[bibenum]{label=[\arabic*],resume,leftmargin={\bibhang+\widthof{[999]}},%
-        itemindent=-\bibhang,
-        itemsep=\bibsep,parsep=\z@,partopsep=0pt,
-        topsep=0pt}
+\setlist[bibenum]{label=[\arabic*],resume,widest=99,leftmargin=*,%
+        itemsep=\bibsep+2pt,parsep=\z@,partopsep=0pt,
+        topsep=0pt,before=\raggedright}
 \let\oldendbibenum\endbibenum
 \def\endbibenum{\oldendbibenum\vspace{-.6\baselineskip}}
 \let\oldendbibsection\endbibsection
@@ -446,29 +445,28 @@ Econometrics, Causal Inference, Machine Learning
 
 \section{Publications}
 
-\begin{bibsection}
+\begin{bibenum}
     \item \href{https://arxiv.org/abs/2301.06283}{Doubly-Robust Inference for Conditional Average Treatment Effects with High-Dimensional Controls} (with Adam Baybutt) --- \textit{Journal of Econometrics}, January 2026
     \item \href{https://www.econometricsociety.org/publications/econometrica/2026/07/01/Identification-in-Instrumental-Variables-Models-The-Central-Role-of-Abadies-Kappa}{Identification in Instrumental Variables Models: The Central Role of Abadie's Kappa} (with Rodrigo Pinto and Andres Santos) --- \textit{Econometrica}, July 2026
-\end{bibsection}
+\end{bibenum}
 
 \section{Working \texorpdfstring{\newline}{} Papers}
 
-\begin{bibsection}
-
+\begin{bibenum}
+    \item Compliers, Defiers and the Evaluation of Information Interventions (with Marco Castillo and Mofffii Ige)
+    \item Choosing the Dictionary and Penalty for IV-LASSO (with Yukun Ma and Bogdan Salahub)
     \item Inference under First-Order Degeneracy (with Xinyue Bei)
     \item An Identification and Dimensionality Robust Test for Instrumental Variables Models --- \textit{Revise and Resubmit, Journal of Econometrics}
     \item \href{https://navjeevan.dev/files/Papers/Ord_Unord_Paper.pdf}{Ordered, Unordered, and Minimal Monotonicity} (with Rodrigo Pinto)
 
-\end{bibsection}
+\end{bibenum}
 
 \section{In Progress}
 %
-\begin{bibsection}
+\begin{bibenum}
+\item An Adaptive Grouped Heterogeneity Estimator for Cross-Sectional Data (with Denis Chetverikov and Andrei Voronin)
 \item On Placebo Testing (with Jorge Garcia and Han Xu)
-\item An Adaptive Group Heterogeneity Estimator for Cross-Sectional Data (with Denis Chetverikov and Andrei Voronin)
-\item Compliers, Defiers and the Evaluation of Information Interventions (with Marco Castillo and Mofffii Ige)
-
-\end{bibsection}
+\end{bibenum}
 \halfblankline
 
 \section{Awards and Fellowships}
